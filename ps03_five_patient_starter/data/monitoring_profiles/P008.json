@@ -1,0 +1,38 @@
+{
+  "patient_id": "P008",
+  "fhir_patient_id": "139a4829-705a-9b84-028c-7b6391c3c416",
+  "age_at_encounter_end": 21,
+  "encounter_id": "139a4829-705a-9b84-2e36-6cbbbebdc835",
+  "encounter_end": "2009-04-14T17:02:09+05:30",
+  "recorded_encounter_reason": "Appendicitis (disorder)",
+  "discharge_disposition": {
+    "coding": [
+      {
+        "system": "http://www.nubc.org/patient-discharge",
+        "code": "01",
+        "display": "Discharged to home care or self care (routine discharge)"
+      }
+    ],
+    "text": "Discharged to home care or self care (routine discharge)"
+  },
+  "historical_condition_labels": [
+    "Risk activity involvement (finding) Risk activity involvement (finding)",
+    "Received higher education (finding) Received higher education (finding)",
+    "Stress (finding) Stress (finding)",
+    "History of appendectomy (situation) History of appendectomy (situation)"
+  ],
+  "historical_medication_prescription_labels": [],
+  "historical_vital_loinc_codes": [],
+  "proposed_simulator_scenario": "Stable postoperative recovery",
+  "monitoring_configuration": {
+    "spo2_scale": 1,
+    "oxygen_target": null,
+    "initial_vitals": null,
+    "baseline_status": "pending"
+  },
+  "limitations": [
+    "Historical conditions and prescriptions are not necessarily active at discharge.",
+    "Scenario is proposed, not a recorded outcome.",
+    "Historical vital availability is not evidence of a stable baseline."
+  ]
+}

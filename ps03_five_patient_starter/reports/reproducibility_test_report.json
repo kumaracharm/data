@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "fixed_seed": 99,
+  "alternate_seed": 100,
+  "patient_count": 10,
+  "samples_per_patient": 4,
+  "repeated_fixed_seed_runs": 2,
+  "output_files_compared_per_run": 22,
+  "all_output_files_byte_identical": true,
+  "compared_outputs": [
+    "observed/P001.csv through observed/P010.csv",
+    "ground_truth/P001_ground_truth.csv through P010_ground_truth.csv",
+    "manifests/simulation_manifest.json",
+    "manifests/patient_initial_states.json"
+  ],
+  "different_seed_changes_observed_and_true_trajectories": true,
+  "event_id": {
+    "algorithm": "UUIDv5",
+    "namespace": "cc8183ea-bfb0-44d8-9d6c-56f57c55a209",
+    "name_components": [
+      "patient_id",
+      "simulation_seed",
+      "scenario_name",
+      "sample_index"
+    ],
+    "expected_name_checked": "P001:99:stable_recovery:0",
+    "matches_expected_uuid": true
+  },
+  "notes": [
+    "The configured start timestamp is fixed, so generated observation and event timestamps repeat for identical configurations.",
+    "Scenario event IDs are stable for a patient/scenario/seed; observation IDs additionally include the sample index.",
+    "The comparison covers CSVs and manifests generated in temporary directories."
+  ]
+}

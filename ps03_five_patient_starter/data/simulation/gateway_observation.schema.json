@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Temporary Virtual Wearable Observed Measurement",
+  "description": "Provisional example only. Replace after the receiving gateway observation contract is agreed. Contains observed sensor values and quality only; no true physiology, scenario label, event onset, or ground-truth sensor-fault label.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "event_id",
+    "patient_id",
+    "timestamp",
+    "observed_hr_bpm",
+    "observed_spo2_percent",
+    "observed_rr_bpm",
+    "observed_temp_c",
+    "signal_quality",
+    "sensor_status",
+    "sensor_connected"
+  ],
+  "properties": {
+    "event_id": {"type": "string", "format": "uuid"},
+    "patient_id": {"type": "string"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "observed_hr_bpm": {"type": ["number", "null"]},
+    "observed_spo2_percent": {"type": ["number", "null"]},
+    "observed_rr_bpm": {"type": ["number", "null"]},
+    "observed_temp_c": {"type": ["number", "null"]},
+    "signal_quality": {"type": "number", "minimum": 0, "maximum": 1},
+    "sensor_status": {"type": "string"},
+    "sensor_connected": {"type": "boolean"}
+  }
+}

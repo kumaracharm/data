@@ -1,0 +1,16 @@
+{
+  "description": "Optional demo presets, not historical outcomes or clinical recommendations. Every patient can run every scenario through the CLI.",
+  "scenarios": {
+    "P001": "gradual_deterioration",
+    "P002": "temporary_fluctuations",
+    "P003": "deterioration_with_sensor_failure",
+    "P004": "recovery_after_deterioration",
+    "P005": "temporary_signal_degradation",
+    "P006": "temporary_fluctuations",
+    "P007": "gradual_deterioration",
+    "P008": "stable_recovery",
+    "P009": "sudden_deterioration",
+    "P010": "probe_removal"
+  },
+  "warning": "These scenario assignments are synthetic test selections and do not describe actual patient outcomes."
+}

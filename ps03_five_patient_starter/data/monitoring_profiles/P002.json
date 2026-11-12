@@ -1,0 +1,67 @@
+{
+  "patient_id": "P002",
+  "fhir_patient_id": "11e0acc0-192c-5eff-ec24-5da02e77abac",
+  "age_at_encounter_end": 42,
+  "encounter_id": "11e0acc0-192c-5eff-1113-eb954c95c949",
+  "encounter_end": "2021-04-22T23:14:19+05:30",
+  "recorded_encounter_reason": "History of coronary artery bypass grafting (situation)",
+  "discharge_disposition": {
+    "coding": [
+      {
+        "system": "http://www.nubc.org/patient-discharge",
+        "code": "01",
+        "display": "Discharged to home care or self care (routine discharge)"
+      }
+    ],
+    "text": "Discharged to home care or self care (routine discharge)"
+  },
+  "historical_condition_labels": [
+    "Only received primary school education (finding) Only received primary school education (finding)",
+    "Has a criminal record (finding) Has a criminal record (finding)",
+    "Stress (finding) Stress (finding)",
+    "Pulmonary emphysema (disorder) Pulmonary emphysema (disorder)",
+    "Medication review due (situation) Medication review due (situation)",
+    "Full-time employment (finding) Full-time employment (finding)",
+    "Limited social contact (finding) Limited social contact (finding)",
+    "Gingivitis (disorder) Gingivitis (disorder)",
+    "Fractured dental filling (finding) Fractured dental filling (finding)",
+    "Not in labor force (finding) Not in labor force (finding)",
+    "Social isolation (finding) Social isolation (finding)",
+    "Prediabetes (finding) Prediabetes (finding)",
+    "Anemia (disorder) Anemia (disorder)",
+    "Acute viral pharyngitis (disorder) Acute viral pharyngitis (disorder)",
+    "Ischemic heart disease (disorder) Ischemic heart disease (disorder)",
+    "Abnormal findings diagnostic imaging heart+coronary circulat (finding) Abnormal findings diagnostic imaging heart+coronary circulat (finding)",
+    "Loose dental filling (finding) Loose dental filling (finding)",
+    "History of coronary artery bypass grafting (situation) History of coronary artery bypass grafting (situation)"
+  ],
+  "historical_medication_prescription_labels": [
+    "albuterol 5 MG/ML Inhalation Solution",
+    "60 ACTUAT Fluticasone propionate 0.25 MG/ACTUAT / salmeterol 0.05 MG/ACTUAT Dry Powder Inhaler",
+    "",
+    "Vitamin B12 5 MG/ML Injectable Solution",
+    "Clopidogrel 75 MG Oral Tablet",
+    "Simvastatin 20 MG Oral Tablet",
+    "24 HR metoprolol succinate 100 MG Extended Release Oral Tablet",
+    "Nitroglycerin 0.4 MG/ACTUAT Mucosal Spray"
+  ],
+  "historical_vital_loinc_codes": [
+    "2708-6",
+    "59408-5",
+    "8310-5",
+    "8867-4",
+    "9279-1"
+  ],
+  "proposed_simulator_scenario": "Emphysema context; oxygen scale selection",
+  "monitoring_configuration": {
+    "spo2_scale": 1,
+    "oxygen_target": null,
+    "initial_vitals": null,
+    "baseline_status": "pending"
+  },
+  "limitations": [
+    "Historical conditions and prescriptions are not necessarily active at discharge.",
+    "Scenario is proposed, not a recorded outcome.",
+    "Historical vital availability is not evidence of a stable baseline."
+  ]
+}

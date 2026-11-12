@@ -1,0 +1,87 @@
+{
+  "P001": {
+    "recording_id": "bidmc01",
+    "numerics_filename": "bidmc_01_Numerics.csv",
+    "headers_in_file": [
+      "Time [s]",
+      " HR",
+      " PULSE",
+      " RESP",
+      " SpO2"
+    ],
+    "mapped_columns": {
+      "time_s": "Time [s]",
+      "hr_bpm": " HR",
+      "rr_bpm": " RESP",
+      "spo2_percent": " SpO2"
+    }
+  },
+  "P002": {
+    "recording_id": "bidmc02",
+    "numerics_filename": "bidmc_02_Numerics.csv",
+    "headers_in_file": [
+      "Time [s]",
+      " HR",
+      " PULSE",
+      " RESP",
+      " SpO2"
+    ],
+    "mapped_columns": {
+      "time_s": "Time [s]",
+      "hr_bpm": " HR",
+      "rr_bpm": " RESP",
+      "spo2_percent": " SpO2"
+    }
+  },
+  "P003": {
+    "recording_id": "bidmc03",
+    "numerics_filename": "bidmc_03_Numerics.csv",
+    "headers_in_file": [
+      "Time [s]",
+      " HR",
+      " PULSE",
+      " RESP",
+      " SpO2"
+    ],
+    "mapped_columns": {
+      "time_s": "Time [s]",
+      "hr_bpm": " HR",
+      "rr_bpm": " RESP",
+      "spo2_percent": " SpO2"
+    }
+  },
+  "P004": {
+    "recording_id": "bidmc04",
+    "numerics_filename": "bidmc_04_Numerics.csv",
+    "headers_in_file": [
+      "Time [s]",
+      " HR",
+      " PULSE",
+      " RESP",
+      " SpO2"
+    ],
+    "mapped_columns": {
+      "time_s": "Time [s]",
+      "hr_bpm": " HR",
+      "rr_bpm": " RESP",
+      "spo2_percent": " SpO2"
+    }
+  },
+  "P005": {
+    "recording_id": "bidmc05",
+    "numerics_filename": "bidmc_05_Numerics.csv",
+    "headers_in_file": [
+      "Time [s]",
+      " HR",
+      " PULSE",
+      " RESP",
+      " SpO2"
+    ],
+    "mapped_columns": {
+      "time_s": "Time [s]",
+      "hr_bpm": " HR",
+      "rr_bpm": " RESP",
+      "spo2_percent": " SpO2"
+    }
+  }
+}

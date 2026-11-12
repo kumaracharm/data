@@ -1,0 +1,1 @@
+event_id,patient_id,event_label,start_timestamp,end_timestamp,start_index,end_index,event_description,simulation_only,affected_channels

@@ -1,0 +1,16 @@
+{
+  "mode": "BIDMC_REAL_DATA_REPLAY",
+  "recording_count": 5,
+  "recordings": {
+    "bidmc01": 481,
+    "bidmc02": 481,
+    "bidmc03": 481,
+    "bidmc04": 481,
+    "bidmc05": 481
+  },
+  "source_values_preserved": true,
+  "synthetic_patient_id_added": false,
+  "temperature": "UNAVAILABLE_IN_BIDMC_NUMERICS",
+  "speed_multiplier": 5.0,
+  "realtime": false
+}

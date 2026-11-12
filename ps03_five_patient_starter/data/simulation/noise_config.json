@@ -1,0 +1,10 @@
+{
+  "source": "data/bidmc_analysis/bidmc_variability.json",
+  "bidmc_difference_std_multipliers": {
+    "hr_bpm": 0.35,
+    "spo2_percent": 0.25,
+    "rr_bpm": 0.35
+  },
+  "temp_c_sd": 0.04,
+  "interpretation": "Configurable wearable measurement-noise starting values derived from short-term differences in ICU source recordings. They are not validated outpatient noise estimates or patient-specific values."
+}

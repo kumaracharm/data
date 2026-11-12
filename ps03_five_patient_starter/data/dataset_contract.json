@@ -1,0 +1,20 @@
+{
+  "dataset_name": "PS-03 ten-patient virtual wearable simulator",
+  "authoritative_patient_count": 10,
+  "authoritative_patient_ids": ["P001", "P002", "P003", "P004", "P005", "P006", "P007", "P008", "P009", "P010"],
+  "authoritative_registry": "data/synthea_original/patient_registry.json",
+  "monitoring_profiles": "data/monitoring_profiles/",
+  "original_fhir_bundles": "data/synthea_original/original_fhir/",
+  "legacy_five_patient_fixture_retained": true,
+  "physiology_replay_source": "BIDMC PPG and Respiration Dataset, PhysioNet version 1.0.0",
+  "personalized_initial_values_status": "PENDING; provisional common demo values are configured separately in data/simulation/initial_values.json",
+  "historical_values_are_not_simulated_baselines": true,
+  "original_bidmc_temperature": "UNAVAILABLE; do not impute",
+  "simulation_temperature": "Independent synthetic temperature channel",
+  "missing_value_policy": "Represent missing observations as null/CSV empty fields; never forward-fill or replace with zero.",
+  "truth_and_observed_streams_separated": true,
+  "gateway_contract_status": "Provisional example schema only; final contract pending",
+  "candidate_population_count_verifiable": false,
+  "not_clinically_validated": true,
+  "not_diagnostic_or_medical_advice": true
+}

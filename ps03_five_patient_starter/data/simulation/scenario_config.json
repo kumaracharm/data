@@ -1,0 +1,21 @@
+{
+  "scenario_config_status": "SIMULATION_ONLY",
+  "default_onset_fraction": 0.25,
+  "default_end_fraction": 0.75,
+  "deterioration_physiological_changes": {
+    "hr_bpm": 18.0,
+    "spo2_percent": -5.0,
+    "rr_bpm": 8.0,
+    "temp_c": 0.8
+  },
+  "deterioration_with_sensor_failure_fraction": 0.6,
+  "sensor_fault_scenarios": [
+    "motion_artifacts",
+    "probe_removal",
+    "flatlined_sensor",
+    "missing_measurements",
+    "connectivity_loss",
+    "temporary_signal_degradation"
+  ],
+  "all_values_are_synthetic_scenario_parameters": true
+}

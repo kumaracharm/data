@@ -1,0 +1,68 @@
+{
+  "patient_id": "P001",
+  "fhir_patient_id": "7f344203-4195-1640-e6a6-138929498536",
+  "age_at_encounter_end": 62,
+  "encounter_id": "7f344203-4195-1640-1ab0-284e1c12e370",
+  "encounter_end": "2021-01-31T17:17:26+05:30",
+  "recorded_encounter_reason": "Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)",
+  "discharge_disposition": null,
+  "historical_condition_labels": [
+    "Educated to high school level (finding) Educated to high school level (finding)",
+    "Body mass index 30+ - obesity (finding) Body mass index 30+ - obesity (finding)",
+    "Essential hypertension (disorder) Essential hypertension (disorder)",
+    "Refugee (person) Refugee (person)",
+    "Past pregnancy history of miscarriage (situation) Past pregnancy history of miscarriage (situation)",
+    "Medication review due (situation) Medication review due (situation)",
+    "Full-time employment (finding) Full-time employment (finding)",
+    "Stress (finding) Stress (finding)",
+    "Unemployed (finding) Unemployed (finding)",
+    "Limited social contact (finding) Limited social contact (finding)",
+    "Acute viral pharyngitis (disorder) Acute viral pharyngitis (disorder)",
+    "Victim of intimate partner abuse (finding) Victim of intimate partner abuse (finding)",
+    "Acute bronchitis (disorder) Acute bronchitis (disorder)",
+    "Gingivitis (disorder) Gingivitis (disorder)",
+    "Gingival disease (disorder) Gingival disease (disorder)",
+    "Dental filling lost (finding) Dental filling lost (finding)",
+    "Polyp of colon (disorder) Polyp of colon (disorder)",
+    "Not in labor force (finding) Not in labor force (finding)",
+    "Suspected disease caused by Severe acute respiratory coronavirus 2 (situation) Suspected disease caused by Severe acute respiratory coronavirus 2 (situation)",
+    "Headache (finding) Headache (finding)",
+    "Sputum finding (finding) Sputum finding (finding)",
+    "Fatigue (finding) Fatigue (finding)",
+    "Dyspnea (finding) Dyspnea (finding)",
+    "Wheezing (finding) Wheezing (finding)",
+    "Fever (finding) Fever (finding)",
+    "Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder) Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)",
+    "Pneumonia (disorder) Pneumonia (disorder)",
+    "Hypoxemia (disorder) Hypoxemia (disorder)",
+    "Respiratory distress (finding) Respiratory distress (finding)",
+    "Acute respiratory failure (disorder) Acute respiratory failure (disorder)",
+    "Sepsis caused by virus (disorder) Sepsis caused by virus (disorder)",
+    "Acute pulmonary embolism (disorder) Acute pulmonary embolism (disorder)"
+  ],
+  "historical_medication_prescription_labels": [
+    "lisinopril 10 MG Oral Tablet",
+    "amLODIPine 2.5 MG Oral Tablet",
+    "Acetaminophen 325 MG Oral Tablet",
+    ""
+  ],
+  "historical_vital_loinc_codes": [
+    "2708-6",
+    "59408-5",
+    "8310-5",
+    "8867-4",
+    "9279-1"
+  ],
+  "proposed_simulator_scenario": "Respiratory decline",
+  "monitoring_configuration": {
+    "spo2_scale": 1,
+    "oxygen_target": null,
+    "initial_vitals": null,
+    "baseline_status": "pending"
+  },
+  "limitations": [
+    "Historical conditions and prescriptions are not necessarily active at discharge.",
+    "Scenario is proposed, not a recorded outcome.",
+    "Historical vital availability is not evidence of a stable baseline."
+  ]
+}

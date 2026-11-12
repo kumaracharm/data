@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "implementation": "Independent patient workers yield cooperatively after each non-realtime sample; timestamps derive from the same configured UTC start and sample index.",
+  "shared_clock_test": {
+    "patients": 10,
+    "ticks": 3,
+    "observations": 30,
+    "time_major_order": true,
+    "each_tick_contains_each_patient_once": true,
+    "patient_order_within_tick": "P001 through P010"
+  },
+  "sensor_failure_isolation_test": {
+    "patients": 2,
+    "duration_ticks": 5,
+    "failed_patient": "P001",
+    "failed_patient_scenario": "connectivity_loss",
+    "failed_patient_observations": 5,
+    "disconnected_samples": 4,
+    "unaffected_patient": "P002",
+    "unaffected_patient_observations": 5,
+    "unaffected_patient_remained_connected": true
+  },
+  "limitations": [
+    "The shared clock is a deterministic simulated timestamp axis, not a wall-clock barrier or guarantee of real-time simultaneity.",
+    "Modeled sensor faults do not stop peer streams. An unexpected worker exception is surfaced and aborts the overall iterator."
+  ]
+}

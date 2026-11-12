@@ -1,0 +1,825 @@
+{
+  "dataset": "PS-03 Five Patient Research Prototype",
+  "generated_at_utc": "2026-11-12T10:09:38.882688+00:00",
+  "validation_passed": true,
+  "patient_profile_count": 5,
+  "vital_stream_count": 5,
+  "rows_per_patient": {
+    "P001": 481,
+    "P002": 481,
+    "P003": 481,
+    "P004": 481,
+    "P005": 481
+  },
+  "bidmc_recordings": {
+    "P001": "bidmc01",
+    "P002": "bidmc02",
+    "P003": "bidmc03",
+    "P004": "bidmc04",
+    "P005": "bidmc05"
+  },
+  "synthea_profile_mapping": {
+    "P001": {
+      "synthea_patient_id": "bd3bab84-cc6a-22ad-ab47-a1ddb5169f8a",
+      "selected_bundle": "data\\synthea_original\\selected_profiles\\P001_Maura912_Steuber698_bd3bab84-cc6a-22ad-ab47-a1ddb5169f8a.json",
+      "condition_resource_ids": [
+        "bd3bab84-cc6a-22ad-5d67-6dc98b1316af",
+        "bd3bab84-cc6a-22ad-6f8f-214b7fa141b2",
+        "bd3bab84-cc6a-22ad-7d8e-3e726934a1f7",
+        "bd3bab84-cc6a-22ad-c5f0-496cb2231d6a",
+        "bd3bab84-cc6a-22ad-da2e-01847712bc3e",
+        "bd3bab84-cc6a-22ad-e13e-4707e1630eba"
+      ],
+      "medication_resource_ids": [
+        "bd3bab84-cc6a-22ad-1877-c701e12f9cc2",
+        "bd3bab84-cc6a-22ad-85a1-4814708ad89b"
+      ]
+    },
+    "P002": {
+      "synthea_patient_id": "229ff6ce-7a9f-2a33-ee2c-75048cb95ea9",
+      "selected_bundle": "data\\synthea_original\\selected_profiles\\P002_Eugenio846_Okuneva707_229ff6ce-7a9f-2a33-ee2c-75048cb95ea9.json",
+      "condition_resource_ids": [
+        "229ff6ce-7a9f-2a33-0920-b9316c948ce7",
+        "229ff6ce-7a9f-2a33-10f8-8c45fdc2ed7f",
+        "229ff6ce-7a9f-2a33-2304-c0d20c3e1b6c",
+        "229ff6ce-7a9f-2a33-23fd-575f0c401517",
+        "229ff6ce-7a9f-2a33-2841-6691876800e5",
+        "229ff6ce-7a9f-2a33-2aff-ce469b5937c6",
+        "229ff6ce-7a9f-2a33-2ed2-7bc947296ba9",
+        "229ff6ce-7a9f-2a33-2f44-77338924768a",
+        "229ff6ce-7a9f-2a33-3017-f36f028f74b5",
+        "229ff6ce-7a9f-2a33-48ff-b3d2022bc137",
+        "229ff6ce-7a9f-2a33-5e95-bf3a2de014d4",
+        "229ff6ce-7a9f-2a33-64ee-23efb805a5bc",
+        "229ff6ce-7a9f-2a33-6677-8fd3919a50b4",
+        "229ff6ce-7a9f-2a33-6eca-0cc0d958328d",
+        "229ff6ce-7a9f-2a33-77f1-ef965c4a31a6",
+        "229ff6ce-7a9f-2a33-7971-20d2e10ecc19",
+        "229ff6ce-7a9f-2a33-8156-f3266f01abaf",
+        "229ff6ce-7a9f-2a33-ae92-2f154fe17c41",
+        "229ff6ce-7a9f-2a33-b431-7dc6ed5e4756",
+        "229ff6ce-7a9f-2a33-b547-68fc3c930f31",
+        "229ff6ce-7a9f-2a33-bbfb-b42d60e2a278",
+        "229ff6ce-7a9f-2a33-c283-a6580b8d927d",
+        "229ff6ce-7a9f-2a33-c5fb-053745aa5038",
+        "229ff6ce-7a9f-2a33-cf20-5a085f44d322",
+        "229ff6ce-7a9f-2a33-de69-394d49ed1d63",
+        "229ff6ce-7a9f-2a33-df8c-ea2b0a0c9f66",
+        "229ff6ce-7a9f-2a33-e237-cc1a2992d74a",
+        "229ff6ce-7a9f-2a33-e3ce-bf618b02734f"
+      ],
+      "medication_resource_ids": [
+        "229ff6ce-7a9f-2a33-0de4-6711b6d1b346",
+        "229ff6ce-7a9f-2a33-16a3-9e497ebb14e1",
+        "229ff6ce-7a9f-2a33-3f82-ed91b2bbf861",
+        "229ff6ce-7a9f-2a33-445d-05d92209a63c",
+        "229ff6ce-7a9f-2a33-547f-b794570f3601",
+        "229ff6ce-7a9f-2a33-8e17-ec6f9bb7ef55",
+        "229ff6ce-7a9f-2a33-91ed-b743c5350c01",
+        "229ff6ce-7a9f-2a33-a7c4-89a1a404700f",
+        "229ff6ce-7a9f-2a33-ad52-1038a907e723",
+        "229ff6ce-7a9f-2a33-b421-8dc201ab7b31",
+        "229ff6ce-7a9f-2a33-bc7b-685497276913",
+        "67f797d6-aaed-69bc-9f4f-9a18a31bbe60"
+      ]
+    },
+    "P003": {
+      "synthea_patient_id": "54d8fc07-02c7-b365-81ad-88d8a1333d04",
+      "selected_bundle": "data\\synthea_original\\selected_profiles\\P003_Michale231_VonRueden376_54d8fc07-02c7-b365-81ad-88d8a1333d04.json",
+      "condition_resource_ids": [
+        "54d8fc07-02c7-b365-3093-feac007c39f2",
+        "54d8fc07-02c7-b365-32c2-67c77743798f",
+        "54d8fc07-02c7-b365-348a-77405c54fbbb",
+        "54d8fc07-02c7-b365-35c5-c28868f870d6",
+        "54d8fc07-02c7-b365-37a5-2216602f2cf2",
+        "54d8fc07-02c7-b365-3d59-195cecd258f3",
+        "54d8fc07-02c7-b365-6157-cf3da1eb6894",
+        "54d8fc07-02c7-b365-6f40-667f1f584164",
+        "54d8fc07-02c7-b365-7df0-eb5c88635b2c",
+        "54d8fc07-02c7-b365-836b-4b7d86268c0d",
+        "54d8fc07-02c7-b365-8e35-1b331db858da",
+        "54d8fc07-02c7-b365-94ea-d870c5e94c55",
+        "54d8fc07-02c7-b365-9c68-e899cf12829f",
+        "54d8fc07-02c7-b365-a6e8-cdeebdde9ddb",
+        "54d8fc07-02c7-b365-a6f8-ec434f3bbbc6",
+        "54d8fc07-02c7-b365-a960-febf77d436b9",
+        "54d8fc07-02c7-b365-ad00-c6f5f7458af4",
+        "54d8fc07-02c7-b365-ae22-09e7ef261dcf",
+        "54d8fc07-02c7-b365-b248-9c3b43de9db7",
+        "54d8fc07-02c7-b365-d3bf-21cddb2a8798",
+        "54d8fc07-02c7-b365-de74-13b9754d30b7",
+        "54d8fc07-02c7-b365-e1d4-d58795ad7717"
+      ],
+      "medication_resource_ids": [
+        "418a9480-088f-1868-b1db-50d82a76931a",
+        "44cdac97-bbd9-d8b2-cef1-34126e4a296d",
+        "4dadc74e-7872-9d94-769d-1d9c828a1925",
+        "54357d1a-72ba-7942-0570-19591f568d09",
+        "54d8fc07-02c7-b365-0cac-2022741d1adb",
+        "54d8fc07-02c7-b365-174a-a98c32d08a9e",
+        "54d8fc07-02c7-b365-17ae-5afd24d226b2",
+        "54d8fc07-02c7-b365-2a5c-ed28d3259753",
+        "54d8fc07-02c7-b365-2dda-6796e77f3f4e",
+        "54d8fc07-02c7-b365-628f-3e324e46ae3f",
+        "54d8fc07-02c7-b365-70b0-cdc5f2b7fdfc",
+        "54d8fc07-02c7-b365-936f-ce1eb3cdc4ad",
+        "54d8fc07-02c7-b365-be39-3a0c308881f3",
+        "54d8fc07-02c7-b365-c0bb-c8f5c70cc934",
+        "54d8fc07-02c7-b365-d40d-9ea2d8cd6fdb",
+        "54d8fc07-02c7-b365-daac-777489fd46db",
+        "54d8fc07-02c7-b365-e103-8b7f354727e3",
+        "54d8fc07-02c7-b365-efe5-adebf071ce0d",
+        "6da1ea82-0c45-6bf9-a9f7-7e049220737e",
+        "6e327961-0b1d-04e5-1966-3eba434562bf",
+        "ad6ac5c0-41c6-eda3-2387-db8f572bce45",
+        "c143ac6b-2335-3140-1a7b-d4c895e13506",
+        "c1ff226b-2175-5d4f-c70a-e2c6e3ed0876",
+        "cb25edd7-3d70-9d60-d6d9-69b3b51bc465",
+        "ea3fe44e-4366-4117-cae1-5cac2175567c",
+        "f5c9a47a-80a7-72b3-9959-fa0e03240419"
+      ]
+    },
+    "P004": {
+      "synthea_patient_id": "0d70929c-5bdf-c248-123b-ba78970f9622",
+      "selected_bundle": "data\\synthea_original\\selected_profiles\\P004_Danilo179_Bradtke547_0d70929c-5bdf-c248-123b-ba78970f9622.json",
+      "condition_resource_ids": [
+        "0d70929c-5bdf-c248-03ff-a025af43a0f1",
+        "0d70929c-5bdf-c248-0e13-fc71fbfd0ced",
+        "0d70929c-5bdf-c248-0ed8-5c9a2f8e4da0",
+        "0d70929c-5bdf-c248-10e5-e2b3b361b64d",
+        "0d70929c-5bdf-c248-14d0-c0d9b7a0cde3",
+        "0d70929c-5bdf-c248-1c7c-a1ec240924e3",
+        "0d70929c-5bdf-c248-324e-407e7b16f8dc",
+        "0d70929c-5bdf-c248-3fe9-efa7bc175c1c",
+        "0d70929c-5bdf-c248-410f-c775f7f49391",
+        "0d70929c-5bdf-c248-4214-00b413dca68e",
+        "0d70929c-5bdf-c248-44fd-265d87f5132f",
+        "0d70929c-5bdf-c248-48c5-fe4cf0700485",
+        "0d70929c-5bdf-c248-4c3b-17d43d2e163d",
+        "0d70929c-5bdf-c248-4dbf-6174ddbedae3",
+        "0d70929c-5bdf-c248-5309-cfb5b63c3bc8",
+        "0d70929c-5bdf-c248-5814-6279350de18c",
+        "0d70929c-5bdf-c248-5a75-d09aa68f543a",
+        "0d70929c-5bdf-c248-5b3c-6fa9de4ef755",
+        "0d70929c-5bdf-c248-5ca9-ae6812461347",
+        "0d70929c-5bdf-c248-66a5-11a981a46bf8",
+        "0d70929c-5bdf-c248-6a88-3001229b02dd",
+        "0d70929c-5bdf-c248-6cb8-a1b0b66fe549",
+        "0d70929c-5bdf-c248-6fd5-d859b89dcc72",
+        "0d70929c-5bdf-c248-7070-ca1eb97f7340",
+        "0d70929c-5bdf-c248-7dcb-b554d438fa1d",
+        "0d70929c-5bdf-c248-858b-1a2b9927900d",
+        "0d70929c-5bdf-c248-88c4-06522a99a93a",
+        "0d70929c-5bdf-c248-89d1-f883464dc18d",
+        "0d70929c-5bdf-c248-8d72-f41c4caf41b0",
+        "0d70929c-5bdf-c248-931e-eafd282bbfe2",
+        "0d70929c-5bdf-c248-9cee-ed00da7d75e1",
+        "0d70929c-5bdf-c248-a078-1e3ae6a60624",
+        "0d70929c-5bdf-c248-abc9-01116fa8d2fe",
+        "0d70929c-5bdf-c248-af6b-3b1fa5b15282",
+        "0d70929c-5bdf-c248-b962-d96e53abbb4a",
+        "0d70929c-5bdf-c248-cec4-d7528a857c32",
+        "0d70929c-5bdf-c248-d00b-1d24d5dcfee5",
+        "0d70929c-5bdf-c248-d11c-68cbefa566b7",
+        "0d70929c-5bdf-c248-d3e8-c9e986a75c04",
+        "0d70929c-5bdf-c248-d7cc-9bf79573ac75",
+        "0d70929c-5bdf-c248-dab5-e7f68cc82b5f",
+        "0d70929c-5bdf-c248-dac9-cfceda651062",
+        "0d70929c-5bdf-c248-ed78-4151e6375819",
+        "0d70929c-5bdf-c248-f032-2cc4acce8417",
+        "0d70929c-5bdf-c248-f7b2-abbde639823b",
+        "0d70929c-5bdf-c248-fb2e-30097d8ba181",
+        "0d70929c-5bdf-c248-fccb-1e50259ab326",
+        "0d70929c-5bdf-c248-fe7f-815aaf77bb85"
+      ],
+      "medication_resource_ids": [
+        "087b8171-5792-368c-60e3-7ab90ee42c89",
+        "099b023d-5ad4-1652-bdfe-fb851204767c",
+        "0d70929c-5bdf-c248-05af-3f8f58a5155e",
+        "0d70929c-5bdf-c248-07c6-9aa236fcee7c",
+        "0d70929c-5bdf-c248-132b-f5d39c3d56ab",
+        "0d70929c-5bdf-c248-1487-c003737f0e91",
+        "0d70929c-5bdf-c248-1bc9-19871bb0bbaa",
+        "0d70929c-5bdf-c248-2093-98d1c5badef2",
+        "0d70929c-5bdf-c248-2a78-50fadfc7e7c6",
+        "0d70929c-5bdf-c248-2c5a-9ca2b42ccf28",
+        "0d70929c-5bdf-c248-326e-57a95f6128c2",
+        "0d70929c-5bdf-c248-3622-dd300d96838e",
+        "0d70929c-5bdf-c248-43af-7330b738fadb",
+        "0d70929c-5bdf-c248-4e8c-73d57191f455",
+        "0d70929c-5bdf-c248-5eb9-f94c3e1a8bd4",
+        "0d70929c-5bdf-c248-6215-3d24a58b5743",
+        "0d70929c-5bdf-c248-6229-159faf9d9de6",
+        "0d70929c-5bdf-c248-65b8-929853fa9960",
+        "0d70929c-5bdf-c248-73f0-52f1eb50f718",
+        "0d70929c-5bdf-c248-75f0-3e89306e0c29",
+        "0d70929c-5bdf-c248-82ce-a3ee0e62d300",
+        "0d70929c-5bdf-c248-8f1a-3ee3080f024d",
+        "0d70929c-5bdf-c248-95c4-0f1a1103a5de",
+        "0d70929c-5bdf-c248-ae7a-eb2fbbd4d0c4",
+        "0d70929c-5bdf-c248-b3ed-b8cce84b60bf",
+        "0d70929c-5bdf-c248-b59a-8e0f6d54a4bb",
+        "0d70929c-5bdf-c248-b6f0-e2a55bcd44a0",
+        "0d70929c-5bdf-c248-c2fc-6b79e214ce26",
+        "0d70929c-5bdf-c248-cd72-5fdecbf842b7",
+        "0d70929c-5bdf-c248-d70e-d781fc3f1226",
+        "0d70929c-5bdf-c248-dfcc-c4326d688f3b",
+        "0d70929c-5bdf-c248-e2fc-87b86b15ab56",
+        "0d70929c-5bdf-c248-ec8f-37741b98e742",
+        "1f646dcd-3566-23da-16f8-e9421914289a",
+        "7f29f5ef-120a-1a63-c61c-855d9f924d8d",
+        "9d0757f9-d176-bb5b-656c-6b73192dfe64",
+        "fc3fd26a-eb96-c34b-cc13-391343751539"
+      ]
+    },
+    "P005": {
+      "synthea_patient_id": "c5c1fefc-1263-b56e-62f8-b9e4932af56c",
+      "selected_bundle": "data\\synthea_original\\selected_profiles\\P005_Ellis535_Bosco882_c5c1fefc-1263-b56e-62f8-b9e4932af56c.json",
+      "condition_resource_ids": [
+        "c5c1fefc-1263-b56e-0329-0049a0490caa",
+        "c5c1fefc-1263-b56e-0a69-259d645f15f6",
+        "c5c1fefc-1263-b56e-2239-f1f875adfb8c",
+        "c5c1fefc-1263-b56e-2310-74dde12ee433",
+        "c5c1fefc-1263-b56e-39ea-d64f030cf5ea",
+        "c5c1fefc-1263-b56e-3af0-3e7c757179f5",
+        "c5c1fefc-1263-b56e-58b2-aa28222a49a8",
+        "c5c1fefc-1263-b56e-5e23-b1b3298971db",
+        "c5c1fefc-1263-b56e-5f61-6766037cb0d2",
+        "c5c1fefc-1263-b56e-6eb1-dbc09bd2f931",
+        "c5c1fefc-1263-b56e-8686-d5745581d6ea",
+        "c5c1fefc-1263-b56e-a7f0-809875209077",
+        "c5c1fefc-1263-b56e-b359-3e290c71bc50",
+        "c5c1fefc-1263-b56e-c504-0f2a8daa5249",
+        "c5c1fefc-1263-b56e-ed7a-45094c11e49a",
+        "c5c1fefc-1263-b56e-f1a3-ebe303ab80c4",
+        "c5c1fefc-1263-b56e-f1d0-c8f3017a8f41",
+        "c5c1fefc-1263-b56e-f743-1af0b188751f",
+        "c5c1fefc-1263-b56e-f8f8-3306570de75e",
+        "c5c1fefc-1263-b56e-ff86-137901008bf5"
+      ],
+      "medication_resource_ids": [
+        "2019111e-951a-2975-69b6-d47709962d63",
+        "26e36e4c-de5a-15eb-da1d-ac4ee01828d2",
+        "3bb21440-f1be-db1b-3cb2-f34a6598f83a",
+        "c5c1fefc-1263-b56e-34c1-348f405d8251",
+        "c5c1fefc-1263-b56e-799b-6fa968d9da2c",
+        "c5c1fefc-1263-b56e-9d05-9f13851fc2af",
+        "c5c1fefc-1263-b56e-b583-0126a8370984",
+        "c5c1fefc-1263-b56e-ffd5-7f66c4a73b93"
+      ]
+    }
+  },
+  "checks": [
+    {
+      "name": "exactly five patient directories",
+      "passed": true,
+      "details": {
+        "expected": [
+          "P001",
+          "P002",
+          "P003",
+          "P004",
+          "P005"
+        ],
+        "found": [
+          "P001",
+          "P002",
+          "P003",
+          "P004",
+          "P005"
+        ]
+      }
+    },
+    {
+      "name": "exactly five consolidated patient profiles",
+      "passed": true,
+      "details": {
+        "profile_count": 5
+      }
+    },
+    {
+      "name": "Synthea release, JAR hash, and five unique selections are traceable",
+      "passed": true,
+      "details": {
+        "release_tag": "master-branch-latest",
+        "jar_sha256": "20098ec70c24c715ea874b19140983634711cc4986196105b5b0a9ca72a4b644",
+        "selected_patient_count": 5
+      }
+    },
+    {
+      "name": "P001: required patient files",
+      "passed": true,
+      "details": {
+        "expected": [
+          "patient_profile.json",
+          "scenario_events.csv",
+          "vital_stream.csv"
+        ],
+        "found": [
+          "patient_profile.json",
+          "scenario_events.csv",
+          "vital_stream.csv"
+        ]
+      }
+    },
+    {
+      "name": "P001: required stream columns",
+      "passed": true,
+      "details": {
+        "missing_columns": []
+      }
+    },
+    {
+      "name": "P001: profile id and stream rows",
+      "passed": true,
+      "details": {
+        "row_count": 481,
+        "profile_patient_id": "P001"
+      }
+    },
+    {
+      "name": "P001: independent Synthea and BIDMC records are not identity-linked",
+      "passed": true
+    },
+    {
+      "name": "P001: temperature is explicitly synthetic",
+      "passed": true,
+      "details": {
+        "temperature_column": "temp_c_synthetic",
+        "provenance": {
+          "column": "temp_c_synthetic",
+          "provenance": "SYNTHETIC_SIMULATION_ONLY",
+          "source_data_available": false,
+          "missingness_policy": "Missing during explicitly labelled simulated packet dropouts; never forward-filled."
+        }
+      }
+    },
+    {
+      "name": "P001: source values exactly preserved without filling",
+      "passed": true,
+      "details": {
+        "hr_bpm": true,
+        "rr_bpm": true,
+        "spo2_percent": true,
+        "time_s": true
+      }
+    },
+    {
+      "name": "P001: missing values are explicitly explained",
+      "passed": true,
+      "details": {
+        "hr_bpm": true,
+        "rr_bpm": true,
+        "spo2_percent": true,
+        "temp_c_synthetic": true
+      }
+    },
+    {
+      "name": "P001: event timestamps match injected rows",
+      "passed": true,
+      "details": {
+        "event_count": 0,
+        "events": [],
+        "injected_row_count": 0
+      }
+    },
+    {
+      "name": "P001: Synthea provenance and resources are traceable",
+      "passed": true,
+      "details": {
+        "patient_resource_id": "bd3bab84-cc6a-22ad-ab47-a1ddb5169f8a",
+        "condition_resource_count": 6,
+        "medication_resource_count": 2,
+        "bundle": "data\\synthea_original\\selected_profiles\\P001_Maura912_Steuber698_bd3bab84-cc6a-22ad-ab47-a1ddb5169f8a.json"
+      }
+    },
+    {
+      "name": "P002: required patient files",
+      "passed": true,
+      "details": {
+        "expected": [
+          "patient_profile.json",
+          "scenario_events.csv",
+          "vital_stream.csv"
+        ],
+        "found": [
+          "patient_profile.json",
+          "scenario_events.csv",
+          "vital_stream.csv"
+        ]
+      }
+    },
+    {
+      "name": "P002: required stream columns",
+      "passed": true,
+      "details": {
+        "missing_columns": []
+      }
+    },
+    {
+      "name": "P002: profile id and stream rows",
+      "passed": true,
+      "details": {
+        "row_count": 481,
+        "profile_patient_id": "P002"
+      }
+    },
+    {
+      "name": "P002: independent Synthea and BIDMC records are not identity-linked",
+      "passed": true
+    },
+    {
+      "name": "P002: temperature is explicitly synthetic",
+      "passed": true,
+      "details": {
+        "temperature_column": "temp_c_synthetic",
+        "provenance": {
+          "column": "temp_c_synthetic",
+          "provenance": "SYNTHETIC_SIMULATION_ONLY",
+          "source_data_available": false,
+          "missingness_policy": "Missing during explicitly labelled simulated packet dropouts; never forward-filled."
+        }
+      }
+    },
+    {
+      "name": "P002: source values exactly preserved without filling",
+      "passed": true,
+      "details": {
+        "hr_bpm": true,
+        "rr_bpm": true,
+        "spo2_percent": true,
+        "time_s": true
+      }
+    },
+    {
+      "name": "P002: missing values are explicitly explained",
+      "passed": true,
+      "details": {
+        "hr_bpm": true,
+        "rr_bpm": true,
+        "spo2_percent": true,
+        "temp_c_synthetic": true
+      }
+    },
+    {
+      "name": "P002: event timestamps match injected rows",
+      "passed": true,
+      "details": {
+        "event_count": 1,
+        "events": [
+          {
+            "event_label": "COPD_SPO2_TARGET_RANGE_TEST",
+            "start_timestamp": "2026-01-01T00:00:00Z",
+            "end_timestamp": "2026-01-01T00:08:00Z"
+          }
+        ],
+        "injected_row_count": 481
+      }
+    },
+    {
+      "name": "P002: Synthea provenance and resources are traceable",
+      "passed": true,
+      "details": {
+        "patient_resource_id": "229ff6ce-7a9f-2a33-ee2c-75048cb95ea9",
+        "condition_resource_count": 28,
+        "medication_resource_count": 12,
+        "bundle": "data\\synthea_original\\selected_profiles\\P002_Eugenio846_Okuneva707_229ff6ce-7a9f-2a33-ee2c-75048cb95ea9.json"
+      }
+    },
+    {
+      "name": "P002: SpO2 88-92% is simulation-only test configuration",
+      "passed": true,
+      "details": {
+        "name": "SpO2 test target range",
+        "range_percent": [
+          88,
+          92
+        ],
+        "not_medical_advice": true,
+        "parameter_is_simulation_only": true
+      }
+    },
+    {
+      "name": "P003: required patient files",
+      "passed": true,
+      "details": {
+        "expected": [
+          "patient_profile.json",
+          "scenario_events.csv",
+          "vital_stream.csv"
+        ],
+        "found": [
+          "patient_profile.json",
+          "scenario_events.csv",
+          "vital_stream.csv"
+        ]
+      }
+    },
+    {
+      "name": "P003: required stream columns",
+      "passed": true,
+      "details": {
+        "missing_columns": []
+      }
+    },
+    {
+      "name": "P003: profile id and stream rows",
+      "passed": true,
+      "details": {
+        "row_count": 481,
+        "profile_patient_id": "P003"
+      }
+    },
+    {
+      "name": "P003: independent Synthea and BIDMC records are not identity-linked",
+      "passed": true
+    },
+    {
+      "name": "P003: temperature is explicitly synthetic",
+      "passed": true,
+      "details": {
+        "temperature_column": "temp_c_synthetic",
+        "provenance": {
+          "column": "temp_c_synthetic",
+          "provenance": "SYNTHETIC_SIMULATION_ONLY",
+          "source_data_available": false,
+          "missingness_policy": "Missing during explicitly labelled simulated packet dropouts; never forward-filled."
+        }
+      }
+    },
+    {
+      "name": "P003: source values exactly preserved without filling",
+      "passed": true,
+      "details": {
+        "hr_bpm": true,
+        "rr_bpm": true,
+        "spo2_percent": true,
+        "time_s": true
+      }
+    },
+    {
+      "name": "P003: missing values are explicitly explained",
+      "passed": true,
+      "details": {
+        "hr_bpm": true,
+        "rr_bpm": true,
+        "spo2_percent": true,
+        "temp_c_synthetic": true
+      }
+    },
+    {
+      "name": "P003: event timestamps match injected rows",
+      "passed": true,
+      "details": {
+        "event_count": 1,
+        "events": [
+          {
+            "event_label": "GRADUAL_MULTI_VITAL_DRIFT",
+            "start_timestamp": "2026-01-01T00:00:00Z",
+            "end_timestamp": "2026-01-01T00:08:00Z"
+          }
+        ],
+        "injected_row_count": 481
+      }
+    },
+    {
+      "name": "P003: Synthea provenance and resources are traceable",
+      "passed": true,
+      "details": {
+        "patient_resource_id": "54d8fc07-02c7-b365-81ad-88d8a1333d04",
+        "condition_resource_count": 22,
+        "medication_resource_count": 26,
+        "bundle": "data\\synthea_original\\selected_profiles\\P003_Michale231_VonRueden376_54d8fc07-02c7-b365-81ad-88d8a1333d04.json"
+      }
+    },
+    {
+      "name": "P004: required patient files",
+      "passed": true,
+      "details": {
+        "expected": [
+          "patient_profile.json",
+          "scenario_events.csv",
+          "vital_stream.csv"
+        ],
+        "found": [
+          "patient_profile.json",
+          "scenario_events.csv",
+          "vital_stream.csv"
+        ]
+      }
+    },
+    {
+      "name": "P004: required stream columns",
+      "passed": true,
+      "details": {
+        "missing_columns": []
+      }
+    },
+    {
+      "name": "P004: profile id and stream rows",
+      "passed": true,
+      "details": {
+        "row_count": 481,
+        "profile_patient_id": "P004"
+      }
+    },
+    {
+      "name": "P004: independent Synthea and BIDMC records are not identity-linked",
+      "passed": true
+    },
+    {
+      "name": "P004: temperature is explicitly synthetic",
+      "passed": true,
+      "details": {
+        "temperature_column": "temp_c_synthetic",
+        "provenance": {
+          "column": "temp_c_synthetic",
+          "provenance": "SYNTHETIC_SIMULATION_ONLY",
+          "source_data_available": false,
+          "missingness_policy": "Missing during explicitly labelled simulated packet dropouts; never forward-filled."
+        }
+      }
+    },
+    {
+      "name": "P004: source values exactly preserved without filling",
+      "passed": true,
+      "details": {
+        "hr_bpm": true,
+        "rr_bpm": true,
+        "spo2_percent": true,
+        "time_s": true
+      }
+    },
+    {
+      "name": "P004: missing values are explicitly explained",
+      "passed": true,
+      "details": {
+        "hr_bpm": true,
+        "rr_bpm": true,
+        "spo2_percent": true,
+        "temp_c_synthetic": true
+      }
+    },
+    {
+      "name": "P004: event timestamps match injected rows",
+      "passed": true,
+      "details": {
+        "event_count": 3,
+        "events": [
+          {
+            "event_label": "MOTION_ARTIFACT_SIMULATED_1",
+            "start_timestamp": "2026-01-01T00:01:36Z",
+            "end_timestamp": "2026-01-01T00:01:40Z"
+          },
+          {
+            "event_label": "MOTION_ARTIFACT_SIMULATED_2",
+            "start_timestamp": "2026-01-01T00:04:00Z",
+            "end_timestamp": "2026-01-01T00:04:04Z"
+          },
+          {
+            "event_label": "MOTION_ARTIFACT_SIMULATED_3",
+            "start_timestamp": "2026-01-01T00:06:24Z",
+            "end_timestamp": "2026-01-01T00:06:28Z"
+          }
+        ],
+        "injected_row_count": 15
+      }
+    },
+    {
+      "name": "P004: Synthea provenance and resources are traceable",
+      "passed": true,
+      "details": {
+        "patient_resource_id": "0d70929c-5bdf-c248-123b-ba78970f9622",
+        "condition_resource_count": 48,
+        "medication_resource_count": 37,
+        "bundle": "data\\synthea_original\\selected_profiles\\P004_Danilo179_Bradtke547_0d70929c-5bdf-c248-123b-ba78970f9622.json"
+      }
+    },
+    {
+      "name": "P005: required patient files",
+      "passed": true,
+      "details": {
+        "expected": [
+          "patient_profile.json",
+          "scenario_events.csv",
+          "vital_stream.csv"
+        ],
+        "found": [
+          "patient_profile.json",
+          "scenario_events.csv",
+          "vital_stream.csv"
+        ]
+      }
+    },
+    {
+      "name": "P005: required stream columns",
+      "passed": true,
+      "details": {
+        "missing_columns": []
+      }
+    },
+    {
+      "name": "P005: profile id and stream rows",
+      "passed": true,
+      "details": {
+        "row_count": 481,
+        "profile_patient_id": "P005"
+      }
+    },
+    {
+      "name": "P005: independent Synthea and BIDMC records are not identity-linked",
+      "passed": true
+    },
+    {
+      "name": "P005: temperature is explicitly synthetic",
+      "passed": true,
+      "details": {
+        "temperature_column": "temp_c_synthetic",
+        "provenance": {
+          "column": "temp_c_synthetic",
+          "provenance": "SYNTHETIC_SIMULATION_ONLY",
+          "source_data_available": false,
+          "missingness_policy": "Missing during explicitly labelled simulated packet dropouts; never forward-filled."
+        }
+      }
+    },
+    {
+      "name": "P005: source values exactly preserved without filling",
+      "passed": true,
+      "details": {
+        "hr_bpm": true,
+        "rr_bpm": true,
+        "spo2_percent": true,
+        "time_s": true
+      }
+    },
+    {
+      "name": "P005: missing values are explicitly explained",
+      "passed": true,
+      "details": {
+        "hr_bpm": true,
+        "rr_bpm": true,
+        "spo2_percent": true,
+        "temp_c_synthetic": true
+      }
+    },
+    {
+      "name": "P005: event timestamps match injected rows",
+      "passed": true,
+      "details": {
+        "event_count": 2,
+        "events": [
+          {
+            "event_label": "PROBE_REMOVAL_SIMULATED",
+            "start_timestamp": "2026-01-01T00:04:48Z",
+            "end_timestamp": "2026-01-01T00:05:25Z"
+          },
+          {
+            "event_label": "PACKET_DROPOUT_SIMULATED",
+            "start_timestamp": "2026-01-01T00:06:34Z",
+            "end_timestamp": "2026-01-01T00:06:57Z"
+          }
+        ],
+        "injected_row_count": 62
+      }
+    },
+    {
+      "name": "P005: Synthea provenance and resources are traceable",
+      "passed": true,
+      "details": {
+        "patient_resource_id": "c5c1fefc-1263-b56e-62f8-b9e4932af56c",
+        "condition_resource_count": 20,
+        "medication_resource_count": 8,
+        "bundle": "data\\synthea_original\\selected_profiles\\P005_Ellis535_Bosco882_c5c1fefc-1263-b56e-62f8-b9e4932af56c.json"
+      }
+    },
+    {
+      "name": "exactly five distinct BIDMC recordings",
+      "passed": true,
+      "details": {
+        "P001": "bidmc01",
+        "P002": "bidmc02",
+        "P003": "bidmc03",
+        "P004": "bidmc04",
+        "P005": "bidmc05"
+      }
+    },
+    {
+      "name": "exactly five patient vital streams",
+      "passed": true,
+      "details": {
+        "P001": 481,
+        "P002": 481,
+        "P003": 481,
+        "P004": 481,
+        "P005": 481
+      }
+    },
+    {
+      "name": "manifest has exactly five patients",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "scope_notice": "Hackathon research prototype only; synthetic profiles and modifications are not clinically validated and are not diagnostic or medical advice."
+}

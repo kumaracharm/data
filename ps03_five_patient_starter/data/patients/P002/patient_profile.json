@@ -1,0 +1,793 @@
+{
+  "patient_id": "P002",
+  "scenario": "COPD_HYPERCAPNIC_SPO2_TARGET_TEST",
+  "scenario_description": "Synthetic COPD/hypercapnic respiratory condition profile with a configured SpO2 target-range test.",
+  "profile_origin": "Synthea-generated FHIR Patient resource",
+  "source_linkage_policy": "The Synthea profile and BIDMC recording are independent source records paired only for this demo; no identity or clinical relationship is asserted.",
+  "synthea": {
+    "patient_resource_id": "229ff6ce-7a9f-2a33-ee2c-75048cb95ea9",
+    "synthea_patient_id": "229ff6ce-7a9f-2a33-ee2c-75048cb95ea9",
+    "source_bundle": "data\\synthea_original\\selected_profiles\\P002_Eugenio846_Okuneva707_229ff6ce-7a9f-2a33-ee2c-75048cb95ea9.json",
+    "selected_bundle": "data\\synthea_original\\selected_profiles\\P002_Eugenio846_Okuneva707_229ff6ce-7a9f-2a33-ee2c-75048cb95ea9.json",
+    "generated_candidate_filename": "Eugenio846_Okuneva707_229ff6ce-7a9f-2a33-ee2c-75048cb95ea9.json",
+    "selected_bundle_sha256": "2531d71be2e85c1f5374a0057169d0d39e7282025c465ebd9a5ab5cb54dc6d65",
+    "release_tag": "master-branch-latest",
+    "release_commit": "bd8a52ba0a54ad8c6a1004b74787a14d8c25dbcc",
+    "jar_sha256": "20098ec70c24c715ea874b19140983634711cc4986196105b5b0a9ca72a4b644",
+    "seed": 20261112,
+    "candidate_population_size": 200,
+    "conditions": [
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-6677-8fd3919a50b4",
+        "display": "Medication review due (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "314529007",
+            "display": "Medication review due (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1959-03-21T00:39:10+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-cf20-5a085f44d322",
+        "display": "Gingival disease (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "18718003",
+            "display": "Gingival disease (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1960-04-09T02:59:44+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-c5fb-053745aa5038",
+        "display": "Primary dental caries (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "109570002",
+            "display": "Primary dental caries (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1960-04-09T06:28:09+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-5e95-bf3a2de014d4",
+        "display": "Sprain (morphologic abnormality)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "384709000",
+            "display": "Sprain (morphologic abnormality)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1960-08-16T00:39:10+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-64ee-23efb805a5bc",
+        "display": "Sprain of ankle (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "44465007",
+            "display": "Sprain of ankle (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1960-08-16T00:39:10+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-b431-7dc6ed5e4756",
+        "display": "Viral sinusitis (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "444814009",
+            "display": "Viral sinusitis (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1960-11-16T23:39:10+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-e237-cc1a2992d74a",
+        "display": "Medication review due (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "314529007",
+            "display": "Medication review due (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1961-04-01T00:39:10+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-bbfb-b42d60e2a278",
+        "display": "Medication review due (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "314529007",
+            "display": "Medication review due (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1962-04-07T00:39:10+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-de69-394d49ed1d63",
+        "display": "Gingivitis (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "66383009",
+            "display": "Gingivitis (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1962-04-07T01:52:41+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-c283-a6580b8d927d",
+        "display": "Gingival disease (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "18718003",
+            "display": "Gingival disease (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1962-04-21T03:51:36+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-3017-f36f028f74b5",
+        "display": "Primary dental caries (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "109570002",
+            "display": "Primary dental caries (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1962-04-21T07:50:40+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-48ff-b3d2022bc137",
+        "display": "Fracture of bone (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "125605004",
+            "display": "Fracture of bone (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1962-07-19T00:39:10+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-2304-c0d20c3e1b6c",
+        "display": "Fracture of rib (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "33737001",
+            "display": "Fracture of rib (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1962-07-19T00:39:10+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-e3ce-bf618b02734f",
+        "display": "Viral sinusitis (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "444814009",
+            "display": "Viral sinusitis (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1963-02-26T03:39:10+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-7971-20d2e10ecc19",
+        "display": "Housing unsatisfactory (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "105531004",
+            "display": "Housing unsatisfactory (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "1963-04-13T01:33:57+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-8156-f3266f01abaf",
+        "display": "Received higher education (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "224299000",
+            "display": "Received higher education (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "1963-04-13T01:33:57+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-6eca-0cc0d958328d",
+        "display": "Full-time employment (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "160903007",
+            "display": "Full-time employment (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1963-04-13T01:33:57+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-ae92-2f154fe17c41",
+        "display": "Stress (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "73595000",
+            "display": "Stress (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1963-04-13T01:33:57+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-df8c-ea2b0a0c9f66",
+        "display": "Medication review due (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "314529007",
+            "display": "Medication review due (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1964-04-18T00:39:10+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-0920-b9316c948ce7",
+        "display": "Part-time employment (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "160904001",
+            "display": "Part-time employment (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1964-04-18T01:10:56+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-b547-68fc3c930f31",
+        "display": "Reports of violence in the environment (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "424393004",
+            "display": "Reports of violence in the environment (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1964-04-18T01:10:56+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-2aff-ce469b5937c6",
+        "display": "Gingivitis (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "66383009",
+            "display": "Gingivitis (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1964-04-18T02:16:36+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-2ed2-7bc947296ba9",
+        "display": "Pulmonary emphysema (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "87433001",
+            "display": "Pulmonary emphysema (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "1967-04-22T00:39:10+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-77f1-ef965c4a31a6",
+        "display": "Anemia (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "271737000",
+            "display": "Anemia (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "1967-04-22T00:39:10+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-2f44-77338924768a",
+        "display": "Medication review due (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "314529007",
+            "display": "Medication review due (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1967-04-22T00:39:10+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-2841-6691876800e5",
+        "display": "Full-time employment (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "160903007",
+            "display": "Full-time employment (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "1967-04-22T01:26:15+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-23fd-575f0c401517",
+        "display": "Medication review due (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "314529007",
+            "display": "Medication review due (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1969-10-04T00:39:10+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "229ff6ce-7a9f-2a33-10f8-8c45fdc2ed7f",
+        "display": "Medication review due (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "314529007",
+            "display": "Medication review due (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1969-10-11T00:39:10+05:30"
+      }
+    ],
+    "medications": [
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "229ff6ce-7a9f-2a33-0de4-6711b6d1b346",
+        "display": "Aspirin 81 MG Oral Tablet",
+        "status": "completed",
+        "authored_on": "1960-08-16T00:39:10+05:30",
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "229ff6ce-7a9f-2a33-16a3-9e497ebb14e1",
+        "display": "Acetaminophen 325 MG Oral Tablet",
+        "status": "completed",
+        "authored_on": "1962-07-19T01:00:11+05:30",
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "229ff6ce-7a9f-2a33-bc7b-685497276913",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "1964-05-02T03:14:59+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:06a1f5a9-c858-ab81-9bcb-037fc8e9298c"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "67f797d6-aaed-69bc-9f4f-9a18a31bbe60",
+        "display": "sodium fluoride 0.0272 MG/MG Oral Gel",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "229ff6ce-7a9f-2a33-b421-8dc201ab7b31",
+        "display": "60 ACTUAT Fluticasone propionate 0.25 MG/ACTUAT / salmeterol 0.05 MG/ACTUAT Dry Powder Inhaler",
+        "status": "completed",
+        "authored_on": "1969-09-27T00:39:10+05:30",
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "229ff6ce-7a9f-2a33-547f-b794570f3601",
+        "display": "albuterol 5 MG/ML Inhalation Solution",
+        "status": "completed",
+        "authored_on": "1969-09-27T00:39:10+05:30",
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "229ff6ce-7a9f-2a33-8e17-ec6f9bb7ef55",
+        "display": "albuterol 5 MG/ML Inhalation Solution",
+        "status": "completed",
+        "authored_on": "1969-09-27T00:39:10+05:30",
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "229ff6ce-7a9f-2a33-3f82-ed91b2bbf861",
+        "display": "60 ACTUAT Fluticasone propionate 0.25 MG/ACTUAT / salmeterol 0.05 MG/ACTUAT Dry Powder Inhaler",
+        "status": "completed",
+        "authored_on": "1969-09-27T00:39:10+05:30",
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "229ff6ce-7a9f-2a33-445d-05d92209a63c",
+        "display": "albuterol 5 MG/ML Inhalation Solution",
+        "status": "completed",
+        "authored_on": "1969-10-04T00:39:10+05:30",
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "229ff6ce-7a9f-2a33-a7c4-89a1a404700f",
+        "display": "60 ACTUAT Fluticasone propionate 0.25 MG/ACTUAT / salmeterol 0.05 MG/ACTUAT Dry Powder Inhaler",
+        "status": "completed",
+        "authored_on": "1969-10-04T00:39:10+05:30",
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "229ff6ce-7a9f-2a33-91ed-b743c5350c01",
+        "display": "albuterol 5 MG/ML Inhalation Solution",
+        "status": "active",
+        "authored_on": "1969-10-11T00:39:10+05:30",
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "229ff6ce-7a9f-2a33-ad52-1038a907e723",
+        "display": "60 ACTUAT Fluticasone propionate 0.25 MG/ACTUAT / salmeterol 0.05 MG/ACTUAT Dry Powder Inhaler",
+        "status": "active",
+        "authored_on": "1969-10-11T00:39:10+05:30",
+        "medication_reference": null
+      }
+    ],
+    "matched_condition": {
+      "selection_rule": "COPD",
+      "resources": [
+        {
+          "resource_type": "Condition",
+          "resource_id": "229ff6ce-7a9f-2a33-2ed2-7bc947296ba9",
+          "display": "Pulmonary emphysema (disorder)",
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "87433001",
+              "display": "Pulmonary emphysema (disorder)"
+            }
+          ],
+          "clinical_status": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "onset": "1967-04-22T00:39:10+05:30"
+        }
+      ]
+    },
+    "demographics": {
+      "gender": "male",
+      "birth_date": "1945-02-17",
+      "name": [
+        {
+          "use": "official",
+          "family": "Okuneva707",
+          "given": [
+            "Eugenio846",
+            "Trenton748"
+          ],
+          "prefix": [
+            "Mr."
+          ]
+        }
+      ]
+    }
+  },
+  "bidmc_source": {
+    "recording_id": "bidmc02",
+    "numerics_filename": "bidmc_02_Numerics.csv",
+    "numerics_source_path": "data/bidmc_original/bidmc_02_Numerics.csv",
+    "source_url": "https://physionet.org/files/bidmc/1.0.0/bidmc_csv/bidmc_02_Numerics.csv",
+    "mapped_headers": {
+      "time_s": "Time [s]",
+      "hr_bpm": " HR",
+      "rr_bpm": " RESP",
+      "spo2_percent": " SpO2"
+    },
+    "source_rows": 481,
+    "timestamp_policy": "Simulation timestamp is the synthetic 2026-01-01 UTC anchor plus the source Time [s] offset; it is not an acquisition timestamp."
+  },
+  "temperature_channel": {
+    "column": "temp_c_synthetic",
+    "provenance": "SYNTHETIC_SIMULATION_ONLY",
+    "source_data_available": false,
+    "missingness_policy": "Missing during explicitly labelled simulated packet dropouts; never forward-filled."
+  },
+  "source_value_policy": "Original HR, RESP, and SpO2 values are retained in *_source columns. Scenario deltas and final values are separate; source gaps are not filled.",
+  "scenario_parameters": {
+    "name": "SpO2 test target range",
+    "range_percent": [
+      88,
+      92
+    ],
+    "not_medical_advice": true,
+    "parameter_is_simulation_only": true
+  },
+  "locally_defined_scenario_labels": [
+    {
+      "label": "HYPERCAPNIC_RESPIRATORY_SCENARIO",
+      "origin": "Local simulation label only; no hypercapnia or respiratory-failure Synthea Condition is claimed unless explicitly present in the FHIR resources."
+    }
+  ],
+  "scenario_events_file": "data/patients/P002/scenario_events.csv",
+  "vital_stream_file": "data/patients/P002/vital_stream.csv",
+  "synthetic_research_prototype_only": true,
+  "not_clinically_validated": true
+}

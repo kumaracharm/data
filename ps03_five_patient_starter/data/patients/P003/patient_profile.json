@@ -1,0 +1,787 @@
+{
+  "patient_id": "P003",
+  "scenario": "HEART_FAILURE_GRADUAL_MULTI_VITAL_DRIFT",
+  "scenario_description": "Synthetic heart failure profile with gradual multi-vital drift.",
+  "profile_origin": "Synthea-generated FHIR Patient resource",
+  "source_linkage_policy": "The Synthea profile and BIDMC recording are independent source records paired only for this demo; no identity or clinical relationship is asserted.",
+  "synthea": {
+    "patient_resource_id": "54d8fc07-02c7-b365-81ad-88d8a1333d04",
+    "synthea_patient_id": "54d8fc07-02c7-b365-81ad-88d8a1333d04",
+    "source_bundle": "data\\synthea_original\\selected_profiles\\P003_Michale231_VonRueden376_54d8fc07-02c7-b365-81ad-88d8a1333d04.json",
+    "selected_bundle": "data\\synthea_original\\selected_profiles\\P003_Michale231_VonRueden376_54d8fc07-02c7-b365-81ad-88d8a1333d04.json",
+    "generated_candidate_filename": "Michale231_VonRueden376_54d8fc07-02c7-b365-81ad-88d8a1333d04.json",
+    "selected_bundle_sha256": "291f79aef2cef0900baa085d3949746c7e7c71e414734f38dd312037853027f7",
+    "release_tag": "master-branch-latest",
+    "release_commit": "bd8a52ba0a54ad8c6a1004b74787a14d8c25dbcc",
+    "jar_sha256": "20098ec70c24c715ea874b19140983634711cc4986196105b5b0a9ca72a4b644",
+    "seed": 20261112,
+    "candidate_population_size": 200,
+    "conditions": [
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-8e35-1b331db858da",
+        "display": "Chronic sinusitis (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "40055000",
+            "display": "Chronic sinusitis (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "1956-11-20T19:31:21+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-b248-9c3b43de9db7",
+        "display": "Educated to high school level (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "473461003",
+            "display": "Educated to high school level (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "1971-12-16T06:31:05+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-a6f8-ec434f3bbbc6",
+        "display": "Prediabetes (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "714628002",
+            "display": "Prediabetes (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "1978-12-28T05:31:21+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-9c68-e899cf12829f",
+        "display": "Full-time employment (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "160903007",
+            "display": "Full-time employment (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1978-12-28T06:22:12+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-94ea-d870c5e94c55",
+        "display": "Anemia (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "271737000",
+            "display": "Anemia (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "1981-12-31T05:31:21+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-6f40-667f1f584164",
+        "display": "Body mass index 30+ - obesity (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "162864005",
+            "display": "Body mass index 30+ - obesity (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "1981-12-31T05:31:21+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-836b-4b7d86268c0d",
+        "display": "Medication review due (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "314529007",
+            "display": "Medication review due (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1993-10-28T05:31:21+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-348a-77405c54fbbb",
+        "display": "Limited social contact (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "423315002",
+            "display": "Limited social contact (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1997-11-06T06:03:00+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-a960-febf77d436b9",
+        "display": "Medication review due (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "314529007",
+            "display": "Medication review due (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "1999-11-11T05:31:21+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-3093-feac007c39f2",
+        "display": "Not in labor force (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "741062008",
+            "display": "Not in labor force (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1999-11-11T06:21:07+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-de74-13b9754d30b7",
+        "display": "Stress (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "73595000",
+            "display": "Stress (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1999-11-11T06:21:07+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-7df0-eb5c88635b2c",
+        "display": "Gingivitis (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "66383009",
+            "display": "Gingivitis (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1999-11-11T06:57:10+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-d3bf-21cddb2a8798",
+        "display": "Full-time employment (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "160903007",
+            "display": "Full-time employment (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "2001-11-15T06:21:16+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-ae22-09e7ef261dcf",
+        "display": "Social isolation (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "422650009",
+            "display": "Social isolation (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "2001-11-15T06:21:16+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-6157-cf3da1eb6894",
+        "display": "Fractured dental filling (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "278588009",
+            "display": "Fractured dental filling (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "2003-11-06T08:33:02+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-e1d4-d58795ad7717",
+        "display": "Limited social contact (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "423315002",
+            "display": "Limited social contact (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "2004-10-28T06:20:30+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-a6e8-cdeebdde9ddb",
+        "display": "Appendicitis (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "74400008",
+            "display": "Appendicitis (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "2005-02-16T09:31:21+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-35c5-c28868f870d6",
+        "display": "History of appendectomy (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "428251008",
+            "display": "History of appendectomy (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "2005-02-16T09:31:21+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-3d59-195cecd258f3",
+        "display": "Sleep disorder (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "39898005",
+            "display": "Sleep disorder (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "2005-10-09T05:31:21+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-37a5-2216602f2cf2",
+        "display": "Chronic congestive heart failure (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "88805009",
+            "display": "Chronic congestive heart failure (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "2005-10-20T05:31:21+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-32c2-67c77743798f",
+        "display": "Obstructive sleep apnea syndrome (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "78275009",
+            "display": "Obstructive sleep apnea syndrome (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "2005-11-10T13:36:28+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "54d8fc07-02c7-b365-ad00-c6f5f7458af4",
+        "display": "Stress (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "73595000",
+            "display": "Stress (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "2005-11-10T06:30:14+05:30"
+      }
+    ],
+    "medications": [
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "54d8fc07-02c7-b365-0cac-2022741d1adb",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "2003-11-06T08:59:27+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:0180a168-2274-5dcf-0672-4db6c98408f6"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "54357d1a-72ba-7942-0570-19591f568d09",
+        "display": "sodium fluoride 0.0272 MG/MG Oral Gel",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "54d8fc07-02c7-b365-2dda-6796e77f3f4e",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "2004-11-11T08:30:17+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:de3855d8-21f7-0b6f-0291-bebc375bec0f"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "f5c9a47a-80a7-72b3-9959-fa0e03240419",
+        "display": "sodium fluoride 0.0272 MG/MG Oral Gel",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "54d8fc07-02c7-b365-be39-3a0c308881f3",
+        "display": "Furosemide 40 MG Oral Tablet",
+        "status": "completed",
+        "authored_on": "2005-11-17T05:31:21+05:30",
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "54d8fc07-02c7-b365-17ae-5afd24d226b2",
+        "display": "Furosemide 40 MG Oral Tablet",
+        "status": "active",
+        "authored_on": "2006-11-16T05:31:21+05:30",
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "54d8fc07-02c7-b365-70b0-cdc5f2b7fdfc",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "2007-05-22T05:38:40+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:d2adc90d-377a-e182-d39d-1f5b41923e2d"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "c143ac6b-2335-3140-1a7b-d4c895e13506",
+        "display": "10 ML Furosemide 10 MG/ML Injection",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "54d8fc07-02c7-b365-e103-8b7f354727e3",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "2007-05-22T17:38:40+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:ac99abbd-8789-8144-e4c2-0944ccfd469d"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "ad6ac5c0-41c6-eda3-2387-db8f572bce45",
+        "display": "10 ML Furosemide 10 MG/ML Injection",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "54d8fc07-02c7-b365-daac-777489fd46db",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "2007-05-23T05:38:40+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:6fff7ecc-9226-9aed-39c0-c1b9711db8d8"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "cb25edd7-3d70-9d60-d6d9-69b3b51bc465",
+        "display": "10 ML Furosemide 10 MG/ML Injection",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "54d8fc07-02c7-b365-d40d-9ea2d8cd6fdb",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "2007-05-23T17:38:40+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:e656c13f-433a-4612-a838-1034a81ae789"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "6da1ea82-0c45-6bf9-a9f7-7e049220737e",
+        "display": "10 ML Furosemide 10 MG/ML Injection",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "54d8fc07-02c7-b365-efe5-adebf071ce0d",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "2007-05-24T05:38:40+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:deecc29e-77de-78c3-f31b-a52759bd255f"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "44cdac97-bbd9-d8b2-cef1-34126e4a296d",
+        "display": "10 ML Furosemide 10 MG/ML Injection",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "54d8fc07-02c7-b365-174a-a98c32d08a9e",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "2007-05-24T17:38:40+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:d9521112-fbda-87fc-f0c8-7bdfeb30d606"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "6e327961-0b1d-04e5-1966-3eba434562bf",
+        "display": "10 ML Furosemide 10 MG/ML Injection",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "54d8fc07-02c7-b365-2a5c-ed28d3259753",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "2007-05-25T05:38:40+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:ad927502-2722-db10-8c76-bf3e7cb65d96"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "4dadc74e-7872-9d94-769d-1d9c828a1925",
+        "display": "10 ML Furosemide 10 MG/ML Injection",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "54d8fc07-02c7-b365-c0bb-c8f5c70cc934",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "2007-05-25T17:38:40+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:f4595ef6-cbb1-7928-df23-2039bbc869c6"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "c1ff226b-2175-5d4f-c70a-e2c6e3ed0876",
+        "display": "10 ML Furosemide 10 MG/ML Injection",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "54d8fc07-02c7-b365-936f-ce1eb3cdc4ad",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "2007-05-26T05:38:40+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:01a16ce1-d976-66f3-c6fa-a50a378dde76"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "ea3fe44e-4366-4117-cae1-5cac2175567c",
+        "display": "10 ML Furosemide 10 MG/ML Injection",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "54d8fc07-02c7-b365-628f-3e324e46ae3f",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "2007-05-26T17:38:40+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:7ec7cb16-4551-6d30-5d74-672a746775aa"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "418a9480-088f-1868-b1db-50d82a76931a",
+        "display": "10 ML Furosemide 10 MG/ML Injection",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      }
+    ],
+    "matched_condition": {
+      "selection_rule": "heart failure",
+      "resources": [
+        {
+          "resource_type": "Condition",
+          "resource_id": "54d8fc07-02c7-b365-37a5-2216602f2cf2",
+          "display": "Chronic congestive heart failure (disorder)",
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "88805009",
+              "display": "Chronic congestive heart failure (disorder)"
+            }
+          ],
+          "clinical_status": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "onset": "2005-10-20T05:31:21+05:30"
+        }
+      ]
+    },
+    "demographics": {
+      "gender": "male",
+      "birth_date": "1953-10-22",
+      "name": [
+        {
+          "use": "official",
+          "family": "VonRueden376",
+          "given": [
+            "Michale231"
+          ],
+          "prefix": [
+            "Mr."
+          ]
+        }
+      ]
+    }
+  },
+  "bidmc_source": {
+    "recording_id": "bidmc03",
+    "numerics_filename": "bidmc_03_Numerics.csv",
+    "numerics_source_path": "data/bidmc_original/bidmc_03_Numerics.csv",
+    "source_url": "https://physionet.org/files/bidmc/1.0.0/bidmc_csv/bidmc_03_Numerics.csv",
+    "mapped_headers": {
+      "time_s": "Time [s]",
+      "hr_bpm": " HR",
+      "rr_bpm": " RESP",
+      "spo2_percent": " SpO2"
+    },
+    "source_rows": 481,
+    "timestamp_policy": "Simulation timestamp is the synthetic 2026-01-01 UTC anchor plus the source Time [s] offset; it is not an acquisition timestamp."
+  },
+  "temperature_channel": {
+    "column": "temp_c_synthetic",
+    "provenance": "SYNTHETIC_SIMULATION_ONLY",
+    "source_data_available": false,
+    "missingness_policy": "Missing during explicitly labelled simulated packet dropouts; never forward-filled."
+  },
+  "source_value_policy": "Original HR, RESP, and SpO2 values are retained in *_source columns. Scenario deltas and final values are separate; source gaps are not filled.",
+  "scenario_parameters": null,
+  "locally_defined_scenario_labels": [],
+  "scenario_events_file": "data/patients/P003/scenario_events.csv",
+  "vital_stream_file": "data/patients/P003/vital_stream.csv",
+  "synthetic_research_prototype_only": true,
+  "not_clinically_validated": true
+}

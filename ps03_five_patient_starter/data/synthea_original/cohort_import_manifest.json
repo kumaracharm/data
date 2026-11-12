@@ -1,0 +1,35 @@
+{
+  "archive_filename": "synthea_cohort_v2.zip",
+  "archive_sha256": "ceeff587497e504b6f36db15e9c183b18fe0de406c8b644701a98ccd9432bef3",
+  "patient_count": 10,
+  "patient_ids": [
+    "P001",
+    "P002",
+    "P003",
+    "P004",
+    "P005",
+    "P006",
+    "P007",
+    "P008",
+    "P009",
+    "P010"
+  ],
+  "registry_and_fhir_patient_ids_match": true,
+  "distinct_fhir_patient_resources": 10,
+  "verified_fhir_patient_ids": {
+    "P001": "7f344203-4195-1640-e6a6-138929498536",
+    "P002": "11e0acc0-192c-5eff-ec24-5da02e77abac",
+    "P003": "731b97bd-e42a-ff26-fc9b-2b307c65aec2",
+    "P004": "4760e5e7-fa82-b084-95cb-bb4564d42496",
+    "P005": "6da2a9c8-6e24-5a7c-852f-0c454d3a54d4",
+    "P006": "31df6e24-d14a-2fd1-38c0-6a79f9084dd8",
+    "P007": "64ee34b3-6256-d78b-f218-a8ac46ee2c61",
+    "P008": "139a4829-705a-9b84-028c-7b6391c3c416",
+    "P009": "d19a69a1-7001-af7c-b1a2-0b7636b58463",
+    "P010": "db5dc9ff-ea35-e955-fe83-7b089193980c"
+  },
+  "selection_population_count": null,
+  "selection_population_count_verifiable_from_archive": false,
+  "selection_population_provenance_note": "The supplied cohort archive does not include evidence of the size of the candidate population it was selected from.",
+  "cohort_readme": "Preliminary revised cohort, 10 unique Synthea patients. Original bundles contain future events: never expose to inference without encounter-end filtering. Profiles contain historical conditions and prescription labels, not verified active discharge medications. Missing disposition is unknown, not home. Scale 1 is prototype default; no authorized Scale 2 case established. Initial vitals pending. All scenarios are synthetic proposals. IDs replace prior preliminary cohort IDs; do not mix versions. No FHIR import or clinical validation performed."
+}

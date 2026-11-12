@@ -1,0 +1,3 @@
+event_id,patient_id,event_label,start_timestamp,end_timestamp,start_index,end_index,event_description,simulation_only,affected_channels
+P005-E0288,P005,PROBE_REMOVAL_SIMULATED,2026-01-01T00:04:48Z,2026-01-01T00:05:25Z,288,325,Pulse-oximeter-like signal loss; HR and SpO2 are missing rather than fabricated.,True,hr_bpm;spo2_percent
+P005-E0394,P005,PACKET_DROPOUT_SIMULATED,2026-01-01T00:06:34Z,2026-01-01T00:06:57Z,394,417,All transmitted vital channels are missing during the simulated packet dropout.,True,hr_bpm;rr_bpm;spo2_percent;temp_c_synthetic

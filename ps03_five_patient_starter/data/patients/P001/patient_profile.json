@@ -1,0 +1,208 @@
+{
+  "patient_id": "P001",
+  "scenario": "STABLE_POST_DISCHARGE_RECOVERY",
+  "scenario_description": "Stable post-discharge recovery simulation over an observed BIDMC recording. The post-discharge label is a locally defined scenario, not a Synthea encounter or BIDMC patient attribute.",
+  "profile_origin": "Synthea-generated FHIR Patient resource",
+  "source_linkage_policy": "The Synthea profile and BIDMC recording are independent source records paired only for this demo; no identity or clinical relationship is asserted.",
+  "synthea": {
+    "patient_resource_id": "bd3bab84-cc6a-22ad-ab47-a1ddb5169f8a",
+    "synthea_patient_id": "bd3bab84-cc6a-22ad-ab47-a1ddb5169f8a",
+    "source_bundle": "data\\synthea_original\\selected_profiles\\P001_Maura912_Steuber698_bd3bab84-cc6a-22ad-ab47-a1ddb5169f8a.json",
+    "selected_bundle": "data\\synthea_original\\selected_profiles\\P001_Maura912_Steuber698_bd3bab84-cc6a-22ad-ab47-a1ddb5169f8a.json",
+    "generated_candidate_filename": "Maura912_Steuber698_bd3bab84-cc6a-22ad-ab47-a1ddb5169f8a.json",
+    "selected_bundle_sha256": "78fb7666f634f61973bbe44a8d47acc8cdd4de1437eb640f1032569bbb85f54c",
+    "release_tag": "master-branch-latest",
+    "release_commit": "bd8a52ba0a54ad8c6a1004b74787a14d8c25dbcc",
+    "jar_sha256": "20098ec70c24c715ea874b19140983634711cc4986196105b5b0a9ca72a4b644",
+    "seed": 20261112,
+    "candidate_population_size": 200,
+    "conditions": [
+      {
+        "resource_type": "Condition",
+        "resource_id": "bd3bab84-cc6a-22ad-da2e-01847712bc3e",
+        "display": "Medication review due (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "314529007",
+            "display": "Medication review due (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1943-05-25T08:14:37+06:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "bd3bab84-cc6a-22ad-e13e-4707e1630eba",
+        "display": "Medication review due (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "314529007",
+            "display": "Medication review due (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1943-06-29T08:14:37+06:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "bd3bab84-cc6a-22ad-5d67-6dc98b1316af",
+        "display": "Seizure disorder (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "128613002",
+            "display": "Seizure disorder (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "1943-07-12T08:14:37+06:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "bd3bab84-cc6a-22ad-c5f0-496cb2231d6a",
+        "display": "History of seizure (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "1290882004",
+            "display": "History of seizure (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "1943-07-12T08:14:37+06:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "bd3bab84-cc6a-22ad-7d8e-3e726934a1f7",
+        "display": "Otitis media (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "65363002",
+            "display": "Otitis media (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1944-03-20T08:14:37+06:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "bd3bab84-cc6a-22ad-6f8f-214b7fa141b2",
+        "display": "Medication review due (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "314529007",
+            "display": "Medication review due (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "1944-05-02T08:14:37+06:30"
+      }
+    ],
+    "medications": [
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "bd3bab84-cc6a-22ad-1877-c701e12f9cc2",
+        "display": "carbamazepine 20 MG/ML Oral Suspension [Tegretol]",
+        "status": "active",
+        "authored_on": "1943-07-12T09:44:09+06:30",
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "bd3bab84-cc6a-22ad-85a1-4814708ad89b",
+        "display": "Aspirin 81 MG Oral Tablet",
+        "status": "completed",
+        "authored_on": "1944-03-20T08:14:37+06:30",
+        "medication_reference": null
+      }
+    ],
+    "matched_condition": null,
+    "demographics": {
+      "gender": "female",
+      "birth_date": "1943-05-25",
+      "name": [
+        {
+          "use": "official",
+          "family": "Steuber698",
+          "given": [
+            "Maura912",
+            "Margrett284"
+          ]
+        }
+      ]
+    }
+  },
+  "bidmc_source": {
+    "recording_id": "bidmc01",
+    "numerics_filename": "bidmc_01_Numerics.csv",
+    "numerics_source_path": "data/bidmc_original/bidmc_01_Numerics.csv",
+    "source_url": "https://physionet.org/files/bidmc/1.0.0/bidmc_csv/bidmc_01_Numerics.csv",
+    "mapped_headers": {
+      "time_s": "Time [s]",
+      "hr_bpm": " HR",
+      "rr_bpm": " RESP",
+      "spo2_percent": " SpO2"
+    },
+    "source_rows": 481,
+    "timestamp_policy": "Simulation timestamp is the synthetic 2026-01-01 UTC anchor plus the source Time [s] offset; it is not an acquisition timestamp."
+  },
+  "temperature_channel": {
+    "column": "temp_c_synthetic",
+    "provenance": "SYNTHETIC_SIMULATION_ONLY",
+    "source_data_available": false,
+    "missingness_policy": "Missing during explicitly labelled simulated packet dropouts; never forward-filled."
+  },
+  "source_value_policy": "Original HR, RESP, and SpO2 values are retained in *_source columns. Scenario deltas and final values are separate; source gaps are not filled.",
+  "scenario_parameters": null,
+  "locally_defined_scenario_labels": [],
+  "scenario_events_file": "data/patients/P001/scenario_events.csv",
+  "vital_stream_file": "data/patients/P001/vital_stream.csv",
+  "synthetic_research_prototype_only": true,
+  "not_clinically_validated": true
+}

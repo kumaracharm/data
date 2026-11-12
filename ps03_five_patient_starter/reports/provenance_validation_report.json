@@ -1,0 +1,56 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_LIMITATIONS",
+  "bidmc": {
+    "official_source": "https://physionet.org/content/bidmc/1.0.0/",
+    "checksum_manifest": "data/bidmc_original/SHA256SUMS.txt",
+    "source_files_checked_against_manifest": 20,
+    "source_files_matched": 20,
+    "recordings": {
+      "bidmc01": {
+        "numerics_file": "bidmc_01_Numerics.csv",
+        "rows": 481,
+        "sha256": "27d43794cf2e7150db10e8bfe61d2bfdb26873a8f1629ffc5fbee5c9a4eb6ef5"
+      },
+      "bidmc02": {
+        "numerics_file": "bidmc_02_Numerics.csv",
+        "rows": 481,
+        "sha256": "99aef20b2846815d45ecde184da753de58c8a85b7dd7af74a2f4c5282013704d"
+      },
+      "bidmc03": {
+        "numerics_file": "bidmc_03_Numerics.csv",
+        "rows": 481,
+        "sha256": "6666475c072fe079f35f1fffe0890a97b56d1086985f8a5d76a23b88eb6c6036"
+      },
+      "bidmc04": {
+        "numerics_file": "bidmc_04_Numerics.csv",
+        "rows": 481,
+        "sha256": "2d3f34558f11ae5ff4170793942c86fd76ecc9c11a3868fd9dbaabf3249ee121"
+      },
+      "bidmc05": {
+        "numerics_file": "bidmc_05_Numerics.csv",
+        "rows": 481,
+        "sha256": "b26e17895c9961bf36c0172e0da2fd58120e30ab6df5c21a3cfc56665630c308"
+      }
+    },
+    "source_values_preserved": true
+  },
+  "synthea": {
+    "archive_sha256": "ceeff587497e504b6f36db15e9c183b18fe0de406c8b644701a98ccd9432bef3",
+    "archive_sha256_matches_import_manifest": true,
+    "extracted_original_fhir_bundles_byte_identical_to_archive": true,
+    "patient_count": 10,
+    "distinct_fhir_patient_resources": 10,
+    "observation_subject_and_encounter_references_checked": 17794,
+    "missing_or_mismatched_subject_references": 0,
+    "missing_or_unresolved_encounter_references": 0,
+    "encounter_patient_mismatches": 0,
+    "selected_profile_encounters_resolve": true,
+    "historical_observations_used_as_simulated_baselines": false,
+    "candidate_population_size_verifiable": false
+  },
+  "limitations": [
+    "Historical observations are filtered to the correct patient and no later than the selected encounter end; history is longitudinal and may reference other earlier encounters.",
+    "The supplied cohort archive does not substantiate a candidate-pool size or selection-from-333 claim.",
+    "No clinical validation is claimed."
+  ]
+}

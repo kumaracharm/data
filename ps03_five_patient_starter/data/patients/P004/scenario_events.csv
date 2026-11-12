@@ -1,0 +1,4 @@
+event_id,patient_id,event_label,start_timestamp,end_timestamp,start_index,end_index,event_description,simulation_only,affected_channels
+P004-E0096,P004,MOTION_ARTIFACT_SIMULATED_1,2026-01-01T00:01:36Z,2026-01-01T00:01:40Z,96,100,Transient signal perturbation added for the motion-artifact simulation.,True,hr_bpm;rr_bpm;spo2_percent
+P004-E0240,P004,MOTION_ARTIFACT_SIMULATED_2,2026-01-01T00:04:00Z,2026-01-01T00:04:04Z,240,244,Transient signal perturbation added for the motion-artifact simulation.,True,hr_bpm;rr_bpm;spo2_percent
+P004-E0384,P004,MOTION_ARTIFACT_SIMULATED_3,2026-01-01T00:06:24Z,2026-01-01T00:06:28Z,384,388,Transient signal perturbation added for the motion-artifact simulation.,True,hr_bpm;rr_bpm;spo2_percent

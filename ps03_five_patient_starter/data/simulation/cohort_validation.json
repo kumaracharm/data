@@ -1,0 +1,49 @@
+{
+  "verified_registry_profile_fhir_pairs": 10,
+  "patient_ids": [
+    "P001",
+    "P002",
+    "P003",
+    "P004",
+    "P005",
+    "P006",
+    "P007",
+    "P008",
+    "P009",
+    "P010"
+  ],
+  "distinct_fhir_patient_resources": 10,
+  "spo2_scales": {
+    "P001": 1,
+    "P002": 1,
+    "P003": 1,
+    "P004": 1,
+    "P005": 1,
+    "P006": 1,
+    "P007": 1,
+    "P008": 1,
+    "P009": 1,
+    "P010": 1
+  },
+  "historical_observation_counts_before_encounter_end": {
+    "P001": 717,
+    "P002": 400,
+    "P003": 1860,
+    "P004": 1483,
+    "P005": 1632,
+    "P006": 585,
+    "P007": 0,
+    "P008": 0,
+    "P009": 1130,
+    "P010": 732
+  },
+  "patients_without_historical_vital_loinc_codes": [
+    "P007",
+    "P008"
+  ],
+  "initial_vitals": "PENDING; provisional demo values are configured separately.",
+  "candidate_population_count": null,
+  "candidate_population_count_verifiable": false,
+  "cohort_readme": "Preliminary revised cohort, 10 unique Synthea patients. Original bundles contain future events: never expose to inference without encounter-end filtering. Profiles contain historical conditions and prescription labels, not verified active discharge medications. Missing disposition is unknown, not home. Scale 1 is prototype default; no authorized Scale 2 case established. Initial vitals pending. All scenarios are synthetic proposals. IDs replace prior preliminary cohort IDs; do not mix versions. No FHIR import or clinical validation performed.",
+  "clinical_validation": false
+}

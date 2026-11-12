@@ -1,0 +1,2 @@
+event_id,patient_id,event_label,start_timestamp,end_timestamp,start_index,end_index,event_description,simulation_only,affected_channels
+P003-E0000,P003,GRADUAL_MULTI_VITAL_DRIFT,2026-01-01T00:00:00Z,2026-01-01T00:08:00Z,0,480,Linear synthetic drift deltas increase across the complete source recording.,True,hr_bpm;rr_bpm;spo2_percent;temp_c_synthetic

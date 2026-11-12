@@ -1,0 +1,2 @@
+event_id,patient_id,event_label,start_timestamp,end_timestamp,start_index,end_index,event_description,simulation_only,affected_channels
+P002-E0000,P002,COPD_SPO2_TARGET_RANGE_TEST,2026-01-01T00:00:00Z,2026-01-01T00:08:00Z,0,480,"SpO2 values set to the 90% simulation midpoint; this is a test parameter, not medical advice.",True,spo2_percent

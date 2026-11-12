@@ -1,0 +1,373 @@
+{
+  "dataset": "BIDMC PPG and Respiration Dataset v1.0.0",
+  "source_url": "https://physionet.org/content/bidmc/1.0.0/",
+  "recording_count": 5,
+  "recordings": [
+    {
+      "recording_id": "bidmc01",
+      "rows": 481,
+      "sampling_interval_seconds": {
+        "median": 1.0,
+        "mean": 1.0,
+        "irregular_interval_count": 0
+      },
+      "channels": {
+        "hr_bpm": {
+          "count": 481,
+          "missing_percent": 0.0,
+          "mean": 91.31808731808732,
+          "std": 1.0127650273844375,
+          "median": 91.0,
+          "q1": 91.0,
+          "q3": 92.0,
+          "iqr": 1.0,
+          "short_term_difference_std": 0.5004521268269829
+        },
+        "spo2_percent": {
+          "count": 468,
+          "missing_percent": 2.7027027027027026,
+          "mean": 96.91666666666667,
+          "std": 0.35769306043282245,
+          "median": 97.0,
+          "q1": 97.0,
+          "q3": 97.0,
+          "iqr": 0.0,
+          "short_term_difference_std": 0.1734620054398383
+        },
+        "rr_bpm": {
+          "count": 481,
+          "missing_percent": 0.0,
+          "mean": 21.43866943866944,
+          "std": 1.2961808872934721,
+          "median": 21.0,
+          "q1": 21.0,
+          "q3": 22.0,
+          "iqr": 1.0,
+          "short_term_difference_std": 0.25418384953953366
+        }
+      },
+      "pairwise_signal_correlations": {
+        "hr_bpm": {
+          "hr_bpm": 1.0,
+          "spo2_percent": 0.18580688555417116,
+          "rr_bpm": 0.7044554434769791
+        },
+        "spo2_percent": {
+          "hr_bpm": 0.18580688555417116,
+          "spo2_percent": 1.0,
+          "rr_bpm": 0.3175868408945165
+        },
+        "rr_bpm": {
+          "hr_bpm": 0.7044554434769791,
+          "spo2_percent": 0.3175868408945165,
+          "rr_bpm": 1.0
+        }
+      }
+    },
+    {
+      "recording_id": "bidmc02",
+      "rows": 481,
+      "sampling_interval_seconds": {
+        "median": 1.0,
+        "mean": 1.0,
+        "irregular_interval_count": 0
+      },
+      "channels": {
+        "hr_bpm": {
+          "count": 481,
+          "missing_percent": 0.0,
+          "mean": 91.06652806652806,
+          "std": 1.4403928152526524,
+          "median": 91.0,
+          "q1": 90.0,
+          "q3": 92.0,
+          "iqr": 2.0,
+          "short_term_difference_std": 0.4285399464859354
+        },
+        "spo2_percent": {
+          "count": 481,
+          "missing_percent": 0.0,
+          "mean": 99.98960498960498,
+          "std": 0.10153021869564402,
+          "median": 100.0,
+          "q1": 100.0,
+          "q3": 100.0,
+          "iqr": 0.0,
+          "short_term_difference_std": 0.06461706697512384
+        },
+        "rr_bpm": {
+          "count": 481,
+          "missing_percent": 0.0,
+          "mean": 15.35135135135135,
+          "std": 0.9349928939364789,
+          "median": 15.0,
+          "q1": 15.0,
+          "q3": 16.0,
+          "iqr": 1.0,
+          "short_term_difference_std": 0.2191172109225503
+        }
+      },
+      "pairwise_signal_correlations": {
+        "hr_bpm": {
+          "hr_bpm": 1.0,
+          "spo2_percent": 0.004738680204784265,
+          "rr_bpm": 0.3043681196267996
+        },
+        "spo2_percent": {
+          "hr_bpm": 0.004738680204784265,
+          "spo2_percent": 1.0,
+          "rr_bpm": 0.038553762115485994
+        },
+        "rr_bpm": {
+          "hr_bpm": 0.3043681196267996,
+          "spo2_percent": 0.038553762115485994,
+          "rr_bpm": 1.0
+        }
+      }
+    },
+    {
+      "recording_id": "bidmc03",
+      "rows": 481,
+      "sampling_interval_seconds": {
+        "median": 1.0,
+        "mean": 1.0,
+        "irregular_interval_count": 0
+      },
+      "channels": {
+        "hr_bpm": {
+          "count": 481,
+          "missing_percent": 0.0,
+          "mean": 76.63825363825364,
+          "std": 2.142358578109714,
+          "median": 76.0,
+          "q1": 76.0,
+          "q3": 77.0,
+          "iqr": 1.0,
+          "short_term_difference_std": 1.1622075286266138
+        },
+        "spo2_percent": {
+          "count": 481,
+          "missing_percent": 0.0,
+          "mean": 95.75051975051976,
+          "std": 0.6192441125786107,
+          "median": 96.0,
+          "q1": 95.0,
+          "q3": 96.0,
+          "iqr": 1.0,
+          "short_term_difference_std": 0.16472864171157117
+        },
+        "rr_bpm": {
+          "count": 481,
+          "missing_percent": 0.0,
+          "mean": 17.638253638253637,
+          "std": 0.767919447077802,
+          "median": 18.0,
+          "q1": 17.0,
+          "q3": 18.0,
+          "iqr": 1.0,
+          "short_term_difference_std": 0.2664229923560463
+        }
+      },
+      "pairwise_signal_correlations": {
+        "hr_bpm": {
+          "hr_bpm": 1.0,
+          "spo2_percent": -0.16396267434203085,
+          "rr_bpm": -0.008793308789848105
+        },
+        "spo2_percent": {
+          "hr_bpm": -0.16396267434203085,
+          "spo2_percent": 1.0,
+          "rr_bpm": 0.06830295415168937
+        },
+        "rr_bpm": {
+          "hr_bpm": -0.008793308789848105,
+          "spo2_percent": 0.06830295415168937,
+          "rr_bpm": 1.0
+        }
+      }
+    },
+    {
+      "recording_id": "bidmc04",
+      "rows": 481,
+      "sampling_interval_seconds": {
+        "median": 1.0,
+        "mean": 1.0,
+        "irregular_interval_count": 0
+      },
+      "channels": {
+        "hr_bpm": {
+          "count": 481,
+          "missing_percent": 0.0,
+          "mean": 92.3970893970894,
+          "std": 3.1428344177522582,
+          "median": 93.0,
+          "q1": 91.0,
+          "q3": 94.0,
+          "iqr": 3.0,
+          "short_term_difference_std": 0.7016111292996521
+        },
+        "spo2_percent": {
+          "count": 481,
+          "missing_percent": 0.0,
+          "mean": 93.0,
+          "std": 0.25,
+          "median": 93.0,
+          "q1": 93.0,
+          "q3": 93.0,
+          "iqr": 0.0,
+          "short_term_difference_std": 0.120869472435087
+        },
+        "rr_bpm": {
+          "count": 481,
+          "missing_percent": 0.0,
+          "mean": 16.66112266112266,
+          "std": 0.8033302996523725,
+          "median": 17.0,
+          "q1": 16.0,
+          "q3": 17.0,
+          "iqr": 1.0,
+          "short_term_difference_std": 0.28165926497256427
+        }
+      },
+      "pairwise_signal_correlations": {
+        "hr_bpm": {
+          "hr_bpm": 1.0,
+          "spo2_percent": -0.1405313191723299,
+          "rr_bpm": 0.31251275261346306
+        },
+        "spo2_percent": {
+          "hr_bpm": -0.1405313191723299,
+          "spo2_percent": 1.0,
+          "rr_bpm": -0.1348552810472107
+        },
+        "rr_bpm": {
+          "hr_bpm": 0.31251275261346306,
+          "spo2_percent": -0.1348552810472107,
+          "rr_bpm": 1.0
+        }
+      }
+    },
+    {
+      "recording_id": "bidmc05",
+      "rows": 481,
+      "sampling_interval_seconds": {
+        "median": 1.0,
+        "mean": 1.0,
+        "irregular_interval_count": 0
+      },
+      "channels": {
+        "hr_bpm": {
+          "count": 481,
+          "missing_percent": 0.0,
+          "mean": 98.20997920997921,
+          "std": 0.8657753025854196,
+          "median": 98.0,
+          "q1": 98.0,
+          "q3": 99.0,
+          "iqr": 1.0,
+          "short_term_difference_std": 0.37953360199754793
+        },
+        "spo2_percent": {
+          "count": 475,
+          "missing_percent": 1.2474012474012475,
+          "mean": 99.37894736842105,
+          "std": 0.5621490441662106,
+          "median": 99.0,
+          "q1": 99.0,
+          "q3": 100.0,
+          "iqr": 1.0,
+          "short_term_difference_std": 0.26839131562903584
+        },
+        "rr_bpm": {
+          "count": 481,
+          "missing_percent": 0.0,
+          "mean": 11.446985446985448,
+          "std": 1.7301843163483388,
+          "median": 11.0,
+          "q1": 10.0,
+          "q3": 12.0,
+          "iqr": 2.0,
+          "short_term_difference_std": 0.5128820689997471
+        }
+      },
+      "pairwise_signal_correlations": {
+        "hr_bpm": {
+          "hr_bpm": 1.0,
+          "spo2_percent": -0.14914557945381185,
+          "rr_bpm": 0.013705486752088629
+        },
+        "spo2_percent": {
+          "hr_bpm": -0.14914557945381185,
+          "spo2_percent": 1.0,
+          "rr_bpm": 0.17158964851987138
+        },
+        "rr_bpm": {
+          "hr_bpm": 0.013705486752088629,
+          "spo2_percent": 0.17158964851987138,
+          "rr_bpm": 1.0
+        }
+      }
+    }
+  ],
+  "pooled": {
+    "rows": 2405,
+    "channels": {
+      "hr_bpm": {
+        "count": 2405,
+        "missing_percent": 0.0,
+        "mean": 89.92598752598752,
+        "std": 7.388179888943673,
+        "median": 91.0,
+        "q1": 89.0,
+        "q3": 94.0,
+        "iqr": 5.0,
+        "short_term_difference_std": 0.6953262059795874
+      },
+      "spo2_percent": {
+        "count": 2386,
+        "missing_percent": 0.7900207900207901,
+        "mean": 97.00167644593462,
+        "std": 2.5792262579731426,
+        "median": 97.0,
+        "q1": 95.0,
+        "q3": 100.0,
+        "iqr": 5.0,
+        "short_term_difference_std": 0.17156862826795666
+      },
+      "rr_bpm": {
+        "count": 2405,
+        "missing_percent": 0.0,
+        "mean": 16.507276507276508,
+        "std": 3.4455065302580725,
+        "median": 17.0,
+        "q1": 15.0,
+        "q3": 18.0,
+        "iqr": 3.0,
+        "short_term_difference_std": 0.32409491762678594
+      }
+    },
+    "short_term_difference_std": {
+      "hr_bpm": 0.6953262059795874,
+      "spo2_percent": 0.17156862826795666,
+      "rr_bpm": 0.32409491762678594
+    },
+    "pairwise_signal_correlations": {
+      "hr_bpm": {
+        "hr_bpm": 1.0,
+        "spo2_percent": 0.30817180957248014,
+        "rr_bpm": -0.3843159408992686
+      },
+      "spo2_percent": {
+        "hr_bpm": 0.30817180957248014,
+        "spo2_percent": 1.0,
+        "rr_bpm": -0.3983231450609325
+      },
+      "rr_bpm": {
+        "hr_bpm": -0.3843159408992686,
+        "spo2_percent": -0.3983231450609325,
+        "rr_bpm": 1.0
+      }
+    }
+  },
+  "interpretation_note": "ICU recordings describe observed signal variability, not stable post-discharge physiology. Only short-term variability statistics are used to parameterize simulation noise; absolute recording values are never used as patient baselines."
+}

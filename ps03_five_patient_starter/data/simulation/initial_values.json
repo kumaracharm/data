@@ -1,0 +1,12 @@
+{
+  "configuration_status": "PROVISIONAL_DEMO_VALUES_NOT_PATIENT_SPECIFIC",
+  "clinical_validation": false,
+  "description": "Replace only after an authorized patient-specific initial-value table is provided. These temporary values are identical across the cohort and are not derived from Synthea historical observations or BIDMC absolute readings.",
+  "initial_values": {
+    "hr_bpm": 72.0,
+    "spo2_percent": 97.0,
+    "rr_bpm": 16.0,
+    "temp_c": 36.8
+  },
+  "patient_overrides": {}
+}

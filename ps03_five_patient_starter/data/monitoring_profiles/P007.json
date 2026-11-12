@@ -1,0 +1,40 @@
+{
+  "patient_id": "P007",
+  "fhir_patient_id": "64ee34b3-6256-d78b-f218-a8ac46ee2c61",
+  "age_at_encounter_end": 46,
+  "encounter_id": "64ee34b3-6256-d78b-357b-06378c9eb335",
+  "encounter_end": "2003-02-17T18:55:47+05:30",
+  "recorded_encounter_reason": "Appendicitis (disorder)",
+  "discharge_disposition": {
+    "coding": [
+      {
+        "system": "http://www.nubc.org/patient-discharge",
+        "code": "01",
+        "display": "Discharged to home care or self care (routine discharge)"
+      }
+    ],
+    "text": "Discharged to home care or self care (routine discharge)"
+  },
+  "historical_condition_labels": [
+    "Received higher education (finding) Received higher education (finding)",
+    "Prediabetes (finding) Prediabetes (finding)",
+    "Anemia (disorder) Anemia (disorder)",
+    "Body mass index 30+ - obesity (finding) Body mass index 30+ - obesity (finding)",
+    "Chronic sinusitis (disorder) Chronic sinusitis (disorder)",
+    "History of appendectomy (situation) History of appendectomy (situation)"
+  ],
+  "historical_medication_prescription_labels": [],
+  "historical_vital_loinc_codes": [],
+  "proposed_simulator_scenario": "Postoperative temperature trend",
+  "monitoring_configuration": {
+    "spo2_scale": 1,
+    "oxygen_target": null,
+    "initial_vitals": null,
+    "baseline_status": "pending"
+  },
+  "limitations": [
+    "Historical conditions and prescriptions are not necessarily active at discharge.",
+    "Scenario is proposed, not a recorded outcome.",
+    "Historical vital availability is not evidence of a stable baseline."
+  ]
+}

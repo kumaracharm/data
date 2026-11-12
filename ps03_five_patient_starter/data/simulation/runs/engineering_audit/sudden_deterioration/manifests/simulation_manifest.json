@@ -1,0 +1,51 @@
+{
+  "patient_count": 10,
+  "patient_ids": [
+    "P001",
+    "P002",
+    "P003",
+    "P004",
+    "P005",
+    "P006",
+    "P007",
+    "P008",
+    "P009",
+    "P010"
+  ],
+  "concurrent_patient_streams": 10,
+  "sampling_interval_seconds": 1.0,
+  "speed_multiplier": 1.0,
+  "simulated_ticks_per_patient": {
+    "P001": 120,
+    "P002": 120,
+    "P003": 120,
+    "P004": 120,
+    "P005": 120,
+    "P006": 120,
+    "P007": 120,
+    "P008": 120,
+    "P009": 120,
+    "P010": 120
+  },
+  "scenarios": {
+    "P001": "sudden_deterioration",
+    "P002": "sudden_deterioration",
+    "P003": "sudden_deterioration",
+    "P004": "sudden_deterioration",
+    "P005": "sudden_deterioration",
+    "P006": "sudden_deterioration",
+    "P007": "sudden_deterioration",
+    "P008": "sudden_deterioration",
+    "P009": "sudden_deterioration",
+    "P010": "sudden_deterioration"
+  },
+  "scenario_patient_counts": {
+    "sudden_deterioration": 10
+  },
+  "baseline_configuration": "PROVISIONAL_DEMO_VALUES_NOT_PATIENT_SPECIFIC",
+  "patient_keyed_demo_overrides_configured": false,
+  "historical_measurements_used_as_initial_baselines": false,
+  "clinical_validation": false,
+  "observed_and_ground_truth_are_separate": true,
+  "observed_payload_schema": "data/simulation/gateway_observation.schema.json"
+}

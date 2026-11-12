@@ -1,0 +1,10 @@
+{
+  "missing_probability": 0.01,
+  "motion_hr_min": 18.0,
+  "motion_hr_max": 35.0,
+  "motion_spo2_min": -8.0,
+  "motion_spo2_max": -3.0,
+  "motion_rr_min": 4.0,
+  "motion_rr_max": 10.0,
+  "description": "Configurable synthetic sensor-fault magnitudes and background missingness for tests; not calibrated or clinically validated."
+}

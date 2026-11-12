@@ -1,0 +1,55 @@
+{
+  "patient_id": "P010",
+  "fhir_patient_id": "db5dc9ff-ea35-e955-fe83-7b089193980c",
+  "age_at_encounter_end": 27,
+  "encounter_id": "db5dc9ff-ea35-e955-21f7-4b8743216f3e",
+  "encounter_end": "2020-05-24T18:48:29+05:30",
+  "recorded_encounter_reason": "Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)",
+  "discharge_disposition": null,
+  "historical_condition_labels": [
+    "Housing unsatisfactory (finding) Housing unsatisfactory (finding)",
+    "Only received primary school education (finding) Only received primary school education (finding)",
+    "Part-time employment (finding) Part-time employment (finding)",
+    "Medication review due (situation) Medication review due (situation)",
+    "Normal pregnancy (finding) Normal pregnancy (finding)",
+    "Full-time employment (finding) Full-time employment (finding)",
+    "Social isolation (finding) Social isolation (finding)",
+    "Stress (finding) Stress (finding)",
+    "Miscarriage in second trimester (disorder) Miscarriage in second trimester (disorder)",
+    "Congenital uterine anomaly (disorder) Congenital uterine anomaly (disorder)",
+    "Past pregnancy history of miscarriage (situation) Past pregnancy history of miscarriage (situation)",
+    "Suspected disease caused by Severe acute respiratory coronavirus 2 (situation) Suspected disease caused by Severe acute respiratory coronavirus 2 (situation)",
+    "Cough (finding) Cough (finding)",
+    "Fatigue (finding) Fatigue (finding)",
+    "Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder) Disease caused by severe acute respiratory syndrome coronavirus 2 (disorder)",
+    "Pneumonia (disorder) Pneumonia (disorder)",
+    "Hypoxemia (disorder) Hypoxemia (disorder)",
+    "Respiratory distress (finding) Respiratory distress (finding)",
+    "Acute respiratory failure (disorder) Acute respiratory failure (disorder)",
+    "Sepsis caused by virus (disorder) Sepsis caused by virus (disorder)",
+    "Acute infective cystitis (disorder) Acute infective cystitis (disorder)",
+    "Acute pulmonary embolism (disorder) Acute pulmonary embolism (disorder)"
+  ],
+  "historical_medication_prescription_labels": [
+    ""
+  ],
+  "historical_vital_loinc_codes": [
+    "2708-6",
+    "59408-5",
+    "8310-5",
+    "8867-4",
+    "9279-1"
+  ],
+  "proposed_simulator_scenario": "Respiratory comparison and sensor faults",
+  "monitoring_configuration": {
+    "spo2_scale": 1,
+    "oxygen_target": null,
+    "initial_vitals": null,
+    "baseline_status": "pending"
+  },
+  "limitations": [
+    "Historical conditions and prescriptions are not necessarily active at discharge.",
+    "Scenario is proposed, not a recorded outcome.",
+    "Historical vital availability is not evidence of a stable baseline."
+  ]
+}

@@ -1,0 +1,584 @@
+{
+  "patient_id": "P005",
+  "scenario": "POST_SEPSIS_PROBE_REMOVAL_AND_PACKET_DROPOUT",
+  "scenario_description": "Synthetic post-sepsis profile with simulated probe-removal-like signal loss and a separate packet-dropout interval.",
+  "profile_origin": "Synthea-generated FHIR Patient resource",
+  "source_linkage_policy": "The Synthea profile and BIDMC recording are independent source records paired only for this demo; no identity or clinical relationship is asserted.",
+  "synthea": {
+    "patient_resource_id": "c5c1fefc-1263-b56e-62f8-b9e4932af56c",
+    "synthea_patient_id": "c5c1fefc-1263-b56e-62f8-b9e4932af56c",
+    "source_bundle": "data\\synthea_original\\selected_profiles\\P005_Ellis535_Bosco882_c5c1fefc-1263-b56e-62f8-b9e4932af56c.json",
+    "selected_bundle": "data\\synthea_original\\selected_profiles\\P005_Ellis535_Bosco882_c5c1fefc-1263-b56e-62f8-b9e4932af56c.json",
+    "generated_candidate_filename": "Ellis535_Bosco882_c5c1fefc-1263-b56e-62f8-b9e4932af56c.json",
+    "selected_bundle_sha256": "cb8ceff7597c620cd11796acfcdeb15d5273a363ab20595f2129e24546a98949",
+    "release_tag": "master-branch-latest",
+    "release_commit": "bd8a52ba0a54ad8c6a1004b74787a14d8c25dbcc",
+    "jar_sha256": "20098ec70c24c715ea874b19140983634711cc4986196105b5b0a9ca72a4b644",
+    "seed": 20261112,
+    "candidate_population_size": 200,
+    "conditions": [
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-0a69-259d645f15f6",
+        "display": "Medication review due (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "314529007",
+            "display": "Medication review due (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1990-01-05T09:46:00+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-2239-f1f875adfb8c",
+        "display": "Educated to high school level (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "473461003",
+            "display": "Educated to high school level (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "1990-01-05T10:16:20+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-8686-d5745581d6ea",
+        "display": "Full-time employment (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "160903007",
+            "display": "Full-time employment (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1991-01-11T10:19:50+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-b359-3e290c71bc50",
+        "display": "Stress (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "73595000",
+            "display": "Stress (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1994-01-14T10:20:43+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-3af0-3e7c757179f5",
+        "display": "Viral sinusitis (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "444814009",
+            "display": "Viral sinusitis (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1995-02-03T10:46:00+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-0329-0049a0490caa",
+        "display": "Gingivitis (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "66383009",
+            "display": "Gingivitis (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1997-01-17T11:30:44+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-6eb1-dbc09bd2f931",
+        "display": "Laceration - injury (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "312608009",
+            "display": "Laceration - injury (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1999-01-09T09:46:00+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-39ea-d64f030cf5ea",
+        "display": "Laceration of foot (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "284551006",
+            "display": "Laceration of foot (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "1999-01-09T09:46:00+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-f1d0-c8f3017a8f41",
+        "display": "Medication review due (situation)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "314529007",
+            "display": "Medication review due (situation)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "2000-01-21T09:46:00+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-5f61-6766037cb0d2",
+        "display": "Gingivitis (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "66383009",
+            "display": "Gingivitis (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "2000-01-21T11:52:30+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-f8f8-3306570de75e",
+        "display": "Infection of tooth (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "427898007",
+            "display": "Infection of tooth (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "2000-02-04T11:15:44+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-58b2-aa28222a49a8",
+        "display": "Leaking dental filling (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "278598003",
+            "display": "Leaking dental filling (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "2000-02-04T13:59:23+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-2310-74dde12ee433",
+        "display": "Loss of teeth (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "37320007",
+            "display": "Loss of teeth (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "2000-02-11T09:46:00+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-c504-0f2a8daa5249",
+        "display": "Torus palatinus (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "46752004",
+            "display": "Torus palatinus (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "2000-02-11T09:46:00+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-a7f0-809875209077",
+        "display": "Viral sinusitis (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "444814009",
+            "display": "Viral sinusitis (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "2000-09-20T18:46:00+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-ed7a-45094c11e49a",
+        "display": "Part-time employment (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "160904001",
+            "display": "Part-time employment (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "2003-01-24T10:27:41+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-5e23-b1b3298971db",
+        "display": "Limited social contact (finding)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "423315002",
+            "display": "Limited social contact (finding)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "2003-01-24T10:27:41+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-f1a3-ebe303ab80c4",
+        "display": "Gingivitis (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "66383009",
+            "display": "Gingivitis (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "resolved"
+            }
+          ]
+        },
+        "onset": "2003-01-24T11:44:17+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-ff86-137901008bf5",
+        "display": "Sepsis (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "91302008",
+            "display": "Sepsis (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "2004-07-18T09:46:00+05:30"
+      },
+      {
+        "resource_type": "Condition",
+        "resource_id": "c5c1fefc-1263-b56e-f743-1af0b188751f",
+        "display": "Acute respiratory distress syndrome (disorder)",
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "67782005",
+            "display": "Acute respiratory distress syndrome (disorder)"
+          }
+        ],
+        "clinical_status": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "onset": "2004-07-27T13:46:00+05:30"
+      }
+    ],
+    "medications": [
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "c5c1fefc-1263-b56e-799b-6fa968d9da2c",
+        "display": "Amoxicillin 250 MG / Clavulanate 125 MG Oral Tablet",
+        "status": "completed",
+        "authored_on": "1995-02-03T10:46:00+05:30",
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "c5c1fefc-1263-b56e-34c1-348f405d8251",
+        "display": "Acetaminophen 325 MG Oral Tablet",
+        "status": "completed",
+        "authored_on": "1999-01-09T09:58:41+05:30",
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "c5c1fefc-1263-b56e-b583-0126a8370984",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "2003-02-07T13:01:55+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:dfa6ce33-a5de-5c15-e0a2-609b16b47934"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "2019111e-951a-2975-69b6-d47709962d63",
+        "display": "sodium fluoride 0.0272 MG/MG Oral Gel",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "c5c1fefc-1263-b56e-ffd5-7f66c4a73b93",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "2004-07-18T09:46:00+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:9c2b950b-384b-c999-20e5-8219c7cc4a09"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "26e36e4c-de5a-15eb-da1d-ac4ee01828d2",
+        "display": "piperacillin 2000 MG / tazobactam 250 MG Injection",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      },
+      {
+        "resource_type": "MedicationRequest",
+        "resource_id": "c5c1fefc-1263-b56e-9d05-9f13851fc2af",
+        "display": "Not specified in resource",
+        "status": "completed",
+        "authored_on": "2004-07-18T09:46:00+05:30",
+        "medication_reference": {
+          "reference": "urn:uuid:704a23a8-069b-94d5-f791-e3e83e5df1cb"
+        }
+      },
+      {
+        "resource_type": "MedicationAdministration",
+        "resource_id": "3bb21440-f1be-db1b-3cb2-f34a6598f83a",
+        "display": "150 ML vancomycin 5 MG/ML Injection",
+        "status": "completed",
+        "authored_on": null,
+        "medication_reference": null
+      }
+    ],
+    "matched_condition": {
+      "selection_rule": "sepsis",
+      "resources": [
+        {
+          "resource_type": "Condition",
+          "resource_id": "c5c1fefc-1263-b56e-ff86-137901008bf5",
+          "display": "Sepsis (disorder)",
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "91302008",
+              "display": "Sepsis (disorder)"
+            }
+          ],
+          "clinical_status": {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                "code": "active"
+              }
+            ]
+          },
+          "onset": "2004-07-18T09:46:00+05:30"
+        }
+      ]
+    },
+    "demographics": {
+      "gender": "male",
+      "birth_date": "1971-11-12",
+      "name": [
+        {
+          "use": "official",
+          "family": "Bosco882",
+          "given": [
+            "Ellis535",
+            "Casey401"
+          ],
+          "prefix": [
+            "Mr."
+          ]
+        }
+      ]
+    }
+  },
+  "bidmc_source": {
+    "recording_id": "bidmc05",
+    "numerics_filename": "bidmc_05_Numerics.csv",
+    "numerics_source_path": "data/bidmc_original/bidmc_05_Numerics.csv",
+    "source_url": "https://physionet.org/files/bidmc/1.0.0/bidmc_csv/bidmc_05_Numerics.csv",
+    "mapped_headers": {
+      "time_s": "Time [s]",
+      "hr_bpm": " HR",
+      "rr_bpm": " RESP",
+      "spo2_percent": " SpO2"
+    },
+    "source_rows": 481,
+    "timestamp_policy": "Simulation timestamp is the synthetic 2026-01-01 UTC anchor plus the source Time [s] offset; it is not an acquisition timestamp."
+  },
+  "temperature_channel": {
+    "column": "temp_c_synthetic",
+    "provenance": "SYNTHETIC_SIMULATION_ONLY",
+    "source_data_available": false,
+    "missingness_policy": "Missing during explicitly labelled simulated packet dropouts; never forward-filled."
+  },
+  "source_value_policy": "Original HR, RESP, and SpO2 values are retained in *_source columns. Scenario deltas and final values are separate; source gaps are not filled.",
+  "scenario_parameters": null,
+  "locally_defined_scenario_labels": [],
+  "scenario_events_file": "data/patients/P005/scenario_events.csv",
+  "vital_stream_file": "data/patients/P005/vital_stream.csv",
+  "synthetic_research_prototype_only": true,
+  "not_clinically_validated": true
+}
