@@ -1,3 +1,80 @@
+# PS-03 HEALTHGUARD — Clinical Intelligence & Smart Wearable Digital Twin
+
+HealthGuard upgrades the PS-03 post-discharge deterioration monitoring platform into a polished, intelligent, role-aware clinical system with **Role-Based Access Control (RBAC)** across 5 distinct interfaces, a **Patient Daily Check-in Experience**, a **Smartwatch Digital Twin**, **Priority-Based Alert Delivery with Parallel Critical Escalation**, **Voice Commands**, and **Secure FHIR Medical Record Exports**.
+
+## Key Features & Architecture
+
+### 1. Role-Based Access Control (RBAC) & Scoped Views
+- **Role A — Patient**: Ultra-simple, mobile-first interface. Today's health status, one-question-at-a-time daily check-in with adaptive questions, connected wearable telemetry, medication & follow-up reminders, and care team contact. Strict privacy scope: patients can only access their own record.
+- **Role B — PHEON / Ward Attendant**: Minimal operational interface. Assigned ward patients, recognizable Minecraft-style avatars, status indicators (Stable / Attention / Urgent), latest vitals, device connectivity, and one-click escalation to the nurse.
+- **Role C — Nurse**: Comprehensive clinical monitoring workspace. Prioritized alerts (P0–P3), vital signs and 120-second trends, daily check-in review, medication adherence reports, patient-reported symptoms, signal quality, and alert acknowledgement/escalation.
+- **Role D — Doctor**: Compact decision-support dashboard. Deteriorating/high-risk patients sorted first, clinical deterioration timeline, vital-sign trends, previous alerts and action history, clinical notes, care plan creation, and authorized FHIR bundle downloads.
+- **Role E — Senior Doctor / Clinical Administrator**: High-level clinical oversight and governance. Full cohort monitoring, critical case breakdown, unresolved escalations queue, staff response times, alert resolution history, patient reassignment, workflow override with mandatory audit reasons, and cybersecurity audit log access.
+
+### 2. Patient Identification — Blocky Minecraft Avatars
+Every patient (P001–P010) features a deterministic, pixel-art Minecraft-style avatar generated from their identity and demographic attributes. Renders crisply across all screens as vector SVGs.
+
+### 3. Smartwatch Integration & Digital Twin
+- Split layout: Patient avatar and smartwatch device visualization on the left; vital measurements, baseline vs current comparison, and deterioration timeline on the right.
+- Visual status indicators for signal quality, battery, and connection state.
+- **Stale data protection**: Outdated or disconnected sensors are clearly flagged with prominent warning banners—never represented as live measurements.
+- Interactive clinical relevance: Click any vital sign to view its physiological mechanism and clinical deterioration thresholds.
+
+### 4. Intelligent Priority Alert Delivery
+- **P0 Critical Alert**: Immediate parallel escalation notifying Nurse, Attending Doctor, and Senior Doctor concurrently, bypassing routine sequential wait times.
+- **P1 Urgent Review**: Escalates to Nurse and Doctor within 15 minutes.
+- **P2 Attention Required**: Ward attendant and nurse follow-up for sensor degradation or mild symptom drift.
+- **P3 Routine Monitoring**: Standard check-in completion and baseline tracking.
+- Smartwatch notification feed: Actionable, concise wrist notifications with lock-screen privacy masking.
+
+### 5. Patient Daily Check-in with Adaptive Branching
+- Simple, friendly 6-question morning health assessment.
+- **Smart adaptive follow-up questions**: If a patient reports breathing difficulty or chest tightness, adaptive branching automatically inquires regarding symptom onset, progression during rest, and activity impact.
+- Optional voice note response with speech-to-text.
+- 14-day history calendar with completed, missed, and follow-up states.
+
+### 6. Voice Interaction Layer
+- Browser Web Speech API with text-input fallback.
+- Commands: *"Show urgent patients"*, *"Open patient P003"*, *"Show today's missed check-ins"*, *"Show patients assigned to me"*, *"Acknowledge this alert"* (requires clinical confirmation dialog), and *"Open patient history"*.
+- Active microphone status indicator and RBAC permission checks on all voice intents.
+
+### 7. Secure HAPI FHIR Interoperability
+- Raw FHIR complexity is hidden from normal clinical views and replaced with human-readable diagnostic summaries.
+- Complete FHIR R4 JSON bundles can be exported on-demand by authorized Doctors and Senior Doctors.
+- Unauthorized export attempts (e.g. by PHEON or Patient) are rejected with HTTP 403 Forbidden and logged in the immutable audit log.
+
+---
+
+## Quick Start & Running the Server
+
+Start the HealthGuard clinical web application:
+
+```powershell
+Set-Location 'C:\Users\ldevi\Downloads\PS03_Five_Patient_Starter\ps03_five_patient_starter'
+& .\.venv\Scripts\python.exe scripts\run_healthguard.py --port 8000
+```
+
+Open `http://127.0.0.1:8000` in your web browser. Use the quick role-switcher in the top navigation bar to seamlessly test all 5 clinical roles:
+- **Patient**: Clora Christiansen (P001)
+- **PHEON**: Marcus Ward (Ward Attendant)
+- **Nurse**: Sarah Jenkins, RN
+- **Doctor**: Dr. Arthur Chen, MD
+- **Senior Doctor**: Dr. Maya Patel, MD
+
+---
+
+## Running Automated Validation Tests
+
+Run the complete test suite verifying all 13 required capabilities (RBAC, check-ins, alert delivery, digital twin, voice, and simulator engines):
+
+```powershell
+Set-Location 'C:\Users\ldevi\Downloads\PS03_Five_Patient_Starter\ps03_five_patient_starter'
+& .\.venv\Scripts\python.exe -m unittest tests/test_healthguard.py -v
+& .\.venv\Scripts\python.exe -m unittest tests/test_server_api.py -v
+```
+
+---
+
 # PS-03 Virtual Wearable Research Simulator
 
 This project uses the supplied revised Synthea cohort ZIP to run a ten-profile, Python-only virtual wearable simulation and replay five original BIDMC recordings. It is a **research/hackathon prototype**, not a clinically validated dataset, medical device, diagnostic system, or source of medical advice.

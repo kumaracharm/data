@@ -1,0 +1,402 @@
+[
+  {
+    "timestamp": "2026-11-13T01:44:41.384936+00:00",
+    "event_id": "AUD-1794534281384-828f2949",
+    "user_id": "alert_engine",
+    "role": "SYSTEM",
+    "action": "ALERT_TRIGGERED",
+    "resource_type": "ALERT",
+    "resource_id": "ALT-1794534281384-P003",
+    "status": "SUCCESS",
+    "details": {
+      "patient_id": "P003",
+      "priority": "P0",
+      "vital": "SpO2",
+      "value": "88.0%",
+      "is_parallel": true,
+      "channels": [
+        "in_app_banner",
+        "smartwatch_feed",
+        "simulated_web_push",
+        "sms_relay_adapter",
+        "hospital_telemetry_pager"
+      ]
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:41.387059+00:00",
+    "event_id": "AUD-1794534281387-1e99176f",
+    "user_id": "alert_engine",
+    "role": "SYSTEM",
+    "action": "ALERT_TRIGGERED",
+    "resource_type": "ALERT",
+    "resource_id": "ALT-1794534281386-P001",
+    "status": "SUCCESS",
+    "details": {
+      "patient_id": "P001",
+      "priority": "P1",
+      "vital": "Heart Rate",
+      "value": "114.0bpm",
+      "is_parallel": false,
+      "channels": [
+        "in_app_banner",
+        "smartwatch_feed",
+        "simulated_web_push",
+        "sms_relay_adapter",
+        "hospital_telemetry_pager"
+      ]
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:41.388355+00:00",
+    "event_id": "AUD-1794534281388-faf0018a",
+    "user_id": "alert_engine",
+    "role": "SYSTEM",
+    "action": "ALERT_TRIGGERED",
+    "resource_type": "ALERT",
+    "resource_id": "ALT-1794534281388-P010",
+    "status": "SUCCESS",
+    "details": {
+      "patient_id": "P010",
+      "priority": "P2",
+      "vital": "Sensor Signal",
+      "value": "35.0%",
+      "is_parallel": false,
+      "channels": [
+        "in_app_banner",
+        "smartwatch_feed",
+        "simulated_web_push"
+      ]
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:54.926210+00:00",
+    "event_id": "AUD-1794534294926-eecddf47",
+    "user_id": "alert_engine",
+    "role": "SYSTEM",
+    "action": "ALERT_TRIGGERED",
+    "resource_type": "ALERT",
+    "resource_id": "ALT-1794534294926-P003",
+    "status": "SUCCESS",
+    "details": {
+      "patient_id": "P003",
+      "priority": "P0",
+      "vital": "SpO2",
+      "value": "88.0%",
+      "is_parallel": true,
+      "channels": [
+        "in_app_banner",
+        "smartwatch_feed",
+        "simulated_web_push",
+        "sms_relay_adapter",
+        "hospital_telemetry_pager"
+      ]
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:54.927414+00:00",
+    "event_id": "AUD-1794534294927-b25668a4",
+    "user_id": "alert_engine",
+    "role": "SYSTEM",
+    "action": "ALERT_TRIGGERED",
+    "resource_type": "ALERT",
+    "resource_id": "ALT-1794534294927-P001",
+    "status": "SUCCESS",
+    "details": {
+      "patient_id": "P001",
+      "priority": "P1",
+      "vital": "Heart Rate",
+      "value": "114.0bpm",
+      "is_parallel": false,
+      "channels": [
+        "in_app_banner",
+        "smartwatch_feed",
+        "simulated_web_push",
+        "sms_relay_adapter",
+        "hospital_telemetry_pager"
+      ]
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:54.928621+00:00",
+    "event_id": "AUD-1794534294928-731e566a",
+    "user_id": "alert_engine",
+    "role": "SYSTEM",
+    "action": "ALERT_TRIGGERED",
+    "resource_type": "ALERT",
+    "resource_id": "ALT-1794534294928-P010",
+    "status": "SUCCESS",
+    "details": {
+      "patient_id": "P010",
+      "priority": "P2",
+      "vital": "Sensor Signal",
+      "value": "35.0%",
+      "is_parallel": false,
+      "channels": [
+        "in_app_banner",
+        "smartwatch_feed",
+        "simulated_web_push"
+      ]
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.310585+00:00",
+    "event_id": "AUD-1794534295310-9f0c8b44",
+    "user_id": "nurse_sarah",
+    "role": "nurse",
+    "action": "LOGIN_SUCCESS",
+    "resource_type": "AUTH",
+    "resource_id": "nurse_sarah",
+    "status": "SUCCESS",
+    "details": {
+      "display_name": "Sarah Jenkins, RN",
+      "role": "nurse"
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.317543+00:00",
+    "event_id": "AUD-1794534295317-63f035bf",
+    "user_id": "dr_chen",
+    "role": "doctor",
+    "action": "LOGIN_SUCCESS",
+    "resource_type": "AUTH",
+    "resource_id": "dr_chen",
+    "status": "SUCCESS",
+    "details": {
+      "display_name": "Dr. Arthur Chen, MD",
+      "role": "doctor"
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.323979+00:00",
+    "event_id": "AUD-1794534295323-d497f2c6",
+    "user_id": "patient_p001",
+    "role": "patient",
+    "action": "LOGIN_SUCCESS",
+    "resource_type": "AUTH",
+    "resource_id": "patient_p001",
+    "status": "SUCCESS",
+    "details": {
+      "display_name": "Clora Christiansen",
+      "role": "patient"
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.326367+00:00",
+    "event_id": "AUD-1794534295326-45bc901b",
+    "user_id": "patient_p001",
+    "role": "patient",
+    "action": "PERMISSION_DENIED",
+    "resource_type": "PERMISSION",
+    "resource_id": "view_assigned_patients",
+    "status": "FORBIDDEN",
+    "details": {
+      "reason": "Role 'patient' does not have permission 'view_assigned_patients'"
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.328548+00:00",
+    "event_id": "AUD-1794534295328-001fb165",
+    "user_id": "patient_p001",
+    "role": "patient",
+    "action": "PERMISSION_DENIED",
+    "resource_type": "PERMISSION",
+    "resource_id": "view_assigned_patients",
+    "status": "FORBIDDEN",
+    "details": {
+      "reason": "Role 'patient' does not have permission 'view_assigned_patients'"
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.333591+00:00",
+    "event_id": "AUD-1794534295333-bb9c4ec9",
+    "user_id": "pheon_marcus",
+    "role": "pheon",
+    "action": "LOGIN_SUCCESS",
+    "resource_type": "AUTH",
+    "resource_id": "pheon_marcus",
+    "status": "SUCCESS",
+    "details": {
+      "display_name": "Marcus Ward",
+      "role": "pheon"
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.336163+00:00",
+    "event_id": "AUD-1794534295336-2078666e",
+    "user_id": "pheon_marcus",
+    "role": "pheon",
+    "action": "PERMISSION_DENIED",
+    "resource_type": "PERMISSION",
+    "resource_id": "export_fhir_records",
+    "status": "FORBIDDEN",
+    "details": {
+      "reason": "Role 'pheon' does not have permission 'export_fhir_records'"
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.337035+00:00",
+    "event_id": "AUD-1794534295337-2090a684",
+    "user_id": "pheon_marcus",
+    "role": "pheon",
+    "action": "FHIR_EXPORT_ATTEMPT_DENIED",
+    "resource_type": "FHIR_BUNDLE",
+    "resource_id": "P001",
+    "status": "FORBIDDEN",
+    "details": {
+      "reason": "Role lacks EXPORT_FHIR_RECORDS permission"
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.353890+00:00",
+    "event_id": "AUD-1794534295353-796b2f45",
+    "user_id": "dr_chen",
+    "role": "doctor",
+    "action": "LOGIN_SUCCESS",
+    "resource_type": "AUTH",
+    "resource_id": "dr_chen",
+    "status": "SUCCESS",
+    "details": {
+      "display_name": "Dr. Arthur Chen, MD",
+      "role": "doctor"
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.358183+00:00",
+    "event_id": "AUD-1794534295358-f9792e80",
+    "user_id": "dr_chen",
+    "role": "doctor",
+    "action": "FHIR_EXPORT_AUTHORIZED",
+    "resource_type": "FHIR_BUNDLE",
+    "resource_id": "P001",
+    "status": "SUCCESS",
+    "details": {
+      "exported_by": "Dr. Arthur Chen, MD",
+      "role": "doctor",
+      "file_size_bytes": 5401100
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.585657+00:00",
+    "event_id": "AUD-1794534295585-f9548178",
+    "user_id": "patient_p001",
+    "role": "patient",
+    "action": "LOGIN_SUCCESS",
+    "resource_type": "AUTH",
+    "resource_id": "patient_p001",
+    "status": "SUCCESS",
+    "details": {
+      "display_name": "Clora Christiansen",
+      "role": "patient"
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.590941+00:00",
+    "event_id": "AUD-1794534295590-bd226dff",
+    "user_id": "patient_p001",
+    "role": "patient",
+    "action": "DAILY_CHECKIN_SUBMITTED",
+    "resource_type": "PATIENT_CHECKIN",
+    "resource_id": "CHK-1794534295-P001",
+    "status": "SUCCESS",
+    "details": {
+      "patient_id": "P001",
+      "risk_score": 0,
+      "risk_tier": "LOW",
+      "alert_triggered": false,
+      "has_voice_note": false
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.594948+00:00",
+    "event_id": "AUD-1794534295594-61c9c78e",
+    "user_id": "dr_chen",
+    "role": "doctor",
+    "action": "LOGIN_SUCCESS",
+    "resource_type": "AUTH",
+    "resource_id": "dr_chen",
+    "status": "SUCCESS",
+    "details": {
+      "display_name": "Dr. Arthur Chen, MD",
+      "role": "doctor"
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.599647+00:00",
+    "event_id": "AUD-1794534295599-c538e43f",
+    "user_id": "dr_chen",
+    "role": "doctor",
+    "action": "LOGIN_SUCCESS",
+    "resource_type": "AUTH",
+    "resource_id": "dr_chen",
+    "status": "SUCCESS",
+    "details": {
+      "display_name": "Dr. Arthur Chen, MD",
+      "role": "doctor"
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.603226+00:00",
+    "event_id": "AUD-1794534295603-299954ab",
+    "user_id": "dr_chen",
+    "role": "doctor",
+    "action": "PERMISSION_DENIED",
+    "resource_type": "PERMISSION",
+    "resource_id": "view_oversight_metrics",
+    "status": "FORBIDDEN",
+    "details": {
+      "reason": "Role 'doctor' does not have permission 'view_oversight_metrics'"
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.605982+00:00",
+    "event_id": "AUD-1794534295605-88598ac2",
+    "user_id": "dr_patel",
+    "role": "senior_doctor",
+    "action": "LOGIN_SUCCESS",
+    "resource_type": "AUTH",
+    "resource_id": "dr_patel",
+    "status": "SUCCESS",
+    "details": {
+      "display_name": "Dr. Maya Patel, MD",
+      "role": "senior_doctor"
+    },
+    "client_ip": "127.0.0.1"
+  },
+  {
+    "timestamp": "2026-11-13T01:44:55.610133+00:00",
+    "event_id": "AUD-1794534295610-2b450e70",
+    "user_id": "nurse_sarah",
+    "role": "nurse",
+    "action": "LOGIN_SUCCESS",
+    "resource_type": "AUTH",
+    "resource_id": "nurse_sarah",
+    "status": "SUCCESS",
+    "details": {
+      "display_name": "Sarah Jenkins, RN",
+      "role": "nurse"
+    },
+    "client_ip": "127.0.0.1"
+  }
+]

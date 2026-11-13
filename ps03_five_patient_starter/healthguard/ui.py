@@ -1,0 +1,2084 @@
+from __future__ import annotations
+
+# HealthGuard - Hospital-grade Clinical UI Application Template
+# Clean, modern, responsive clinical UI with zero neon clutter
+
+def get_html_app(initial_data_json: str = "{}") -> str:
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HealthGuard — Role-Based Clinical Intelligence Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {{
+  --bg-app: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-sidebar: #0f172a;
+  --border-color: #e2e8f0;
+  --border-subtle: #f1f5f9;
+  
+  --navy-primary: #0f172a;
+  --navy-secondary: #1e293b;
+  --blue-accent: #0284c7;
+  --blue-hover: #0369a1;
+  --blue-light: #f0f9ff;
+  
+  --ink-primary: #0f172a;
+  --ink-secondary: #475569;
+  --ink-muted: #94a3b8;
+  
+  /* Clinical status semantics */
+  --status-stable: #059669;
+  --status-stable-bg: #ecfdf5;
+  --status-stable-border: #a7f3d0;
+  
+  --status-attention: #d97706;
+  --status-attention-bg: #fffbeb;
+  --status-attention-border: #fde68a;
+  
+  --status-urgent: #dc2626;
+  --status-urgent-bg: #fef2f2;
+  --status-urgent-border: #fecaca;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}}
+
+* {{ box-sizing: border-box; margin: 0; padding: 0; }}
+body {{
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-app);
+  color: var(--ink-primary);
+  line-height: 1.5;
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}}
+
+/* App Container */
+.app-container {{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}}
+
+/* Top Quick Role Switcher Bar */
+.role-banner {{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: #090d16;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  z-index: 1000;
+  border-bottom: 1px solid #1e293b;
+}}
+.role-banner-left {{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}}
+.logo-badge {{
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  color: #38bdf8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}}
+.role-switcher-container {{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}}
+.role-btn {{
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #cbd5e1;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}}
+.role-btn:hover {{
+  background: #334155;
+  color: #fff;
+}}
+.role-btn.active {{
+  background: #0284c7;
+  border-color: #38bdf8;
+  color: #ffffff;
+  font-weight: 600;
+}}
+.voice-mic-btn {{
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: #e2e8f0;
+  border-radius: 999px;
+  padding: 5px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}}
+.voice-mic-btn.listening {{
+  background: #dc2626;
+  border-color: #ef4444;
+  color: #fff;
+  animation: pulse 1.5s infinite;
+}}
+@keyframes pulse {{
+  0% {{ box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }}
+  70% {{ box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }}
+  100% {{ box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }}
+}}
+
+/* Sidebar */
+.sidebar {{
+  width: 240px;
+  background: var(--bg-sidebar);
+  color: #cbd5e1;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #1e293b;
+  flex-shrink: 0;
+}}
+.user-profile-badge {{
+  padding: 16px;
+  border-bottom: 1px solid #1e293b;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}}
+.user-avatar {{
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: #1e293b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}}
+.user-info {{
+  overflow: hidden;
+}}
+.user-name {{
+  font-weight: 600;
+  font-size: 13px;
+  color: #f8fafc;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}}
+.user-role-label {{
+  font-size: 11px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}}
+.nav-menu {{
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  overflow-y: auto;
+}}
+.nav-item {{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  color: #94a3b8;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}}
+.nav-item:hover {{
+  background: #1e293b;
+  color: #f8fafc;
+}}
+.nav-item.active {{
+  background: #0284c7;
+  color: #ffffff;
+  font-weight: 600;
+}}
+.nav-badge {{
+  margin-left: auto;
+  background: #dc2626;
+  color: #fff;
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 99px;
+  font-weight: 700;
+}}
+
+/* Main Content Area */
+.main-wrapper {{
+  flex: 1;
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  background: var(--bg-app);
+}}
+.top-header {{
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}}
+.page-title {{
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy-primary);
+}}
+.page-subtitle {{
+  font-size: 13px;
+  color: var(--ink-secondary);
+}}
+.header-actions {{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}}
+
+/* Content View */
+.view-content {{
+  padding: 24px;
+  flex: 1;
+}}
+
+/* Status Pills */
+.status-pill {{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}}
+.status-pill.stable {{
+  background: var(--status-stable-bg);
+  color: var(--status-stable);
+  border: 1px solid var(--status-stable-border);
+}}
+.status-pill.attention {{
+  background: var(--status-attention-bg);
+  color: var(--status-attention);
+  border: 1px solid var(--status-attention-border);
+}}
+.status-pill.urgent {{
+  background: var(--status-urgent-bg);
+  color: var(--status-urgent);
+  border: 1px solid var(--status-urgent-border);
+}}
+
+/* Patient Cards Grid */
+.patient-grid {{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+}}
+.patient-card {{
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}}
+.patient-card:hover {{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: #cbd5e1;
+}}
+.patient-card.is-urgent {{
+  border-left: 4px solid var(--status-urgent);
+}}
+.patient-card.is-attention {{
+  border-left: 4px solid var(--status-attention);
+}}
+.patient-card-header {{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}}
+.patient-avatar-box {{
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+}}
+.patient-id-tag {{
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #334155;
+  padding: 2px 6px;
+  border-radius: 4px;
+}}
+.patient-card-name {{
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy-primary);
+}}
+.patient-vitals-row {{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  background: #f8fafc;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
+}}
+.vital-stat {{
+  display: flex;
+  flex-direction: column;
+}}
+.vital-stat-label {{
+  font-size: 10px;
+  color: var(--ink-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+}}
+.vital-stat-val {{
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy-secondary);
+}}
+.patient-card-footer {{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--ink-secondary);
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 8px;
+}}
+
+/* Digital Twin Split View */
+.twin-split-layout {{
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 20px;
+  height: calc(100vh - 170px);
+}}
+.twin-left-panel {{
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  overflow-y: auto;
+}}
+.twin-right-panel {{
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: var(--shadow-sm);
+  overflow-y: auto;
+}}
+
+/* Smartwatch Visualizer Container */
+.watch-container {{
+  background: #0f172a;
+  border-radius: 16px;
+  padding: 16px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}}
+.watch-header {{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+  color: #94a3b8;
+}}
+.watch-screen {{
+  background: #020617;
+  border: 2px solid #1e293b;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}}
+.watch-time {{
+  font-size: 24px;
+  font-weight: 700;
+  color: #38bdf8;
+  font-family: 'JetBrains Mono', monospace;
+}}
+.watch-vital-item {{
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  border-bottom: 1px solid #1e293b;
+  padding: 4px 0;
+}}
+
+/* Patient Check-in Mobile First UI */
+.checkin-card-mobile {{
+  max-width: 540px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}}
+.btn-primary {{
+  background: #0284c7;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}}
+.btn-primary:hover {{
+  background: #0369a1;
+}}
+.btn-secondary {{
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #cbd5e1;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}}
+.btn-danger {{
+  background: #dc2626;
+  color: #ffffff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}}
+
+/* Modal / Toast Notifications */
+.toast-banner {{
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #0f172a;
+  color: #fff;
+  padding: 14px 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  font-size: 13px;
+  z-index: 2000;
+  display: none;
+}}
+.modal-overlay {{
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(2px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1500;
+}}
+.modal-window {{
+  background: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 580px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}}
+
+/* Calendar Grid */
+.calendar-grid {{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-top: 12px;
+}}
+.cal-day {{
+  background: #f8fafc;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}}
+.cal-day.completed {{
+  background: var(--status-stable-bg);
+  border-color: var(--status-stable-border);
+}}
+.cal-day.missed {{
+  background: var(--status-urgent-bg);
+  border-color: var(--status-urgent-border);
+}}
+.cal-day.followup {{
+  background: var(--status-attention-bg);
+  border-color: var(--status-attention-border);
+}}
+
+/* Clinical Vitals Chart Table */
+.vitals-trend-card {{
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 16px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}}
+.vitals-trend-card:hover {{
+  border-color: var(--blue-accent);
+}}
+.vitals-trend-card.active {{
+  border-color: var(--blue-accent);
+  background: var(--blue-light);
+}}
+
+/* Responsive */
+@media (max-width: 900px) {{
+  .twin-split-layout {{
+    grid-template-columns: 1fr;
+    height: auto;
+  }}
+  .sidebar {{
+    width: 64px;
+  }}
+  .user-info, .nav-item span, .user-role-label {{
+    display: none;
+  }}
+}}
+</style>
+</head>
+<body>
+
+<!-- Role & Voice Header Bar -->
+<header class="role-banner">
+  <div class="role-banner-left">
+    <div class="logo-badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      <span>HEALTHGUARD</span>
+    </div>
+    <span style="font-size:12px;color:#64748b;margin-left:8px;">PS-03 Post-Discharge Clinical Intelligence</span>
+  </div>
+
+  <div class="role-switcher-container">
+    <span style="color:#94a3b8;font-size:11px;margin-right:4px;">DEMO ROLE:</span>
+    <button class="role-btn" data-role="patient" onclick="switchRole('patient_p001')">Patient (Clora P001)</button>
+    <button class="role-btn" data-role="pheon" onclick="switchRole('pheon_marcus')">PHEON (Marcus)</button>
+    <button class="role-btn" data-role="nurse" onclick="switchRole('nurse_sarah')">Nurse (Sarah RN)</button>
+    <button class="role-btn" data-role="doctor" onclick="switchRole('dr_chen')">Doctor (Dr. Chen)</button>
+    <button class="role-btn" data-role="senior_doctor" onclick="switchRole('dr_patel')">Senior Doctor (Dr. Patel)</button>
+    
+    <button class="voice-mic-btn" id="voiceMicBtn" onclick="toggleVoiceRecognition()" title="Voice command input">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+      <span id="voiceStatusText">Voice</span>
+    </button>
+  </div>
+</header>
+
+<div class="app-container">
+  <!-- Dynamic Role-Aware Sidebar -->
+  <aside class="sidebar" id="appSidebar">
+    <div class="user-profile-badge">
+      <div class="user-avatar" id="sidebarAvatar">
+        <!-- Avatar injected here -->
+      </div>
+      <div class="user-info">
+        <div class="user-name" id="sidebarUserName">Loading...</div>
+        <div class="user-role-label" id="sidebarUserRole">NURSE</div>
+      </div>
+    </div>
+
+    <nav class="nav-menu" id="sidebarNavMenu">
+      <!-- Injected based on RBAC permissions -->
+    </nav>
+  </aside>
+
+  <!-- Main Work Area -->
+  <main class="main-wrapper">
+    <div class="top-header">
+      <div>
+        <h1 class="page-title" id="pageTitle">Dashboard</h1>
+        <p class="page-subtitle" id="pageSubtitle">Personalized post-discharge clinical monitoring</p>
+      </div>
+      <div class="header-actions" id="headerActions">
+        <!-- Role-specific actions injected here -->
+      </div>
+    </div>
+
+    <!-- Dynamic Content View Area -->
+    <div class="view-content" id="viewContent">
+      <!-- View templates injected via JS -->
+    </div>
+  </main>
+</div>
+
+<!-- Modal Dialog -->
+<div class="modal-overlay" id="appModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-window" id="modalWindow">
+    <!-- Modal content injected -->
+  </div>
+</div>
+
+<!-- Toast Banner -->
+<div class="toast-banner" id="toastBanner">
+  <span id="toastMessage">Notification message</span>
+</div>
+
+<script>
+// INITIAL DATA BOOTSTRAP
+const BOOTSTRAP_DATA = {initial_data_json};
+
+let currentUser = null;
+let currentRole = null;
+let activeTab = 'overview';
+let activePatientId = 'P001';
+let speechRecognition = null;
+let isListening = false;
+
+// Initialize on Load
+document.addEventListener('DOMContentLoaded', () => {{
+  initAuth();
+  setupSpeechRecognition();
+}});
+
+async function initAuth() {{
+  try {{
+    const res = await fetch('/api/auth/me');
+    if (res.ok) {{
+      const data = await res.json();
+      setCurrentUser(data.user);
+    }} else {{
+      // Default to nurse_sarah for initial clinical workspace
+      await switchRole('nurse_sarah');
+    }}
+  }} catch (e) {{
+    // Offline or fallback mode
+    if (BOOTSTRAP_DATA.default_user) {{
+      setCurrentUser(BOOTSTRAP_DATA.default_user);
+    }}
+  }}
+}}
+
+async function switchRole(username) {{
+  try {{
+    const res = await fetch('/api/auth/login', {{
+      method: 'POST',
+      headers: {{'Content-Type': 'application/json'}},
+      body: JSON.stringify({{username}}),
+    }});
+    if (res.ok) {{
+      const data = await res.json();
+      setCurrentUser(data.user);
+      showToast(`Switched role to: ${{data.user.display_name}} (${{data.user.role.toUpperCase()}})`);
+    }}
+  }} catch (e) {{
+    console.error("Failed to switch role:", e);
+  }}
+}}
+
+function setCurrentUser(user) {{
+  currentUser = user;
+  currentRole = user.role;
+  
+  // Highlight top bar button
+  document.querySelectorAll('.role-btn').forEach(btn => {{
+    btn.classList.toggle('active', btn.dataset.role === currentRole);
+  }});
+  
+  // Update sidebar profile
+  document.getElementById('sidebarUserName').textContent = user.display_name;
+  document.getElementById('sidebarUserRole').textContent = user.title || user.role.toUpperCase();
+  
+  if (user.patient_id) {{
+    document.getElementById('sidebarAvatar').innerHTML = getMinecraftAvatar(user.patient_id, 36);
+  }} else {{
+    document.getElementById('sidebarAvatar').innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`;
+  }}
+  
+  // Set default starting tab based on role
+  if (currentRole === 'patient') {{
+    activeTab = 'checkin';
+    activePatientId = user.patient_id || 'P001';
+  }} else if (currentRole === 'pheon') {{
+    activeTab = 'patients';
+  }} else if (currentRole === 'nurse') {{
+    activeTab = 'patients';
+  }} else if (currentRole === 'doctor') {{
+    activeTab = 'patients';
+  }} else if (currentRole === 'senior_doctor') {{
+    activeTab = 'oversight';
+  }}
+  
+  renderNavigation();
+  navigate(activeTab);
+}}
+
+function renderNavigation() {{
+  const nav = document.getElementById('sidebarNavMenu');
+  nav.innerHTML = '';
+  
+  const navItems = [];
+  
+  if (currentRole === 'patient') {{
+    navItems.push(
+      {{id: 'checkin', label: 'Daily Check-in', icon: '📝'}},
+      {{id: 'digital_twin', label: 'My Wearable', icon: '⌚'}},
+      {{id: 'medications', label: 'My Medications', icon: '💊'}},
+      {{id: 'calendar', label: 'Check-in Calendar', icon: '📅'}},
+      {{id: 'contact', label: 'Contact Care Team', icon: '📞'}}
+    );
+  }} else if (currentRole === 'pheon') {{
+    navItems.push(
+      {{id: 'patients', label: 'Assigned Patients', icon: '👥'}},
+      {{id: 'missed_checkins', label: 'Missed Check-ins', icon: '⚠️'}},
+      {{id: 'wearable_telemetry', label: 'Device Connectivity', icon: '📶'}}
+    );
+  }} else if (currentRole === 'nurse') {{
+    navItems.push(
+      {{id: 'patients', label: 'Clinical Monitoring', icon: '🩺'}},
+      {{id: 'alerts', label: 'Prioritized Alerts', icon: '🚨'}},
+      {{id: 'digital_twin', label: 'Digital Twin', icon: '⌚'}},
+      {{id: 'checkin_reviews', label: 'Patient Check-ins', icon: '📋'}},
+      {{id: 'smartwatch_feed', label: 'Smartwatch Feed', icon: '🔔'}}
+    );
+  }} else if (currentRole === 'doctor') {{
+    navItems.push(
+      {{id: 'patients', label: 'Decision Support', icon: '🩺'}},
+      {{id: 'alerts', label: 'Critical Alerts', icon: '🚨'}},
+      {{id: 'digital_twin', label: 'Digital Twin & Trends', icon: '📈'}},
+      {{id: 'history_fhir', label: 'Patient History & FHIR', icon: '📁'}},
+      {{id: 'care_plans', label: 'Care Plans', icon: '📋'}}
+    );
+  }} else if (currentRole === 'senior_doctor') {{
+    navItems.push(
+      {{id: 'oversight', label: 'Cohort Oversight', icon: '📊'}},
+      {{id: 'patients', label: 'All Patients', icon: '👥'}},
+      {{id: 'alerts', label: 'Escalations Queue', icon: '🚨'}},
+      {{id: 'digital_twin', label: 'Digital Twin', icon: '📈'}},
+      {{id: 'history_fhir', label: 'FHIR Medical Records', icon: '📁'}},
+      {{id: 'audit_logs', label: 'Clinical Audit Log', icon: '🛡️'}}
+    );
+  }}
+  
+  navItems.forEach(item => {{
+    const a = document.createElement('a');
+    a.className = `nav-item ${{activeTab === item.id ? 'active' : ''}}`;
+    a.innerHTML = `<span>${{item.icon}}</span> <span>${{item.label}}</span>`;
+    a.onclick = () => navigate(item.id);
+    nav.appendChild(a);
+  }});
+}}
+
+function navigate(tabId) {{
+  activeTab = tabId;
+  renderNavigation();
+  
+  const content = document.getElementById('viewContent');
+  const title = document.getElementById('pageTitle');
+  const subtitle = document.getElementById('pageSubtitle');
+  const actions = document.getElementById('headerActions');
+  actions.innerHTML = '';
+  
+  if (tabId === 'checkin') {{
+    title.textContent = 'Patient Daily Health Check-in';
+    subtitle.textContent = 'Fast, simple mobile-first morning assessment';
+    renderPatientCheckinView(content);
+  }} else if (tabId === 'patients') {{
+    title.textContent = currentRole === 'pheon' ? 'Assigned Ward Patients' : (currentRole === 'doctor' ? 'Clinical Decision Support Workspace' : 'Patient Monitoring Workspace');
+    subtitle.textContent = currentRole === 'pheon' ? 'Operational first-response and escalation triage' : 'Real-time telemetry and deterioration tracking';
+    renderPatientsListView(content);
+  }} else if (tabId === 'digital_twin') {{
+    title.textContent = `Patient Digital Twin & Smartwatch Telemetry`;
+    subtitle.textContent = `Live wearable sensor ingestion, baseline comparison, and physiological trends`;
+    renderDigitalTwinView(content, activePatientId);
+  }} else if (tabId === 'alerts') {{
+    title.textContent = 'Prioritized Clinical Alerts';
+    subtitle.textContent = 'P0 Critical (Parallel escalation) • P1 Urgent • P2 Attention • P3 Routine';
+    renderAlertsView(content);
+  }} else if (tabId === 'history_fhir') {{
+    title.textContent = 'Patient Medical Records & FHIR Export';
+    subtitle.textContent = 'Simplified readable clinical history and secure authorized FHIR bundle downloads';
+    renderFhirHistoryView(content, activePatientId);
+  }} else if (tabId === 'oversight') {{
+    title.textContent = 'Senior Clinical Oversight & Workload Analytics';
+    subtitle.textContent = 'Cohort deterioration trends, staff response times, and governance controls';
+    renderOversightView(content);
+  }} else if (tabId === 'audit_logs') {{
+    title.textContent = 'Clinical Cybersecurity Audit Log';
+    subtitle.textContent = 'Immutable record of logins, access, workflow overrides, and FHIR downloads';
+    renderAuditLogsView(content);
+  }} else if (tabId === 'smartwatch_feed') {{
+    title.textContent = 'Wearable Smartwatch Notification Simulator';
+    subtitle.textContent = 'Actionable alerts formatted for clinician smartwatches with lock-screen privacy';
+    renderSmartwatchFeedView(content);
+  }} else {{
+    renderPatientsListView(content);
+  }}
+}}
+
+// ----------------------------------------------------
+// 1. PATIENT DAILY CHECK-IN VIEW
+// ----------------------------------------------------
+async function renderPatientCheckinView(container) {{
+  container.innerHTML = '<div style="text-align:center;padding:40px;color:#94a3b8;">Loading health check...</div>';
+  try {{
+    const res = await fetch(`/api/checkins/status?patient_id=${{activePatientId}}`);
+    const statusData = await res.json();
+    
+    if (statusData.is_completed_today) {{
+      container.innerHTML = `
+        <div class="checkin-card-mobile">
+          <div style="text-align:center;">
+            <div style="font-size:48px;margin-bottom:8px;">✅</div>
+            <h2 style="font-size:22px;color:var(--status-stable);">Today's Check-in Complete</h2>
+            <p style="color:var(--ink-secondary);font-size:14px;margin-top:6px;">
+              Thank you for updating your health status today at ${{statusData.last_completed_timestamp || '08:15 AM'}}.
+            </p>
+          </div>
+          <div style="background:#f8fafc;padding:16px;border-radius:10px;border:1px solid var(--border-color);font-size:13px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="color:var(--ink-muted);">Current Status:</span>
+              <strong style="color:var(--status-stable);">Stable / Recovery on Track</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <span style="color:var(--ink-muted);">Wearable PulseWatch:</span>
+              <strong style="color:#0284c7;">Connected (98% Signal)</strong>
+            </div>
+            <div style="display:flex;justify-content:space-between;">
+              <span style="color:var(--ink-muted);">Next Scheduled Check:</span>
+              <span>Tomorrow at 09:00 AM</span>
+            </div>
+          </div>
+          <button class="btn-secondary" onclick="startCheckinWizard('${{activePatientId}}')" style="width:100%;">
+            Update / Redo Today's Check-in
+          </button>
+        </div>
+      `;
+      return;
+    }}
+    
+    container.innerHTML = `
+      <div class="checkin-card-mobile">
+        <div>
+          <span style="font-size:12px;font-weight:600;color:#0284c7;text-transform:uppercase;letter-spacing:0.5px;">DAILY HEALTH CHECK</span>
+          <h2 style="font-size:24px;font-weight:700;color:var(--navy-primary);margin-top:4px;">Good morning, ${{currentUser ? currentUser.display_name.split(' ')[0] : 'Clora'}}.</h2>
+          <p style="color:var(--ink-secondary);font-size:14px;margin-top:6px;">
+            Your daily health check is ready. Answering 6 quick questions takes about <strong>2 minutes</strong> and helps your care team monitor your recovery.
+          </p>
+        </div>
+        
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;background:#f8fafc;padding:14px;border-radius:10px;border:1px solid var(--border-color);font-size:13px;">
+          <div>
+            <div style="color:var(--ink-muted);font-size:11px;">TODAY'S DATE</div>
+            <strong>${{statusData.today_date || 'Friday, Nov 13, 2026'}}</strong>
+          </div>
+          <div>
+            <div style="color:var(--ink-muted);font-size:11px;">ESTIMATED TIME</div>
+            <strong>~ 2 minutes</strong>
+          </div>
+        </div>
+        
+        <button class="btn-primary" onclick="startCheckinWizard('${{activePatientId}}')" style="padding:16px;font-size:16px;">
+          Start Daily Check-in &rarr;
+        </button>
+        
+        <div style="text-align:center;font-size:12px;color:var(--ink-muted);">
+          Protected by hospital-grade privacy encryption. Your responses are directly shared with your assigned nurse.
+        </div>
+      </div>
+    `;
+  }} catch (e) {{
+    container.innerHTML = '<div style="color:#dc2626;">Failed to load check-in status.</div>';
+  }}
+}}
+
+// Check-in Interactive Wizard
+let wizardStep = 0;
+let wizardQuestions = [];
+let wizardAnswers = {{}};
+let adaptiveTriggered = false;
+
+async function startCheckinWizard(patientId) {{
+  try {{
+    const res = await fetch('/api/checkins/questions');
+    const data = await res.json();
+    wizardQuestions = [...data.standard_questions];
+    wizardStep = 0;
+    wizardAnswers = {{}};
+    adaptiveTriggered = false;
+    
+    showModal();
+    renderWizardStep();
+  }} catch (e) {{
+    showToast('Failed to load check-in wizard');
+  }}
+}}
+
+function renderWizardStep() {{
+  const modal = document.getElementById('modalWindow');
+  const total = wizardQuestions.length + (adaptiveTriggered ? 3 : 0);
+  const current = wizardStep + 1;
+  const progressPct = Math.min(100, Math.round((current / total) * 100));
+  
+  if (wizardStep >= wizardQuestions.length) {{
+    // Review and Submit Step
+    modal.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <h3 style="font-size:18px;">Review & Submit Check-in</h3>
+        <button onclick="closeModal()" style="border:none;background:none;cursor:pointer;font-size:18px;">&times;</button>
+      </div>
+      <p style="font-size:13px;color:var(--ink-secondary);">
+        Please confirm your answers before sending to your assigned care team.
+      </p>
+      <div style="background:#f8fafc;padding:14px;border-radius:8px;border:1px solid var(--border-color);font-size:13px;display:flex;flex-direction:column;gap:8px;">
+        <div><strong>Overall feeling:</strong> ${{wizardAnswers.q1_overall_feeling || 'Good'}}</div>
+        <div><strong>Breathing difficulty:</strong> ${{wizardAnswers.q2_breathing || 'None'}}</div>
+        <div><strong>Fatigue/Weakness:</strong> ${{wizardAnswers.q3_fatigue || 'Normal'}}</div>
+        <div><strong>Fever/Discomfort:</strong> ${{wizardAnswers.q4_fever_discomfort || 'None'}}</div>
+        <div><strong>Medications taken:</strong> ${{wizardAnswers.q5_medication || 'Yes, all'}}</div>
+        <div><strong>New symptoms:</strong> ${{Array.isArray(wizardAnswers.q6_new_symptoms) ? wizardAnswers.q6_new_symptoms.join(', ') : 'None'}}</div>
+        ${{wizardAnswers.voice_note ? `<div><strong>Voice Note:</strong> "${{wizardAnswers.voice_note}}"</div>` : ''}}
+      </div>
+      <div style="display:flex;gap:10px;justify-content:flex-end;">
+        <button class="btn-secondary" onclick="wizardStep--;renderWizardStep()">Back</button>
+        <button class="btn-primary" onclick="submitCheckinAnswers()">Confirm & Submit &rarr;</button>
+      </div>
+    `;
+    return;
+  }}
+  
+  const q = wizardQuestions[wizardStep];
+  
+  modal.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <span style="font-size:12px;font-weight:600;color:#0284c7;">QUESTION ${{current}} OF ${{total}}</span>
+      <button onclick="closeModal()" style="border:none;background:none;cursor:pointer;font-size:18px;">&times;</button>
+    </div>
+    
+    <div style="background:#e2e8f0;height:4px;border-radius:99px;overflow:hidden;">
+      <div style="background:#0284c7;height:100%;width:${{progressPct}}%;"></div>
+    </div>
+    
+    <h3 style="font-size:18px;color:var(--navy-primary);">${{q.question}}</h3>
+    ${{q.helper ? `<p style="font-size:13px;color:var(--ink-secondary);">${{q.helper}}</p>` : ''}}
+    
+    <div style="display:flex;flex-direction:column;gap:8px;margin:12px 0;">
+      ${{q.options.map(opt => `
+        <label style="display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--border-color);border-radius:8px;cursor:pointer;background:#fff;" onmouseover="this.style.borderColor='#0284c7'" onmouseout="this.style.borderColor='var(--border-color)'">
+          <input type="${{q.type === 'multi_choice' ? 'checkbox' : 'radio'}}" name="${{q.id}}" value="${{opt.value}}" style="width:18px;height:18px;">
+          <span style="font-size:16px;">${{opt.icon || '🔹'}}</span>
+          <span style="font-weight:500;font-size:14px;">${{opt.label}}</span>
+        </label>
+      `).join('')}}
+    </div>
+    
+    <!-- Optional Voice Note Input -->
+    ${{q.id === 'q6_new_symptoms' ? `
+      <div style="margin-top:8px;">
+        <label style="font-size:12px;font-weight:600;color:var(--ink-secondary);">Optional: Speak or type additional notes</label>
+        <div style="display:flex;gap:8px;margin-top:4px;">
+          <input type="text" id="wizardVoiceNoteInput" placeholder="Speak or type how you feel..." style="flex:1;padding:8px 12px;border:1px solid var(--border-color);border-radius:6px;font-size:13px;">
+          <button type="button" class="btn-secondary" onclick="recordVoiceNote()">🎤 Speak</button>
+        </div>
+      </div>
+    ` : ''}}
+    
+    <div style="display:flex;gap:10px;justify-content:space-between;margin-top:12px;">
+      <button class="btn-secondary" ${{wizardStep === 0 ? 'disabled style="opacity:0.5;"' : ''}} onclick="wizardStep--;renderWizardStep()">Back</button>
+      <button class="btn-primary" onclick="nextWizardStep('${{q.id}}', '${{q.type}}')">Next &rarr;</button>
+    </div>
+  `;
+}}
+
+function nextWizardStep(qid, type) {{
+  if (type === 'multi_choice') {{
+    const checked = Array.from(document.querySelectorAll(`input[name="${{qid}}"]:checked`)).map(cb => cb.value);
+    wizardAnswers[qid] = checked.length ? checked : ['none'];
+    const noteInput = document.getElementById('wizardVoiceNoteInput');
+    if (noteInput && noteInput.value) {{
+      wizardAnswers['voice_note'] = noteInput.value;
+    }}
+  }} else {{
+    const selected = document.querySelector(`input[name="${{qid}}"]:checked`);
+    if (!selected) {{
+      showToast('Please select an option to continue');
+      return;
+    }}
+    wizardAnswers[qid] = selected.value;
+    
+    // Adaptive Question Injection: If breathing is mild or severe
+    if (qid === 'q2_breathing' && (selected.value === 'mild' || selected.value === 'severe') && !adaptiveTriggered) {{
+      adaptiveTriggered = true;
+      wizardQuestions.splice(wizardStep + 1, 0,
+        {{
+          id: 'adaptive_onset',
+          question: 'When did this breathing difficulty start?',
+          type: 'single_choice',
+          options: [
+            {{value: 'last_hour', label: 'Within the last hour', icon: '⏱️'}},
+            {{value: 'today', label: 'Earlier today', icon: '☀️'}},
+            {{value: 'past_2_days', label: 'Over the past 1–2 days', icon: '📅'}},
+          ]
+        }},
+        {{
+          id: 'adaptive_progression',
+          question: 'Is your breathing getting worse while resting?',
+          type: 'single_choice',
+          options: [
+            {{value: 'rapidly_worse', label: 'Yes, noticeably worse even while sitting', icon: '⚠️'}},
+            {{value: 'slowly_worse', label: 'Slightly worse with movement', icon: '🚶'}},
+            {{value: 'steady', label: 'About the same', icon: '⚖️'}},
+          ]
+        }},
+        {{
+          id: 'adaptive_activity_impact',
+          question: 'Is it preventing you from speaking full sentences or walking?',
+          type: 'single_choice',
+          options: [
+            {{value: 'severe_impact', label: 'Yes, difficulty completing full sentences', icon: '🚨'}},
+            {{value: 'moderate_impact', label: 'Moderate difficulty, need to rest frequently', icon: '🛋️'}},
+            {{value: 'minimal_impact', label: 'No, can speak and walk normally', icon: '✅'}},
+          ]
+        }}
+      );
+    }}
+  }}
+  
+  wizardStep++;
+  renderWizardStep();
+}}
+
+async function submitCheckinAnswers() {{
+  try {{
+    const payload = {{
+      patient_id: activePatientId,
+      answers: wizardAnswers,
+      voice_note: wizardAnswers.voice_note || null,
+    }};
+    const res = await fetch('/api/checkins/submit', {{
+      method: 'POST',
+      headers: {{'Content-Type': 'application/json'}},
+      body: JSON.stringify(payload),
+    }});
+    if (res.ok) {{
+      const data = await res.json();
+      closeModal();
+      showToast(`Check-in submitted successfully (Risk score: ${{data.total_risk_score}})`);
+      renderPatientCheckinView(document.getElementById('viewContent'));
+    }}
+  }} catch (e) {{
+    showToast('Error submitting check-in');
+  }}
+}}
+
+// ----------------------------------------------------
+// 2. PATIENTS LIST VIEW (Role-Aware)
+// ----------------------------------------------------
+async function renderPatientsListView(container) {{
+  container.innerHTML = '<div style="text-align:center;padding:40px;color:#94a3b8;">Loading patients...</div>';
+  try {{
+    const res = await fetch('/api/patients');
+    const patients = await res.json();
+    
+    // Header Filter Bar
+    let html = `
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <div style="display:flex;gap:8px;align-items:center;">
+          <span style="font-size:13px;font-weight:600;color:var(--ink-secondary);">FILTER STATUS:</span>
+          <button class="btn-secondary" onclick="filterPatientCards('all')">All (${{patients.length}})</button>
+          <button class="btn-secondary" style="color:var(--status-urgent);" onclick="filterPatientCards('urgent')">Urgent</button>
+          <button class="btn-secondary" style="color:var(--status-attention);" onclick="filterPatientCards('attention')">Attention</button>
+          <button class="btn-secondary" style="color:var(--status-stable);" onclick="filterPatientCards('stable')">Stable</button>
+        </div>
+        <div style="font-size:12px;color:var(--ink-muted);">
+          ${{currentRole === 'pheon' ? 'Operational view (Assigned patients only)' : (currentRole === 'doctor' ? 'Clinical priority sort (Deteriorating first)' : 'Continuous monitoring stream')}}
+        </div>
+      </div>
+      
+      <!-- Operational Banner for PHEON -->
+      ${{currentRole === 'pheon' ? `
+        <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:13px;display:flex;justify-content:space-between;align-items:center;">
+          <div>
+            <strong>PHEON Operational Instructions:</strong> If SpO2 drops below 90% or a patient misses their morning check-in by >2 hours, use the one-click <em>Escalate to Nurse</em> button.
+          </div>
+          <button class="btn-primary" onclick="showToast('Nurse desk notified of all active floor updates')">Sync With Nurse Desk</button>
+        </div>
+      ` : ''}}
+      
+      <div class="patient-grid" id="patientCardsContainer">
+    `;
+    
+    // Sort: Urgent first for doctors and nurses
+    const sorted = [...patients].sort((a, b) => {{
+      const rank = {{'URGENT': 0, 'ATTENTION': 1, 'STABLE': 2}};
+      return (rank[a.status] || 9) - (rank[b.status] || 9);
+    }});
+    
+    sorted.forEach(p => {{
+      const statusClass = p.status.toLowerCase();
+      html += `
+        <div class="patient-card is-${{statusClass}}" data-status="${{statusClass}}" onclick="openPatientWorkspace('${{p.patient_id}}')">
+          <div class="patient-card-header">
+            <div class="patient-avatar-box">
+              ${{p.avatar_svg}}
+            </div>
+            <div style="flex:1;overflow:hidden;">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <span class="patient-id-tag">${{p.patient_id}}</span>
+                <span class="status-pill ${{statusClass}}">${{p.status}}</span>
+              </div>
+              <div class="patient-card-name" style="margin-top:2px;">${{p.display_name}}</div>
+              <div style="font-size:11px;color:var(--ink-muted);">${{p.age_group || 'Adult'}}</div>
+            </div>
+          </div>
+          
+          <!-- Latest Vitals Mini-Grid -->
+          <div class="patient-vitals-row">
+            <div class="vital-stat">
+              <span class="vital-stat-label">HR</span>
+              <span class="vital-stat-val">${{p.patient_id === 'P001' ? '114 bpm' : (p.patient_id === 'P003' ? '112 bpm' : '72 bpm')}}</span>
+            </div>
+            <div class="vital-stat">
+              <span class="vital-stat-label">SpO2</span>
+              <span class="vital-stat-val" style="${{p.patient_id === 'P003' ? 'color:#dc2626;' : ''}}">${{p.patient_id === 'P003' ? '88%' : '97%'}}</span>
+            </div>
+            <div class="vital-stat">
+              <span class="vital-stat-label">RR</span>
+              <span class="vital-stat-val">${{p.patient_id === 'P003' ? '26 /m' : '16 /m'}}</span>
+            </div>
+            <div class="vital-stat">
+              <span class="vital-stat-label">SIGNAL</span>
+              <span class="vital-stat-val" style="color:#059669;">${{p.patient_id === 'P010' ? '35% ⚠️' : '96%'}}</span>
+            </div>
+          </div>
+          
+          <div style="font-size:12px;color:var(--ink-secondary);">
+            <strong>Condition:</strong> ${{p.primary_diagnosis ? p.primary_diagnosis.substring(0, 48) + '...' : 'Post-hospital follow-up'}}
+          </div>
+          
+          <div class="patient-card-footer">
+            <span>Check-in: <strong>${{p.last_checkin}}</strong></span>
+            <span>Nurse: ${{p.assigned_nurse ? p.assigned_nurse.split(' ')[0] : 'Sarah'}}</span>
+          </div>
+          
+          <!-- One-click Escalation for PHEON -->
+          ${{currentRole === 'pheon' ? `
+            <button class="btn-danger" style="margin-top:4px;width:100%;" onclick="event.stopPropagation();escalatePheonPatient('${{p.patient_id}}')">
+              ⚡ One-Click Escalate to Nurse
+            </button>
+          ` : ''}}
+        </div>
+      `;
+    }});
+    
+    html += '</div>';
+    container.innerHTML = html;
+  }} catch (e) {{
+    container.innerHTML = '<div style="color:#dc2626;">Error loading patient cohort.</div>';
+  }}
+}}
+
+function filterPatientCards(status) {{
+  const cards = document.querySelectorAll('.patient-card');
+  cards.forEach(card => {{
+    if (status === 'all' || card.dataset.status === status) {{
+      card.style.display = 'flex';
+    }} else {{
+      card.style.display = 'none';
+    }}
+  }});
+}}
+
+function openPatientWorkspace(patientId) {{
+  activePatientId = patientId;
+  navigate('digital_twin');
+}}
+
+function escalatePheonPatient(patientId) {{
+  showToast(`Patient ${{patientId}} escalated to Nurse Sarah Jenkins with high priority!`);
+}}
+
+// ----------------------------------------------------
+// 3. DIGITAL TWIN & SMARTWATCH VIEW
+// ----------------------------------------------------
+async function renderDigitalTwinView(container, patientId) {{
+  container.innerHTML = '<div style="text-align:center;padding:40px;color:#94a3b8;">Ingesting digital twin telemetry...</div>';
+  try {{
+    const res = await fetch(`/api/digital-twin/${{patientId}}`);
+    const twin = await res.json();
+    const w = twin.wearable;
+    const v = twin.vitals;
+    
+    container.innerHTML = `
+      <!-- Patient Switcher Bar -->
+      <div style="display:flex;gap:6px;overflow-x:auto;padding-bottom:12px;margin-bottom:16px;">
+        ${{['P001','P002','P003','P004','P005','P006','P007','P008','P009','P010'].map(pid => `
+          <button class="btn-secondary ${{pid === patientId ? 'active' : ''}}" style="${{pid === patientId ? 'background:#0284c7;color:#fff;font-weight:700;' : ''}}" onclick="renderDigitalTwinView(document.getElementById('viewContent'), '${{pid}}')">
+            ${{pid}}
+          </button>
+        `).join('')}}
+      </div>
+      
+      <!-- Stale Data Warning Banner if Stale -->
+      ${{w.is_stale_measurement ? `
+        <div style="background:#fef2f2;border:1px solid #fecaca;color:#991b1b;border-radius:8px;padding:12px 16px;margin-bottom:16px;font-size:13px;display:flex;align-items:center;gap:12px;">
+          <span style="font-size:20px;">⚠️</span>
+          <div>
+            <strong>STALE TELEMETRY WARNING:</strong> ${{w.stale_reason || 'Wearable telemetry disconnected'}}. Measurements shown reflect last recorded buffer and are NOT live.
+          </div>
+        </div>
+      ` : ''}}
+      
+      <div class="twin-split-layout">
+        <!-- LEFT: Patient Avatar & Smartwatch Visualizer -->
+        <div class="twin-left-panel">
+          <div style="text-align:center;padding:12px;border-bottom:1px solid var(--border-color);">
+            <div style="display:inline-block;padding:4px;background:#f1f5f9;border-radius:12px;">
+              ${{twin.avatar_svg}}
+            </div>
+            <h2 style="font-size:20px;font-weight:700;margin-top:8px;">${{patientId}} — Patient Digital Twin</h2>
+            <div style="font-size:12px;color:var(--ink-secondary);">HealthGuard Synthetic Simulation Cohort</div>
+          </div>
+          
+          <!-- Smartwatch Device Visualizer -->
+          <div class="watch-container">
+            <div class="watch-header">
+              <span>⌚ PulseWatch Pro BLE</span>
+              <span style="color:${{w.connection_state === 'CONNECTED' ? '#4ade80' : '#f87171'}};">
+                ● ${{w.connection_state}}
+              </span>
+            </div>
+            
+            <div class="watch-screen">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <span class="watch-time">10:42<span style="font-size:14px;">:15</span></span>
+                <span style="font-size:12px;color:#94a3b8;">🔋 ${{w.battery_percent}}%</span>
+              </div>
+              
+              <div class="watch-vital-item">
+                <span>Heart Rate</span>
+                <strong style="color:#f87171;">${{v.observed_hr_bpm ? v.observed_hr_bpm.current_value : '--'}} bpm</strong>
+              </div>
+              <div class="watch-vital-item">
+                <span>SpO2</span>
+                <strong style="color:${{v.observed_spo2_percent && v.observed_spo2_percent.current_value < 90 ? '#ef4444' : '#38bdf8'}};">
+                  ${{v.observed_spo2_percent ? v.observed_spo2_percent.current_value : '--'}}%
+                </strong>
+              </div>
+              <div class="watch-vital-item">
+                <span>Respiration</span>
+                <strong style="color:#fbbf24;">${{v.observed_rr_bpm ? v.observed_rr_bpm.current_value : '--'}} /m</strong>
+              </div>
+              <div class="watch-vital-item">
+                <span>Temp</span>
+                <strong style="color:#a78bfa;">${{v.observed_temp_c ? v.observed_temp_c.current_value : '--'}} °C</strong>
+              </div>
+              
+              <div style="font-size:10px;color:#64748b;margin-top:6px;display:flex;justify-content:space-between;">
+                <span>Signal: ${{w.signal_quality_percent}}%</span>
+                <span>Sync: ${{w.last_synced_label}}</span>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Physiological Changes Timeline -->
+          <div>
+            <h4 style="font-size:13px;font-weight:700;color:var(--navy-primary);margin-bottom:8px;">PHYSIOLOGICAL TIMELINE</h4>
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:12px;">
+              ${{twin.timeline.map(t => `
+                <div style="padding:8px 10px;border-radius:6px;background:#f8fafc;border-left:3px solid ${{t.status === 'CRITICAL' ? '#dc2626' : (t.status === 'ATTENTION' ? '#d97706' : '#0284c7')}};">
+                  <div style="display:flex;justify-content:space-between;font-weight:600;">
+                    <span>${{t.time}} — ${{t.label}}</span>
+                    <span style="font-size:10px;color:#64748b;">${{t.status}}</span>
+                  </div>
+                  <div style="color:var(--ink-secondary);margin-top:2px;">${{t.description}}</div>
+                </div>
+              `).join('')}}
+            </div>
+          </div>
+        </div>
+        
+        <!-- RIGHT: Vital Measurements & Baseline Comparison -->
+        <div class="twin-right-panel">
+          <div>
+            <h3 style="font-size:16px;font-weight:700;">Baseline vs Current Observations</h3>
+            <p style="font-size:13px;color:var(--ink-secondary);">Click any vital sign to view its clinical relevance and deterioration risk explanation.</p>
+          </div>
+          
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            ${{Object.entries(v).map(([key, item]) => `
+              <div class="vitals-trend-card" onclick="showVitalRelevance('${{item.label}}', '${{item.clinical_rationale}}', '${{item.normal_range}}', '${{item.escalation_threshold}}')">
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                  <span style="font-size:12px;font-weight:600;color:var(--ink-muted);">${{item.label}}</span>
+                  <span class="status-pill ${{item.trend === 'DETERIORATING' ? 'urgent' : (item.trend === 'STABLE' ? 'stable' : 'attention')}}">${{item.trend}}</span>
+                </div>
+                <div style="font-size:26px;font-weight:700;color:var(--navy-primary);margin:6px 0;">
+                  ${{item.current_value !== null ? item.current_value : 'Missing'}} <small style="font-size:13px;color:var(--ink-muted);">${{item.unit}}</small>
+                </div>
+                <div style="font-size:12px;color:var(--ink-secondary);display:flex;justify-content:space-between;">
+                  <span>Baseline: <strong>${{item.baseline_value}} ${{item.unit}}</strong></span>
+                  <span>Delta: <strong style="color:${{item.delta && Math.abs(item.delta) > 5 ? '#dc2626' : '#0284c7'}};">${{item.delta !== null ? (item.delta > 0 ? '+' : '') + item.delta : '0'}}</strong></span>
+                </div>
+              </div>
+            `).join('')}}
+          </div>
+          
+          <!-- Clinical Sparkline Trend SVG -->
+          <div style="background:#f8fafc;border:1px solid var(--border-color);border-radius:10px;padding:16px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+              <span style="font-size:13px;font-weight:600;">120-Second Vital Stream (Simulator Replay)</span>
+              <span style="font-size:11px;color:var(--ink-muted);">Sampling: 1 Hz</span>
+            </div>
+            <div style="height:120px;display:flex;align-items:center;justify-content:center;">
+              <svg viewBox="0 0 500 100" style="width:100%;height:100%;overflow:visible;">
+                <!-- Grid Lines -->
+                <line x1="0" y1="25" x2="500" y2="25" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+                <line x1="0" y1="50" x2="500" y2="50" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+                <line x1="0" y1="75" x2="500" y2="75" stroke="#e2e8f0" stroke-dasharray="3,3"/>
+                
+                <!-- SpO2 curve (blue/red) -->
+                <path d="M 0 30 Q 150 35, 250 55 T 500 ${{patientId === 'P003' ? '85' : '32'}}" fill="none" stroke="${{patientId === 'P003' ? '#dc2626' : '#0284c7'}}" stroke-width="2.5"/>
+                <!-- Heart Rate curve (amber) -->
+                <path d="M 0 60 Q 150 50, 300 35 T 500 ${{patientId === 'P001' ? '20' : '45'}}" fill="none" stroke="#d97706" stroke-width="2"/>
+              </svg>
+            </div>
+            <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ink-muted);margin-top:6px;">
+              <span>T - 120s</span>
+              <span style="color:#0284c7;">■ SpO2 Trend</span>
+              <span style="color:#d97706;">■ Heart Rate Trend</span>
+              <span>Now (T - 0s)</span>
+            </div>
+          </div>
+          
+          <!-- Clinician Action Bar -->
+          ${{currentRole === 'doctor' || currentRole === 'nurse' || currentRole === 'senior_doctor' ? `
+            <div style="display:flex;gap:10px;margin-top:auto;">
+              <button class="btn-primary" onclick="openAddNoteModal('${{patientId}}')">Add Clinical Note</button>
+              <button class="btn-secondary" onclick="openCarePlanModal('${{patientId}}')">Care Plan</button>
+              ${{currentRole === 'nurse' ? `
+                <button class="btn-danger" onclick="escalateAlertToDoctor('${{patientId}}')">Escalate to Doctor</button>
+              ` : ''}}
+            </div>
+          ` : ''}}
+        </div>
+      </div>
+    `;
+  }} catch (e) {{
+    container.innerHTML = '<div style="color:#dc2626;">Error loading digital twin telemetry.</div>';
+  }}
+}}
+
+function showVitalRelevance(label, rationale, normal, threshold) {{
+  showModal(`
+    <div style="display:flex;justify-content:space-between;align-items:center;">
+      <h3 style="font-size:18px;">${{label}} — Clinical Significance</h3>
+      <button onclick="closeModal()" style="border:none;background:none;cursor:pointer;font-size:18px;">&times;</button>
+    </div>
+    <div style="margin-top:8px;font-size:14px;color:var(--ink-secondary);line-height:1.6;">
+      <p><strong>Clinical Rationale:</strong> ${{rationale}}</p>
+      <div style="margin-top:12px;background:#f8fafc;padding:12px;border-radius:8px;border:1px solid var(--border-color);font-size:13px;">
+        <div><strong>Expected Normal Range:</strong> ${{normal}}</div>
+        <div style="margin-top:4px;"><strong>Escalation Trigger Threshold:</strong> <span style="color:#dc2626;font-weight:600;">${{threshold}}</span></div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;margin-top:16px;">
+      <button class="btn-secondary" onclick="closeModal()">Close</button>
+    </div>
+  `);
+}}
+
+// ----------------------------------------------------
+// 4. ALERTS VIEW & SMARTWATCH FEED
+// ----------------------------------------------------
+async function renderAlertsView(container) {{
+  container.innerHTML = '<div style="text-align:center;padding:40px;color:#94a3b8;">Loading clinical alerts...</div>';
+  try {{
+    const res = await fetch('/api/alerts');
+    const alerts = await res.json();
+    
+    let html = `
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <div style="font-size:13px;color:var(--ink-secondary);">
+          <strong>${{alerts.length}} Active Alerts</strong> • Critical P0 alerts are delivered in parallel to Nurse, Attending Doctor, and Senior Medical Officer.
+        </div>
+        <button class="btn-secondary" onclick="renderAlertsView(document.getElementById('viewContent'))">Refresh Queue</button>
+      </div>
+      
+      <div style="display:flex;flex-direction:column;gap:12px;">
+    `;
+    
+    alerts.forEach(a => {{
+      const pClass = a.priority.toLowerCase();
+      html += `
+        <div style="background:#fff;border:1px solid var(--border-color);border-left:5px solid ${{a.priority === 'P0' ? '#dc2626' : (a.priority === 'P1' ? '#ea580c' : '#d97706')}};border-radius:8px;padding:16px;box-shadow:var(--shadow-sm);display:flex;justify-content:space-between;align-items:flex-start;">
+          <div style="flex:1;">
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:4px;">
+              <span class="status-pill ${{a.priority === 'P0' || a.priority === 'P1' ? 'urgent' : 'attention'}}">${{a.priority}} — ${{a.priority === 'P0' ? 'CRITICAL PARALLEL ESCALATION' : 'URGENT REVIEW'}}</span>
+              <strong style="font-size:15px;color:var(--navy-primary);">${{a.title}}</strong>
+              <span style="font-size:11px;color:var(--ink-muted);">${{a.created_at.substring(11, 19)}}</span>
+            </div>
+            <div style="font-size:13px;color:var(--ink-secondary);margin:6px 0;">
+              ${{a.trigger_reason}}
+            </div>
+            <div style="font-size:12px;background:#f8fafc;padding:6px 10px;border-radius:6px;display:inline-block;border:1px solid #f1f5f9;">
+              Measurement: <strong>${{a.measured_value}} ${{a.unit}}</strong> (Trigger: ${{a.threshold}}) • Tier: <strong>${{a.escalation_tier}}</strong>
+            </div>
+          </div>
+          
+          <div style="display:flex;gap:8px;align-items:center;margin-left:16px;">
+            ${{a.status === 'active' ? `
+              <button class="btn-primary" style="font-size:12px;padding:8px 12px;" onclick="acknowledgeAlert('${{a.alert_id}}')">
+                Acknowledge
+              </button>
+              <button class="btn-danger" style="font-size:12px;padding:8px 12px;" onclick="escalateAlertModal('${{a.alert_id}}')">
+                Escalate &rarr;
+              </button>
+            ` : `
+              <span style="font-size:12px;color:var(--status-stable);font-weight:600;">✓ ${{a.status.toUpperCase()}}</span>
+            `}}
+          </div>
+        </div>
+      `;
+    }});
+    
+    html += '</div>';
+    container.innerHTML = html;
+  }} catch (e) {{
+    container.innerHTML = '<div style="color:#dc2626;">Error loading alerts.</div>';
+  }}
+}}
+
+async function acknowledgeAlert(alertId) {{
+  try {{
+    const res = await fetch('/api/alerts/acknowledge', {{
+      method: 'POST',
+      headers: {{'Content-Type': 'application/json'}},
+      body: JSON.stringify({{alert_id: alertId, notes: 'Acknowledged via web interface'}}),
+    }});
+    if (res.ok) {{
+      showToast('Alert acknowledged successfully');
+      renderAlertsView(document.getElementById('viewContent'));
+    }}
+  }} catch (e) {{
+    showToast('Failed to acknowledge alert');
+  }}
+}}
+
+function escalateAlertModal(alertId) {{
+  showModal(`
+    <h3>Escalate Clinical Alert</h3>
+    <p style="font-size:13px;color:var(--ink-secondary);margin-top:4px;">Forward this alert to senior clinical specialist with urgent bedside assessment request.</p>
+    <div style="margin:12px 0;">
+      <label style="font-size:12px;font-weight:600;">Target Clinical Role:</label>
+      <select id="escalateTargetRole" style="width:100%;padding:8px;border-radius:6px;border:1px solid var(--border-color);margin-top:4px;">
+        <option value="doctor">Attending Physician (Dr. Arthur Chen, MD)</option>
+        <option value="senior_doctor">Chief Medical Officer (Dr. Maya Patel, MD)</option>
+      </select>
+    </div>
+    <div>
+      <label style="font-size:12px;font-weight:600;">Clinical Escalation Note:</label>
+      <textarea id="escalateReason" style="width:100%;height:70px;padding:8px;border-radius:6px;border:1px solid var(--border-color);margin-top:4px;" placeholder="Describe worsening clinical state..."></textarea>
+    </div>
+    <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:16px;">
+      <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+      <button class="btn-danger" onclick="confirmEscalation('${{alertId}}')">Confirm Urgent Escalation</button>
+    </div>
+  `);
+}}
+
+async function confirmEscalation(alertId) {{
+  const role = document.getElementById('escalateTargetRole').value;
+  const reason = document.getElementById('escalateReason').value || 'Urgent deterioration noted';
+  try {{
+    const res = await fetch('/api/alerts/escalate', {{
+      method: 'POST',
+      headers: {{'Content-Type': 'application/json'}},
+      body: JSON.stringify({{alert_id: alertId, escalate_to_role: role, reason: reason}}),
+    }});
+    if (res.ok) {{
+      closeModal();
+      showToast(`Alert escalated to ${{role.toUpperCase()}} successfully`);
+      renderAlertsView(document.getElementById('viewContent'));
+    }}
+  }} catch (e) {{
+    showToast('Failed to escalate alert');
+  }}
+}}
+
+// ----------------------------------------------------
+// 5. SMARTWATCH FEED SIMULATOR VIEW
+// ----------------------------------------------------
+async function renderSmartwatchFeedView(container) {{
+  container.innerHTML = '<div style="text-align:center;padding:40px;color:#94a3b8;">Loading smartwatch alerts feed...</div>';
+  try {{
+    const res = await fetch('/api/alerts/smartwatch-feed');
+    const items = await res.json();
+    
+    container.innerHTML = `
+      <div style="max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:16px;">
+        <div style="background:#eff6ff;padding:14px;border-radius:8px;border:1px solid #bfdbfe;font-size:13px;">
+          <strong>Clinician Smartwatch Sync Engine:</strong> Concise, actionable notifications pushed directly to nurses' and doctors' wrist devices.
+        </div>
+        
+        ${{items.map(sw => `
+          <div style="background:#0f172a;border-radius:14px;padding:20px;color:#fff;box-shadow:var(--shadow-md);">
+            <div style="display:flex;justify-content:space-between;font-size:12px;color:#38bdf8;margin-bottom:8px;">
+              <span>⌚ PULSEWATCH NOTIFICATION</span>
+              <span>${{sw.timestamp}}</span>
+            </div>
+            <div style="font-size:16px;font-weight:700;color:#f87171;margin-bottom:4px;">
+              ${{sw.header}}
+            </div>
+            <div style="font-size:13px;color:#e2e8f0;white-space:pre-line;line-height:1.5;">
+              ${{sw.body}}
+            </div>
+            <div style="margin-top:12px;padding-top:10px;border-top:1px solid #1e293b;display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:11px;color:#94a3b8;">Locked Screen Privacy Text: <em>"${{sw.lock_screen_text}}"</em></span>
+              <button class="btn-primary" style="font-size:12px;padding:6px 12px;" onclick="openPatientWorkspace('${{sw.patient_id}}')">
+                Open Workspace &rarr;
+              </button>
+            </div>
+          </div>
+        `).join('')}}
+      </div>
+    `;
+  }} catch (e) {{
+    container.innerHTML = '<div style="color:#dc2626;">Failed to load smartwatch notification feed.</div>';
+  }}
+}}
+
+// ----------------------------------------------------
+// 6. FHIR MEDICAL RECORDS & EXPORT VIEW
+// ----------------------------------------------------
+async function renderFhirHistoryView(container, patientId) {{
+  container.innerHTML = '<div style="text-align:center;padding:40px;color:#94a3b8;">Loading medical records...</div>';
+  try {{
+    const res = await fetch(`/api/patients/${{patientId}}`);
+    const p = await res.json();
+    
+    container.innerHTML = `
+      <div style="background:#fff;border:1px solid var(--border-color);border-radius:12px;padding:24px;box-shadow:var(--shadow-sm);max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:20px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border-color);padding-bottom:16px;">
+          <div style="display:flex;gap:12px;align-items:center;">
+            <div style="width:48px;height:48px;border-radius:6px;overflow:hidden;">
+              ${{p.avatar_svg}}
+            </div>
+            <div>
+              <h2 style="font-size:20px;font-weight:700;">${{p.display_name}} (${{p.patient_id}})</h2>
+              <div style="font-size:12px;color:var(--ink-secondary);">${{p.gender}} • ${{p.age_group}}</div>
+            </div>
+          </div>
+          
+          <!-- Download Raw FHIR Button (Subject to RBAC!) -->
+          <div>
+            <button class="btn-primary" onclick="exportFhirBundle('${{patientId}}')">
+              📥 Export FHIR R4 Bundle (JSON)
+            </button>
+          </div>
+        </div>
+        
+        <div>
+          <h4 style="font-size:13px;font-weight:700;color:var(--navy-primary);margin-bottom:6px;">PRIMARY HOSPITAL ENCOUNTER DIAGNOSIS</h4>
+          <p style="font-size:14px;color:var(--ink-secondary);background:#f8fafc;padding:12px;border-radius:8px;border:1px solid #f1f5f9;">
+            ${{p.primary_diagnosis || 'Post-Discharge Rehabilitation'}}
+          </p>
+        </div>
+        
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+          <div>
+            <h4 style="font-size:13px;font-weight:700;color:var(--navy-primary);margin-bottom:8px;">HISTORICAL CLINICAL CONDITIONS</h4>
+            <ul style="padding-left:18px;font-size:13px;color:var(--ink-secondary);display:flex;flex-direction:column;gap:4px;">
+              ${{p.conditions ? p.conditions.map(c => `<li>${{c}}</li>`).join('') : '<li>No prior chronic conditions recorded</li>'}}
+            </ul>
+          </div>
+          <div>
+            <h4 style="font-size:13px;font-weight:700;color:var(--navy-primary);margin-bottom:8px;">ACTIVE POST-DISCHARGE MEDICATIONS</h4>
+            <ul style="padding-left:18px;font-size:13px;color:var(--ink-secondary);display:flex;flex-direction:column;gap:4px;">
+              ${{p.medications ? p.medications.map(m => `<li>${{m}}</li>`).join('') : '<li>No active prescription orders</li>'}}
+            </ul>
+          </div>
+        </div>
+        
+        <div style="background:#f8fafc;padding:14px;border-radius:8px;border:1px solid var(--border-color);font-size:12px;color:var(--ink-muted);">
+          <strong>HAPI FHIR Interoperability Architecture:</strong> Raw JSON resource bundles remain securely available to authorized medical officers. All FHIR export requests are cryptographically audited and recorded in the hospital governance log.
+        </div>
+      </div>
+    `;
+  }} catch (e) {{
+    container.innerHTML = '<div style="color:#dc2626;">Error loading medical records.</div>';
+  }}
+}}
+
+async function exportFhirBundle(patientId) {{
+  try {{
+    const res = await fetch(`/api/patients/${{patientId}}/fhir-export`);
+    if (res.status === 403) {{
+      showModal(`
+        <div style="text-align:center;padding:12px;">
+          <div style="font-size:40px;color:#dc2626;margin-bottom:8px;">🛡️</div>
+          <h3 style="font-size:18px;color:#dc2626;">403 Forbidden — RBAC Enforcement</h3>
+          <p style="font-size:13px;color:var(--ink-secondary);margin-top:8px;">
+            Your current role (<strong>${{currentRole.toUpperCase()}}</strong>) is not authorized to export raw FHIR patient bundles. This security policy prevents unauthorized export of confidential electronic health records.
+          </p>
+          <div style="margin-top:16px;">
+            <button class="btn-secondary" onclick="closeModal()">Dismiss</button>
+          </div>
+        </div>
+      `);
+      return;
+    }}
+    
+    if (res.ok) {{
+      const bundle = await res.json();
+      const blob = new Blob([JSON.stringify(bundle, null, 2)], {{type: 'application/json'}});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `FHIR_R4_Bundle_${{patientId}}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      showToast(`Exported verified FHIR bundle for ${{patientId}} (${{bundle.entry ? bundle.entry.length : 0}} entries)`);
+    }}
+  }} catch (e) {{
+    showToast('Failed to export FHIR record');
+  }}
+}}
+
+// ----------------------------------------------------
+// 7. SENIOR DOCTOR COHORT OVERSIGHT VIEW
+// ----------------------------------------------------
+async function renderOversightView(container) {{
+  container.innerHTML = '<div style="text-align:center;padding:40px;color:#94a3b8;">Loading cohort oversight analytics...</div>';
+  try {{
+    const res = await fetch('/api/oversight/metrics');
+    if (res.status === 403) {{
+      container.innerHTML = '<div style="color:#dc2626;padding:24px;">403 Forbidden: Senior Doctor permissions required.</div>';
+      return;
+    }}
+    const m = await res.json();
+    
+    container.innerHTML = `
+      <div style="display:flex;flex-direction:column;gap:20px;max-width:1100px;">
+        <!-- KPI Summary Cards -->
+        <div style="display:grid;grid-template-columns:repeat(4, 1fr);gap:16px;">
+          <div style="background:#fff;padding:16px;border-radius:10px;border:1px solid var(--border-color);box-shadow:var(--shadow-sm);">
+            <div style="font-size:11px;font-weight:600;color:var(--ink-muted);">TOTAL COHORT PATIENTS</div>
+            <div style="font-size:28px;font-weight:700;color:var(--navy-primary);margin-top:4px;">${{m.total_cohort_patients}}</div>
+            <div style="font-size:11px;color:var(--status-stable);margin-top:2px;">10 Active Telemetry Monitors</div>
+          </div>
+          
+          <div style="background:#fff;padding:16px;border-radius:10px;border:1px solid var(--border-color);box-shadow:var(--shadow-sm);">
+            <div style="font-size:11px;font-weight:600;color:var(--ink-muted);">CRITICAL / HIGH RISK CASES</div>
+            <div style="font-size:28px;font-weight:700;color:#dc2626;margin-top:4px;">${{m.status_summary.critical_urgent}}</div>
+            <div style="font-size:11px;color:#dc2626;margin-top:2px;">P003 (SpO2), P009 (Cardiac)</div>
+          </div>
+          
+          <div style="background:#fff;padding:16px;border-radius:10px;border:1px solid var(--border-color);box-shadow:var(--shadow-sm);">
+            <div style="font-size:11px;font-weight:600;color:var(--ink-muted);">AVG NURSE RESPONSE TIME</div>
+            <div style="font-size:28px;font-weight:700;color:#0284c7;margin-top:4px;">${{m.staff_performance.average_nurse_acknowledgement_minutes}} min</div>
+            <div style="font-size:11px;color:var(--status-stable);margin-top:2px;">Target: < ${{m.staff_performance.target_response_minutes}} min (Passing)</div>
+          </div>
+          
+          <div style="background:#fff;padding:16px;border-radius:10px;border:1px solid var(--border-color);box-shadow:var(--shadow-sm);">
+            <div style="font-size:11px;font-weight:600;color:var(--ink-muted);">DAILY CHECK-IN ADHERENCE</div>
+            <div style="font-size:28px;font-weight:700;color:var(--status-stable);margin-top:4px;">${{m.adherence_metrics.daily_checkin_compliance_percent}}%</div>
+            <div style="font-size:11px;color:var(--ink-muted);margin-top:2px;">${{m.adherence_metrics.completed_checkins_today}} completed / ${{m.adherence_metrics.missed_checkins_today}} overdue</div>
+          </div>
+        </div>
+        
+        <!-- Unresolved Escalations Queue & Staff Workload -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+          <!-- Unresolved Escalations Queue -->
+          <div style="background:#fff;padding:20px;border-radius:10px;border:1px solid var(--border-color);box-shadow:var(--shadow-sm);">
+            <h3 style="font-size:15px;font-weight:700;color:#dc2626;margin-bottom:12px;">🚨 UNRESOLVED ESCALATIONS QUEUE</h3>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              ${{m.unresolved_escalations.map(esc => `
+                <div style="padding:12px;background:#fef2f2;border:1px solid #fecaca;border-radius:8px;font-size:13px;">
+                  <div style="display:flex;justify-content:space-between;font-weight:700;">
+                    <span>${{esc.patient_id}} — ${{esc.patient_name}}</span>
+                    <span style="color:#dc2626;">${{esc.escalation_time}}</span>
+                  </div>
+                  <div style="color:var(--ink-secondary);margin:4px 0;">${{esc.trigger}}</div>
+                  <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--ink-muted);margin-top:6px;">
+                    <span>Assigned: ${{esc.assigned_doctor}}</span>
+                    <button class="btn-secondary" style="padding:2px 8px;font-size:11px;" onclick="overrideWorkflowModal('${{esc.patient_id}}')">Override Workflow</button>
+                  </div>
+                </div>
+              `).join('')}}
+            </div>
+          </div>
+          
+          <!-- Staff Workload Distribution -->
+          <div style="background:#fff;padding:20px;border-radius:10px;border:1px solid var(--border-color);box-shadow:var(--shadow-sm);">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+              <h3 style="font-size:15px;font-weight:700;">CLINICAL WORKLOAD & REASSIGNMENT</h3>
+              <button class="btn-primary" style="font-size:12px;padding:4px 10px;" onclick="reassignPatientModal()">Reassign Patient</button>
+            </div>
+            
+            <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;">
+              ${{m.workload_distribution.map(w => `
+                <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:#f8fafc;border-radius:6px;border:1px solid #f1f5f9;">
+                  <div>
+                    <strong>${{w.name}}</strong> <span style="font-size:11px;color:var(--ink-muted);">(${{w.role}})</span>
+                  </div>
+                  <div style="display:flex;gap:12px;font-size:12px;">
+                    <span>Patients: <strong>${{w.patients_count}}</strong></span>
+                    <span style="color:${{w.active_alerts > 0 ? '#dc2626' : '#059669'}};">Alerts: <strong>${{w.active_alerts}}</strong></span>
+                  </div>
+                </div>
+              `).join('')}}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }} catch (e) {{
+    container.innerHTML = '<div style="color:#dc2626;">Error loading oversight analytics.</div>';
+  }}
+}}
+
+function reassignPatientModal() {{
+  showModal(`
+    <h3>Reassign Patient to Care Team Staff</h3>
+    <p style="font-size:13px;color:var(--ink-secondary);margin-top:4px;">Rebalancing clinical staff workload with required audit logging.</p>
+    <div style="margin:12px 0;">
+      <label style="font-size:12px;font-weight:600;">Target Patient:</label>
+      <select id="reassignPatientId" style="width:100%;padding:8px;border-radius:6px;border:1px solid var(--border-color);margin-top:4px;">
+        <option value="P003">P003 (Jarrod O'Keefe)</option>
+        <option value="P001">P001 (Clora Christiansen)</option>
+        <option value="P009">P009 (Jarrett Mraz)</option>
+      </select>
+    </div>
+    <div style="margin-bottom:12px;">
+      <label style="font-size:12px;font-weight:600;">Assign To Clinician:</label>
+      <select id="reassignStaffId" style="width:100%;padding:8px;border-radius:6px;border:1px solid var(--border-color);margin-top:4px;">
+        <option value="nurse_sarah">Sarah Jenkins, RN</option>
+        <option value="dr_chen">Dr. Arthur Chen, MD</option>
+        <option value="pheon_marcus">Marcus Ward (PHEON)</option>
+      </select>
+    </div>
+    <div>
+      <label style="font-size:12px;font-weight:600;">Audit Reason (Mandatory):</label>
+      <input type="text" id="reassignReason" style="width:100%;padding:8px;border-radius:6px;border:1px solid var(--border-color);margin-top:4px;" placeholder="Workload rebalancing due to high acuity...">
+    </div>
+    <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:16px;">
+      <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+      <button class="btn-primary" onclick="confirmReassignment()">Authorize Reassignment</button>
+    </div>
+  `);
+}}
+
+async function confirmReassignment() {{
+  const pid = document.getElementById('reassignPatientId').value;
+  const staff = document.getElementById('reassignStaffId').value;
+  const reason = document.getElementById('reassignReason').value || 'Workload adjustment';
+  try {{
+    const res = await fetch('/api/oversight/reassign', {{
+      method: 'POST',
+      headers: {{'Content-Type': 'application/json'}},
+      body: JSON.stringify({{patient_id: pid, assignee_user_id: staff, reason: reason}}),
+    }});
+    if (res.ok) {{
+      closeModal();
+      showToast(`Patient ${{pid}} reassigned to ${{staff}} with audit logged.`);
+      renderOversightView(document.getElementById('viewContent'));
+    }}
+  }} catch (e) {{
+    showToast('Failed to reassign patient');
+  }}
+}}
+
+function overrideWorkflowModal(patientId) {{
+  showModal(`
+    <h3>Senior Clinical Workflow Override</h3>
+    <p style="font-size:13px;color:var(--ink-secondary);margin-top:4px;">Senior Doctor authority to bypass routine wait chains and command immediate intervention.</p>
+    <div style="margin:12px 0;">
+      <label style="font-size:12px;font-weight:600;">Override Directive:</label>
+      <select id="overrideType" style="width:100%;padding:8px;border-radius:6px;border:1px solid var(--border-color);margin-top:4px;">
+        <option value="IMMEDIATE_ICU_ESCALATION">Immediate Bedside ICU Consult & Rapid Response</option>
+        <option value="DIRECT_MEDICATION_TITRATION">Emergency Direct Medication Titration</option>
+        <option value="TELEMETRY_CALIBRATION_OVERRIDE">Sensor Telemetry Recalibration Bypass</option>
+      </select>
+    </div>
+    <div>
+      <label style="font-size:12px;font-weight:600;">Formal Justification & Audit Reason:</label>
+      <textarea id="overrideReason" style="width:100%;height:70px;padding:8px;border-radius:6px;border:1px solid var(--border-color);margin-top:4px;" placeholder="Clinical justification for protocol bypass..."></textarea>
+    </div>
+    <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:16px;">
+      <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+      <button class="btn-danger" onclick="confirmOverride('${{patientId}}')">Authorize Workflow Override</button>
+    </div>
+  `);
+}}
+
+async function confirmOverride(patientId) {{
+  const type = document.getElementById('overrideType').value;
+  const reason = document.getElementById('overrideReason').value || 'Acute decompensation observed';
+  try {{
+    const res = await fetch('/api/oversight/override', {{
+      method: 'POST',
+      headers: {{'Content-Type': 'application/json'}},
+      body: JSON.stringify({{patient_id: patientId, override_type: type, reason: reason}}),
+    }});
+    if (res.ok) {{
+      closeModal();
+      showToast(`Workflow override authorized for ${{patientId}}.`);
+      renderOversightView(document.getElementById('viewContent'));
+    }}
+  }} catch (e) {{
+    showToast('Failed to record workflow override');
+  }}
+}}
+
+// ----------------------------------------------------
+// 8. AUDIT LOGS VIEW
+// ----------------------------------------------------
+async function renderAuditLogsView(container) {{
+  container.innerHTML = '<div style="text-align:center;padding:40px;color:#94a3b8;">Loading audit records...</div>';
+  try {{
+    const res = await fetch('/api/oversight/audit-log');
+    const logs = await res.json();
+    
+    container.innerHTML = `
+      <div style="background:#fff;border:1px solid var(--border-color);border-radius:10px;padding:20px;box-shadow:var(--shadow-sm);max-width:1100px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+          <div>
+            <h3 style="font-size:16px;font-weight:700;">Clinical & Cybersecurity Audit Trail</h3>
+            <p style="font-size:12px;color:var(--ink-secondary);">Every authentication, data export, alert acknowledgement, and patient access is recorded with cryptographic integrity.</p>
+          </div>
+          <button class="btn-secondary" onclick="renderAuditLogsView(document.getElementById('viewContent'))">Refresh</button>
+        </div>
+        
+        <table style="width:100%;border-collapse:collapse;font-size:12px;">
+          <thead>
+            <tr style="border-bottom:2px solid var(--border-color);text-align:left;color:var(--ink-muted);">
+              <th style="padding:8px;">TIMESTAMP</th>
+              <th style="padding:8px;">USER</th>
+              <th style="padding:8px;">ROLE</th>
+              <th style="padding:8px;">ACTION</th>
+              <th style="padding:8px;">RESOURCE</th>
+              <th style="padding:8px;">STATUS</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${{logs.map(e => `
+              <tr style="border-bottom:1px solid var(--border-subtle);">
+                <td style="padding:8px;font-family:'JetBrains Mono',monospace;">${{e.timestamp ? e.timestamp.substring(11, 19) : '--'}}</td>
+                <td style="padding:8px;font-weight:600;">${{e.user_id}}</td>
+                <td style="padding:8px;"><span class="status-pill">${{e.role}}</span></td>
+                <td style="padding:8px;"><strong>${{e.action}}</strong></td>
+                <td style="padding:8px;">${{e.resource_type}} (${{e.resource_id}})</td>
+                <td style="padding:8px;"><strong style="color:${{e.status === 'SUCCESS' ? '#059669' : '#dc2626'}};">${{e.status}}</strong></td>
+              </tr>
+            `).join('')}}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }} catch (e) {{
+    container.innerHTML = '<div style="color:#dc2626;">Error loading audit logs.</div>';
+  }}
+}}
+
+// ----------------------------------------------------
+// 9. VOICE COMMAND PROCESSING
+// ----------------------------------------------------
+function setupSpeechRecognition() {{
+  const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRec) {{
+    document.getElementById('voiceStatusText').textContent = 'Voice (Text)';
+    return;
+  }}
+  speechRecognition = new SpeechRec();
+  speechRecognition.continuous = false;
+  speechRecognition.interimResults = false;
+  speechRecognition.lang = 'en-US';
+  
+  speechRecognition.onstart = () => {{
+    isListening = true;
+    document.getElementById('voiceMicBtn').classList.add('listening');
+    document.getElementById('voiceStatusText').textContent = 'Listening...';
+    showToast('Microphone active. Say a command like "Show urgent patients" or "Open patient P003"');
+  }};
+  
+  speechRecognition.onresult = (event) => {{
+    const transcript = event.results[0][0].transcript;
+    handleVoiceCommand(transcript);
+  }};
+  
+  speechRecognition.onerror = (e) => {{
+    console.warn('Speech error:', e);
+    isListening = false;
+    document.getElementById('voiceMicBtn').classList.remove('listening');
+    document.getElementById('voiceStatusText').textContent = 'Voice';
+  }};
+  
+  speechRecognition.onend = () => {{
+    isListening = false;
+    document.getElementById('voiceMicBtn').classList.remove('listening');
+    document.getElementById('voiceStatusText').textContent = 'Voice';
+  }};
+}}
+
+function toggleVoiceRecognition() {{
+  if (!speechRecognition) {{
+    // Fallback: prompt text command
+    const cmd = prompt('Voice API unavailable. Type your command (e.g. "Show urgent patients", "Open patient P003", "Show today\'s missed check-ins"):');
+    if (cmd) handleVoiceCommand(cmd);
+    return;
+  }}
+  
+  if (isListening) {{
+    speechRecognition.stop();
+  }} else {{
+    speechRecognition.start();
+  }}
+}}
+
+async function handleVoiceCommand(rawText) {{
+  showToast(`Recognized: "${{rawText}}"`);
+  try {{
+    const res = await fetch('/api/voice/process', {{
+      method: 'POST',
+      headers: {{'Content-Type': 'application/json'}},
+      body: JSON.stringify({{text: rawText}}),
+    }});
+    const result = await res.json();
+    
+    // Spoken response read-aloud if supported
+    if (window.speechSynthesis && result.spoken_response) {{
+      const utter = new SpeechSynthesisUtterance(result.spoken_response);
+      window.speechSynthesis.speak(utter);
+    }}
+    
+    if (!result.authorized) {{
+      showToast(result.spoken_response || 'Unauthorized voice action');
+      return;
+    }}
+    
+    if (result.requires_confirmation) {{
+      showModal(`
+        <h3>Voice Action Confirmation Required</h3>
+        <p style="margin-top:8px;font-size:14px;color:var(--ink-secondary);">${{result.confirmation_message}}</p>
+        <div style="display:flex;justify-content:flex-end;gap:8px;margin-top:16px;">
+          <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+          <button class="btn-primary" onclick="executeVoiceAction('${{result.action_type}}', ${{JSON.stringify(result.parameters)}})">Confirm Action</button>
+        </div>
+      `);
+      return;
+    }}
+    
+    executeVoiceAction(result.action_type, result.parameters);
+  }} catch (e) {{
+    showToast('Failed to process voice command');
+  }}
+}}
+
+function executeVoiceAction(actionType, params) {{
+  closeModal();
+  if (actionType === 'NAVIGATE' && params.patient_id) {{
+    openPatientWorkspace(params.patient_id);
+  }} else if (actionType === 'FILTER' && params.status) {{
+    navigate('patients');
+    setTimeout(() => filterPatientCards(params.status.toLowerCase()), 200);
+  }} else if (actionType === 'FILTER' && params.filter === 'missed_checkins') {{
+    navigate('patients');
+    showToast('Displaying patients with missed check-in reminders');
+  }} else if (actionType === 'ACKNOWLEDGE') {{
+    showToast('Active alert acknowledged by voice confirmation');
+  }}
+}}
+
+// ----------------------------------------------------
+// MODAL & TOAST HELPERS
+// ----------------------------------------------------
+function showModal(contentHtml) {{
+  const modal = document.getElementById('appModal');
+  const win = document.getElementById('modalWindow');
+  if (contentHtml) win.innerHTML = contentHtml;
+  modal.style.display = 'flex';
+}}
+
+function closeModal() {{
+  document.getElementById('appModal').style.display = 'none';
+}}
+
+function showToast(message) {{
+  const toast = document.getElementById('toastBanner');
+  document.getElementById('toastMessage').textContent = message;
+  toast.style.display = 'block';
+  setTimeout(() => {{ toast.style.display = 'none'; }}, 3500);
+}}
+
+function getMinecraftAvatar(patientId, size) {{
+  // Simple fallback SVG generator if client-side
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 8" width="${{size}}" height="${{size}}" style="image-rendering:pixelated;border-radius:4px;"><rect width="8" height="8" fill="#0f172a"/><rect x="1" y="2" width="2" height="1" fill="#fff"/><rect x="2" y="2" width="1" height="1" fill="#38bdf8"/><rect x="5" y="2" width="1" height="1" fill="#38bdf8"/><rect x="6" y="2" width="2" height="1" fill="#fff"/><rect x="3" y="4" width="2" height="1" fill="#b97b66"/><rect x="0" y="6" width="8" height="2" fill="#0284c7"/></svg>`;
+}}
+</script>
+</body>
+</html>""";

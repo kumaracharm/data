@@ -3,11 +3,12 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import sys
 from pathlib import Path
 from typing import Any
 
-
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
 SIMULATION = ROOT / "data" / "simulation"
 RUNS = SIMULATION / "runs"
 PATIENT_IDS = [f"P{number:03d}" for number in range(1, 11)]
@@ -268,6 +269,18 @@ def main() -> None:
     args = parser.parse_args()
     payload = build_payload()
     build_viewer(args.output, payload)
+
+    # Also build the unified HealthGuard Application HTML in reports
+    try:
+        from healthguard.ui import get_html_app
+        reports_dir = ROOT / "reports"
+        reports_dir.mkdir(parents=True, exist_ok=True)
+        hg_app_path = reports_dir / "healthguard_app.html"
+        hg_app_path.write_text(get_html_app(), encoding="utf-8")
+        print(f"HealthGuard Unified Application: {hg_app_path}")
+    except Exception as err:
+        print(f"Note: HealthGuard UI export skipped: {err}")
+
     export_dir = SIMULATION / "exports"
     export_dir.mkdir(parents=True, exist_ok=True)
     combined_path = export_dir / "ten_patients_patient_scenario_presets.csv"
